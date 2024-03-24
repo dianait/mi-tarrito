@@ -15,6 +15,10 @@
 		138F89A22BB02D1C00EA9F2F /* daymooddataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89A12BB02D1C00EA9F2F /* daymooddataTests.swift */; };
 		138F89AC2BB02D1C00EA9F2F /* daymooddataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89AB2BB02D1C00EA9F2F /* daymooddataUITests.swift */; };
 		138F89AE2BB02D1C00EA9F2F /* daymooddataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89AD2BB02D1C00EA9F2F /* daymooddataUITestsLaunchTests.swift */; };
+		138F89BD2BB0367400EA9F2F /* AddItemVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */; };
+		138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89BE2BB03C1700EA9F2F /* TarritoView.swift */; };
+		138F89C12BB043AF00EA9F2F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89C02BB043AF00EA9F2F /* ListView.swift */; };
+		138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89C22BB04A8300EA9F2F /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		138F89A72BB02D1C00EA9F2F /* daymooddataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daymooddataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F89AB2BB02D1C00EA9F2F /* daymooddataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daymooddataUITests.swift; sourceTree = "<group>"; };
 		138F89AD2BB02D1C00EA9F2F /* daymooddataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daymooddataUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVIew.swift; sourceTree = "<group>"; };
+		138F89BE2BB03C1700EA9F2F /* TarritoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarritoView.swift; sourceTree = "<group>"; };
+		138F89C02BB043AF00EA9F2F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		138F89C22BB04A8300EA9F2F /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +105,14 @@
 			isa = PBXGroup;
 			children = (
 				138F898E2BB02D1A00EA9F2F /* daymooddataApp.swift */,
+				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
 				138F89902BB02D1A00EA9F2F /* ContentView.swift */,
 				138F89922BB02D1A00EA9F2F /* Item.swift */,
 				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
 				138F89962BB02D1C00EA9F2F /* Preview Content */,
+				138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */,
+				138F89C02BB043AF00EA9F2F /* ListView.swift */,
+				138F89C22BB04A8300EA9F2F /* IntroView.swift */,
 			);
 			path = daymooddata;
 			sourceTree = "<group>";
@@ -260,9 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */,
 				138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */,
+				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
+				138F89C12BB043AF00EA9F2F /* ListView.swift in Sources */,
 				138F89932BB02D1A00EA9F2F /* Item.swift in Sources */,
 				138F898F2BB02D1A00EA9F2F /* daymooddataApp.swift in Sources */,
+				138F89BD2BB0367400EA9F2F /* AddItemVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,3 @@
-//
-//  daymooddataApp.swift
-//  daymooddata
-//
-//  Created by Diana Hernández on 24/3/24.
-//
-
 import SwiftUI
 import SwiftData
 

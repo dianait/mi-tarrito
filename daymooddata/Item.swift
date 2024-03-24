@@ -1,18 +1,13 @@
-//
-//  Item.swift
-//  daymooddata
-//
-//  Created by Diana Hernández on 24/3/24.
-//
-
 import Foundation
 import SwiftData
 
 @Model
 final class Item {
     var timestamp: Date
-    
-    init(timestamp: Date) {
+    var text: String
+
+    init(timestamp: Date, text: String = "This is a example message") {
         self.timestamp = timestamp
+        self.text = text
     }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		138F898F2BB02D1A00EA9F2F /* daymooddataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* daymooddataApp.swift */; };
+		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
 		138F89932BB02D1A00EA9F2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89922BB02D1A00EA9F2F /* Item.swift */; };
 		138F89952BB02D1C00EA9F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138F89942BB02D1C00EA9F2F /* Assets.xcassets */; };
@@ -39,15 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		138F898B2BB02D1A00EA9F2F /* daymooddata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daymooddata.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		138F898E2BB02D1A00EA9F2F /* daymooddataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daymooddataApp.swift; sourceTree = "<group>"; };
+		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
 		138F89902BB02D1A00EA9F2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		138F89922BB02D1A00EA9F2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		138F89942BB02D1C00EA9F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		138F89972BB02D1C00EA9F2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		138F899D2BB02D1C00EA9F2F /* daymooddataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daymooddataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mitarritoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F89A12BB02D1C00EA9F2F /* daymooddataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daymooddataTests.swift; sourceTree = "<group>"; };
-		138F89A72BB02D1C00EA9F2F /* daymooddataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daymooddataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		138F89A72BB02D1C00EA9F2F /* mitarritoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mitarritoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F89AB2BB02D1C00EA9F2F /* daymooddataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daymooddataUITests.swift; sourceTree = "<group>"; };
 		138F89AD2BB02D1C00EA9F2F /* daymooddataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daymooddataUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVIew.swift; sourceTree = "<group>"; };
@@ -84,9 +84,9 @@
 		138F89822BB02D1A00EA9F2F = {
 			isa = PBXGroup;
 			children = (
-				138F898D2BB02D1A00EA9F2F /* daymooddata */,
-				138F89A02BB02D1C00EA9F2F /* daymooddataTests */,
-				138F89AA2BB02D1C00EA9F2F /* daymooddataUITests */,
+				138F898D2BB02D1A00EA9F2F /* mitarrito */,
+				138F89A02BB02D1C00EA9F2F /* mitarritoTests */,
+				138F89AA2BB02D1C00EA9F2F /* mitarritoUITests */,
 				138F898C2BB02D1A00EA9F2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,17 +94,17 @@
 		138F898C2BB02D1A00EA9F2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				138F898B2BB02D1A00EA9F2F /* daymooddata.app */,
-				138F899D2BB02D1C00EA9F2F /* daymooddataTests.xctest */,
-				138F89A72BB02D1C00EA9F2F /* daymooddataUITests.xctest */,
+				138F898B2BB02D1A00EA9F2F /* mitarrito.app */,
+				138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */,
+				138F89A72BB02D1C00EA9F2F /* mitarritoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		138F898D2BB02D1A00EA9F2F /* daymooddata */ = {
+		138F898D2BB02D1A00EA9F2F /* mitarrito */ = {
 			isa = PBXGroup;
 			children = (
-				138F898E2BB02D1A00EA9F2F /* daymooddataApp.swift */,
+				138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */,
 				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
 				138F89902BB02D1A00EA9F2F /* ContentView.swift */,
 				138F89922BB02D1A00EA9F2F /* Item.swift */,
@@ -114,7 +114,7 @@
 				138F89C02BB043AF00EA9F2F /* ListView.swift */,
 				138F89C22BB04A8300EA9F2F /* IntroView.swift */,
 			);
-			path = daymooddata;
+			path = mitarrito;
 			sourceTree = "<group>";
 		};
 		138F89962BB02D1C00EA9F2F /* Preview Content */ = {
@@ -125,29 +125,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		138F89A02BB02D1C00EA9F2F /* daymooddataTests */ = {
+		138F89A02BB02D1C00EA9F2F /* mitarritoTests */ = {
 			isa = PBXGroup;
 			children = (
 				138F89A12BB02D1C00EA9F2F /* daymooddataTests.swift */,
 			);
-			path = daymooddataTests;
+			path = mitarritoTests;
 			sourceTree = "<group>";
 		};
-		138F89AA2BB02D1C00EA9F2F /* daymooddataUITests */ = {
+		138F89AA2BB02D1C00EA9F2F /* mitarritoUITests */ = {
 			isa = PBXGroup;
 			children = (
 				138F89AB2BB02D1C00EA9F2F /* daymooddataUITests.swift */,
 				138F89AD2BB02D1C00EA9F2F /* daymooddataUITestsLaunchTests.swift */,
 			);
-			path = daymooddataUITests;
+			path = mitarritoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		138F898A2BB02D1A00EA9F2F /* daymooddata */ = {
+		138F898A2BB02D1A00EA9F2F /* mitarrito */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "daymooddata" */;
+			buildConfigurationList = 138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarrito" */;
 			buildPhases = (
 				138F89872BB02D1A00EA9F2F /* Sources */,
 				138F89882BB02D1A00EA9F2F /* Frameworks */,
@@ -157,14 +157,14 @@
 			);
 			dependencies = (
 			);
-			name = daymooddata;
+			name = mitarrito;
 			productName = daymooddata;
-			productReference = 138F898B2BB02D1A00EA9F2F /* daymooddata.app */;
+			productReference = 138F898B2BB02D1A00EA9F2F /* mitarrito.app */;
 			productType = "com.apple.product-type.application";
 		};
-		138F899C2BB02D1C00EA9F2F /* daymooddataTests */ = {
+		138F899C2BB02D1C00EA9F2F /* mitarritoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "daymooddataTests" */;
+			buildConfigurationList = 138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarritoTests" */;
 			buildPhases = (
 				138F89992BB02D1C00EA9F2F /* Sources */,
 				138F899A2BB02D1C00EA9F2F /* Frameworks */,
@@ -175,14 +175,14 @@
 			dependencies = (
 				138F899F2BB02D1C00EA9F2F /* PBXTargetDependency */,
 			);
-			name = daymooddataTests;
+			name = mitarritoTests;
 			productName = daymooddataTests;
-			productReference = 138F899D2BB02D1C00EA9F2F /* daymooddataTests.xctest */;
+			productReference = 138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		138F89A62BB02D1C00EA9F2F /* daymooddataUITests */ = {
+		138F89A62BB02D1C00EA9F2F /* mitarritoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 138F89B72BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "daymooddataUITests" */;
+			buildConfigurationList = 138F89B72BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarritoUITests" */;
 			buildPhases = (
 				138F89A32BB02D1C00EA9F2F /* Sources */,
 				138F89A42BB02D1C00EA9F2F /* Frameworks */,
@@ -193,9 +193,9 @@
 			dependencies = (
 				138F89A92BB02D1C00EA9F2F /* PBXTargetDependency */,
 			);
-			name = daymooddataUITests;
+			name = mitarritoUITests;
 			productName = daymooddataUITests;
-			productReference = 138F89A72BB02D1C00EA9F2F /* daymooddataUITests.xctest */;
+			productReference = 138F89A72BB02D1C00EA9F2F /* mitarritoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +221,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "daymooddata" */;
+			buildConfigurationList = 138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "mitarrito" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -234,9 +234,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				138F898A2BB02D1A00EA9F2F /* daymooddata */,
-				138F899C2BB02D1C00EA9F2F /* daymooddataTests */,
-				138F89A62BB02D1C00EA9F2F /* daymooddataUITests */,
+				138F898A2BB02D1A00EA9F2F /* mitarrito */,
+				138F899C2BB02D1C00EA9F2F /* mitarritoTests */,
+				138F89A62BB02D1C00EA9F2F /* mitarritoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,7 +277,7 @@
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
 				138F89C12BB043AF00EA9F2F /* ListView.swift in Sources */,
 				138F89932BB02D1A00EA9F2F /* Item.swift in Sources */,
-				138F898F2BB02D1A00EA9F2F /* daymooddataApp.swift in Sources */,
+				138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */,
 				138F89BD2BB0367400EA9F2F /* AddItemVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,12 +304,12 @@
 /* Begin PBXTargetDependency section */
 		138F899F2BB02D1C00EA9F2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 138F898A2BB02D1A00EA9F2F /* daymooddata */;
+			target = 138F898A2BB02D1A00EA9F2F /* mitarrito */;
 			targetProxy = 138F899E2BB02D1C00EA9F2F /* PBXContainerItemProxy */;
 		};
 		138F89A92BB02D1C00EA9F2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 138F898A2BB02D1A00EA9F2F /* daymooddata */;
+			target = 138F898A2BB02D1A00EA9F2F /* mitarrito */;
 			targetProxy = 138F89A82BB02D1C00EA9F2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -441,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"daymooddata/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"mitarrito/Preview Content\"";
 				DEVELOPMENT_TEAM = 7G4S2SGHRL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.daymooddata;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -470,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"daymooddata/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"mitarrito/Preview Content\"";
 				DEVELOPMENT_TEAM = 7G4S2SGHRL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -484,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.daymooddata;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -508,7 +508,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daymooddata.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/daymooddata";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mitarrito.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mitarrito";
 			};
 			name = Debug;
 		};
@@ -528,7 +528,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daymooddata.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/daymooddata";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mitarrito.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mitarrito";
 			};
 			name = Release;
 		};
@@ -571,7 +571,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "daymooddata" */ = {
+		138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "mitarrito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89AF2BB02D1C00EA9F2F /* Debug */,
@@ -580,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "daymooddata" */ = {
+		138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarrito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89B22BB02D1C00EA9F2F /* Debug */,
@@ -589,7 +589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "daymooddataTests" */ = {
+		138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarritoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89B52BB02D1C00EA9F2F /* Debug */,
@@ -598,7 +598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		138F89B72BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "daymooddataUITests" */ = {
+		138F89B72BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarritoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89B82BB02D1C00EA9F2F /* Debug */,

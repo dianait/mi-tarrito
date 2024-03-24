@@ -3,7 +3,8 @@ import SwiftUI
 struct AddItemVIew: View {
     @State private var text = ""
     var action: (String) -> Void
-
+    @State private var counter: Int = 0
+    @FocusState private var responseIsFocussed: Bool
     var body: some View {
         VStack {
             ZStack(alignment: .topTrailing) {
@@ -12,16 +13,27 @@ struct AddItemVIew: View {
                     .aspectRatio(contentMode: .fit)
 
                 TextView(text: $text)
+                    .focused($responseIsFocussed)
+                    .onReceive(text.publisher.last()) {
+                        if ($0 as Character).asciiValue == 10 {
+                            responseIsFocussed = false
+                            text.removeLast()
+                        }
+                    }
                     .frame(minHeight: 200)
                     .padding([.leading, .trailing])
-                    .opacity(0.5)
+                    .opacity(0.2)
             }
+            .confettiCannon(counter: $counter)
 
             Button(action: {
-                action(text)
-                text = ""
+                if !text.isEmpty {
+                    action(text)
+                    text = ""
+                    counter += 1
+                }
             }) {
-                Text("PPT")
+                Text("💾 GUARDAR")
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
@@ -32,7 +44,6 @@ struct AddItemVIew: View {
             Spacer()
         }
         .padding()
-        .background(Color(UIColor.systemBackground))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -47,8 +58,6 @@ struct TextView: View {
 
     var body: some View {
         TextEditor(text: $text)
-            .cornerRadius(10)
-            .padding(.horizontal, 5)
             .padding(.top, 60)
     }
 }

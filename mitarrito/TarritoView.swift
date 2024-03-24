@@ -1,10 +1,10 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TarritoView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             Image(.tarrrito)

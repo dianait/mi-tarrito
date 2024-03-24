@@ -1,5 +1,5 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct MiTarritoApp: App {
@@ -19,6 +19,7 @@ struct MiTarritoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background(.white)
         }
         .modelContainer(sharedModelContainer)
     }

@@ -24,7 +24,7 @@ struct AddItemVIew: View {
                     .padding([.leading, .trailing])
                     .opacity(0.2)
             }
-            .confettiCannon(counter: $counter)
+
 
             Button(action: {
                 if !text.isEmpty {
@@ -37,12 +37,15 @@ struct AddItemVIew: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.orange)
+                    .background(text.isEmpty ? Color.gray : Color.orange)
+                    .opacity(text.isEmpty ? 0.6: 1)
                     .cornerRadius(10)
             }
+            .disabled(text.isEmpty)
             .padding([.leading, .trailing])
             Spacer()
         }
+        .confettiCannon(counter: $counter)
         .padding()
         .edgesIgnoringSafeArea(.all)
     }

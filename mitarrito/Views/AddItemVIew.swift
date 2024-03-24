@@ -7,6 +7,7 @@ struct AddItemVIew: View {
     @FocusState private var responseIsFocussed: Bool
     var body: some View {
         VStack {
+            Spacer()
             ZStack(alignment: .topTrailing) {
                 Image("libreta")
                     .resizable()
@@ -20,7 +21,6 @@ struct AddItemVIew: View {
                             text.removeLast()
                         }
                     }
-                    .frame(minHeight: 200)
                     .padding([.leading, .trailing])
                     .opacity(0.2)
             }

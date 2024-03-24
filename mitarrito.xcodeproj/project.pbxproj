@@ -113,6 +113,33 @@
 			path = Shapes;
 			sourceTree = "<group>";
 		};
+		1338C6E22BB0A8A40061FBEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				138F89C42BB0513C00EA9F2F /* Tarrito3DView.swift */,
+				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1338C6E32BB0A8C10061FBEB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				138F89C22BB04A8300EA9F2F /* IntroView.swift */,
+				138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */,
+				138F89C02BB043AF00EA9F2F /* ListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1338C6E42BB0A8D30061FBEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				138F89922BB02D1A00EA9F2F /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		138F89822BB02D1A00EA9F2F = {
 			isa = PBXGroup;
 			children = (
@@ -136,17 +163,14 @@
 		138F898D2BB02D1A00EA9F2F /* mitarrito */ = {
 			isa = PBXGroup;
 			children = (
+				1338C6E42BB0A8D30061FBEB /* Model */,
+				1338C6E32BB0A8C10061FBEB /* Views */,
+				1338C6E22BB0A8A40061FBEB /* Components */,
 				138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */,
-				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
 				138F89902BB02D1A00EA9F2F /* ContentView.swift */,
-				138F89922BB02D1A00EA9F2F /* Item.swift */,
 				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
 				138F89962BB02D1C00EA9F2F /* Preview Content */,
-				138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */,
-				138F89C02BB043AF00EA9F2F /* ListView.swift */,
 				1338C6D62BB0A2BF0061FBEB /* Sources */,
-				138F89C22BB04A8300EA9F2F /* IntroView.swift */,
-				138F89C42BB0513C00EA9F2F /* Tarrito3DView.swift */,
 			);
 			path = mitarrito;
 			sourceTree = "<group>";

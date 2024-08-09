@@ -39,6 +39,7 @@
 		13D16F0A2BB1DDB300507835 /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D16F092BB1DDB300507835 /* StickyView.swift */; };
 		13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D16F0B2BB1DE8D00507835 /* StickiesView.swift */; };
 		13D16F0E2BB1E17900507835 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D16F0D2BB1E17900507835 /* AddView.swift */; };
+		13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		13D16F092BB1DDB300507835 /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
 		13D16F0B2BB1DE8D00507835 /* StickiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickiesView.swift; sourceTree = "<group>"; };
 		13D16F0D2BB1E17900507835 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				13D16F0B2BB1DE8D00507835 /* StickiesView.swift */,
 				136DA6312BB3015A000049A1 /* TabBarView.swift */,
 				136DA6332BB32978000049A1 /* testView.swift */,
+				13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				1338C6DD2BB0A2BF0061FBEB /* View+ConfettiCannon.swift in Sources */,
 				138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */,
 				138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */,
+				13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */,
 				1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */,
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
 				138F89C12BB043AF00EA9F2F /* ListView.swift in Sources */,

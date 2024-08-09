@@ -6,7 +6,6 @@ struct ListView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        Text("mi tarrito app")
         List {
             ForEach(items) { item in
                 NavigationLink {

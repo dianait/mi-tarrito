@@ -5,10 +5,10 @@
 //  Created by Diana Hernández on 24/3/24.
 //
 
-@testable import daymooddata
+@testable import mitarrito
 import XCTest
 
-final class daymooddataTests: XCTestCase {
+final class mitarritoTests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

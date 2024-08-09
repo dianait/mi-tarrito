@@ -6,19 +6,22 @@ struct TarritoView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        ZStack(alignment: .top) {
-            Image(.tarrrito)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(.top, 10)
-                .padding(.trailing, 10)
-                .frame(width: 100)
+        HStack {
+            Spacer()
+            ZStack(alignment: .top) {
+                Image(.tarrrito)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 10)
+                    .padding(.trailing, 10)
+                    .frame(width: 100)
 
-            Text("\(items.count)")
-                .font(.system(size: 20))
-                .padding(.top, 25)
-                .padding(.trailing, 8)
-                .bold()
+                Text("\(items.count)")
+                    .font(.system(size: 20))
+                    .padding(.top, 25)
+                    .padding(.trailing, 8)
+                    .bold()
+            }
         }
     }
 }
@@ -27,3 +30,5 @@ struct TarritoView: View {
     TarritoView()
         .modelContainer(for: Item.self, inMemory: true)
 }
+
+

@@ -1,13 +1,6 @@
-//
-//  daymooddataUITestsLaunchTests.swift
-//  daymooddataUITests
-//
-//  Created by Diana Hernández on 24/3/24.
-//
-
 import XCTest
 
-final class daymooddataUITestsLaunchTests: XCTestCase {
+final class mitarritoUITestsLaunchTests: XCTestCase {
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

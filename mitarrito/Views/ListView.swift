@@ -17,16 +17,8 @@ struct ListView: View {
             }
             .onDelete(perform: deleteItems)
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                EditButton()
-            }
-            ToolbarItem {
-                Button(action: addItem) {
-                    Label("Add Item", systemImage: "plus")
-                }
-            }
-        }
+        .listStyle(.plain)
+        .padding(.top, 100)
     }
 
     private func addItem() {

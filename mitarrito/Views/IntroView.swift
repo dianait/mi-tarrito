@@ -23,13 +23,15 @@ public struct IntroView: View {
                         }
                     }
                     .padding([.leading, .trailing])
-                    .opacity(0.5)
+                    .opacity(0.2)
                     .frame(width: 250, height: 170)
-                Text("Escribe aquí tu logro...")
+                /*
+                 Text("Escribe aquí tu logro...")
                     .fontWeight(.light)
                     .foregroundColor(.black.opacity(0.4))
                     .padding(8)
                     .hidden(!text.isEmpty)
+                 */
             }
             Spacer()
             Button(action: {
@@ -40,7 +42,7 @@ public struct IntroView: View {
                 }
             }) {
                 Text("🎉 PA`L TARRITO")
-                    .foregroundColor(text.isEmpty ? Color.black : Color.white)
+                    .foregroundColor(Color.white)
                     .padding()
                     .frame(maxWidth: .infinity)
 

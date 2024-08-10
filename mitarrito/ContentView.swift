@@ -14,14 +14,12 @@ struct ContentView: View {
         TabView(selection: $currentTab) {
             switch currentTab {
                 case .home:
-                    IntroView()
-                        .applyBG()
-                        .tag(currentTab.rawValue)
-                case .add:
-                    AddItemVIew {
+                    IntroView(){
                         text in
                         addItem(text: text)
                     }
+                        .applyBG()
+                        .tag(currentTab.rawValue)
                 case .list:
                     ImageGalleryCarouselView()
                         .applyBG()
@@ -33,7 +31,7 @@ struct ContentView: View {
     
     private func addItem(text: String) {
         withAnimation {
-            let newItem = Item(text: text, color: ColorUtility.randomColorString(), date: Date())
+            let newItem = Item(text: text, color: ColorUtility.randomColorString())
             modelContext.insert(newItem)
         }
     }
@@ -68,7 +66,6 @@ struct ColorUtility {
 
 enum Tab: String, CaseIterable {
     case home
-    case add
     case list
 }
 
@@ -107,7 +104,7 @@ struct CustomTabbar: View {
                 Circle()
                     .fill(.white)
                     .frame(width: 50, height: 50)
-                    .offset(x: 35, y: yOffset)
+                    .offset(x: 65, y: yOffset)
                     .offset(x: indicatorOffset(width: width))
                     .shadow(color: .orange, radius: 7)
             }
@@ -130,10 +127,8 @@ struct CustomTabbar: View {
         switch currentTab {
             case .home:
                 return 0
-            case .add:
-                return 1
             case .list:
-                return 2
+                return 1
         }
     }
     
@@ -141,8 +136,6 @@ struct CustomTabbar: View {
         switch rawValue {
             case "home":
                 return "house.fill"
-            case "add":
-                return "plus"
             case "list":
                 return "list.clipboard.fill"
             default:

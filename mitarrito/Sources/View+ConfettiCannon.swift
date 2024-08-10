@@ -44,10 +44,10 @@ public extension View {
     ///
     @ViewBuilder func confettiCannon(
         counter: Binding<Int>,
-        num: Int = 20,
+        num: Int = 30,
         confettis: [ConfettiType] = ConfettiType.allCases,
         colors: [Color] = [.blue, .red, .green, .yellow, .pink, .purple, .orange],
-        confettiSize: CGFloat = 10.0,
+        confettiSize: CGFloat = 12.0,
         rainHeight: CGFloat = 600.0,
         fadesOut: Bool = true,
         opacity: Double = 1.0,

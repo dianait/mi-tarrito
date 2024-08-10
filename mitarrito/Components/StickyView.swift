@@ -3,7 +3,7 @@ import SwiftUI
 struct StickyView: View {
     var item: Item
 
-    init(item: Item = Item(text: "🎉 Tu primer logro aquí", color: "yellow",date: Date())) {
+    init(item: Item = Item(text: "🎉 Tu primer logro aquí", color: "yellow")) {
         self.item = item
     }
 

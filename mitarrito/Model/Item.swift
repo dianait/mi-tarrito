@@ -7,8 +7,8 @@ final class Item {
     var text: String
     var color: String
 
-    init(text: String, color: String, date: Date) {
-        self.date = date
+    init(text: String, color: String) {
+        self.date = Date()
         self.text = text
         self.color = color
     }

@@ -5,7 +5,6 @@ struct AddItemVIew: View {
     var action: (String) -> Void
     @State private var counter: Int = 0
     @FocusState private var responseIsFocussed: Bool
-    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         VStack {
@@ -32,10 +31,6 @@ struct AddItemVIew: View {
                     action(text)
                     text = ""
                     counter += 1
-
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        dismiss()
-                    }
                 }
             }) {
                 Text("💾 GUARDAR")

@@ -14,7 +14,7 @@ struct ImageGalleryCarouselView: View {
         } else {
             ZStack {
                 ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
-                    StickyView(text: item.text)
+                    StickyView(item: item)
                         .rotation3DEffect(
                             .degrees(Double(cardRotation(index))),
                             axis: (x: 0, y: 1, z: 0),

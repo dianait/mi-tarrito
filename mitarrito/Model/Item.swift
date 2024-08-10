@@ -3,11 +3,13 @@ import SwiftData
 
 @Model
 final class Item {
-    var timestamp: Date
+    var date: Date
     var text: String
+    var color: String
 
-    init(timestamp: Date, text: String = "This is a example message") {
-        self.timestamp = timestamp
+    init(text: String, color: String, date: Date) {
+        self.date = date
         self.text = text
+        self.color = color
     }
 }

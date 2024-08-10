@@ -33,7 +33,7 @@ struct ContentView: View {
     
     private func addItem(text: String) {
         withAnimation {
-            let newItem = Item(timestamp: Date(), text: text)
+            let newItem = Item(text: text, color: ColorUtility.randomColorString(), date: Date())
             modelContext.insert(newItem)
         }
     }
@@ -43,6 +43,26 @@ extension View {
     func applyBG() -> some View {
         frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
+    }
+}
+
+struct ColorUtility {
+    static let availableColors = [
+        "blue",
+        "cyan",
+        "green",
+        "indigo",
+        "mint",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "teal",
+        "yellow"
+    ]
+
+    static func randomColorString() -> String {
+        return availableColors.randomElement() ?? "gray"
     }
 }
 

@@ -2,27 +2,30 @@ import SwiftUI
 
 struct StickyView: View {
     var text: String
-    var color: Color = .yellow
-    var borderColor: Color = .orange
+    var color: Color
 
-    init(text: String = "¡Hola, mundo!", color: Color = .yellow, borderColor: Color = .orange) {
+    init(text: String = "¡Hola, mundo!") {
             self.text = text
-            self.color = color
-            self.borderColor = borderColor
+        	self.color =  Color(
+                hue: Double.random(in: 0...1),
+                saturation: Double.random(in: 0.3...0.7),
+                brightness: Double.random(in: 0.7...1)
+            )
         }
 
     var body: some View {
         VStack {
             Spacer()
-            Text(text)
-                .font(.largeTitle)
-                .frame(width: 200, height: 200)
-                .background(color)
-                .clipShape(BentCornerShape(corner: .bottomRight, size: 20))
-                .overlay(BentCornerShape(corner: .bottomRight, size: 20)
-                    .stroke(borderColor, lineWidth: 2))
-                .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2)
-            Spacer()
+            ZStack(alignment: .topTrailing) {
+                Image("postit")
+                    .resizable()
+                    .colorMultiply(color)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300)
+                Text(text)
+                    .font(.largeTitle)
+                    .frame(width: 300, height: 300)
+            }
         }
         .frame(width: 200, height: 200)
     }

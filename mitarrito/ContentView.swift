@@ -23,7 +23,7 @@ struct ContentView: View {
                         addItem(text: text)
                     }
                 case .list:
-                    ListView()
+                    ImageGalleryCarouselView()
                         .applyBG()
                         .tag(currentTab.rawValue)
             }

@@ -12,19 +12,18 @@ struct TarritoView: View {
                     Image(.tarrrito)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100)
 
                     Text("\(items.count)")
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.system(size: 18, weight: .bold))
                         .foregroundColor(.white)
-                        .padding(6)
+                        .padding(5)
                         .background(Color.orange)
                         .clipShape(Circle())
                         .overlay(
                             Circle()
                                 .stroke(Color.white, lineWidth: 2)
                         )
-                        .offset(x: 1, y: 13)
+                        .offset(x: 1, y: 15)
                         .shadow(color: .gray.opacity(0.2), radius: 2, x: 0, y: 2)
                 }
                 .padding(.trailing, 10)

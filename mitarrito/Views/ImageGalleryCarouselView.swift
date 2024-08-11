@@ -6,6 +6,7 @@ struct ImageGalleryCarouselView: View {
     @Query private var items: [Item]
     @State private var currentIndex: Int = 0
     @State private var translation: CGFloat = 0
+    var delete: (Item) -> Void
 
     var body: some View {
         if items.isEmpty {
@@ -14,7 +15,7 @@ struct ImageGalleryCarouselView: View {
         } else {
             ZStack {
                 ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
-                    StickyView(item: item)
+                    StickyView(item: item, delete: { item in delete(item) })
                         .rotation3DEffect(
                             .degrees(Double(cardRotation(index))),
                             axis: (x: 0, y: 1, z: 0),
@@ -62,6 +63,6 @@ struct ImageGalleryCarouselView: View {
 
 
 #Preview {
-    ImageGalleryCarouselView()
+    ImageGalleryCarouselView() { _ in }
         .modelContainer(for: Item.self, inMemory: true)
 }

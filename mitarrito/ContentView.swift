@@ -21,7 +21,11 @@ struct ContentView: View {
                         .applyBG()
                         .tag(currentTab.rawValue)
                 case .list:
-                    ImageGalleryCarouselView()
+                    ImageGalleryCarouselView() {
+                    item in
+                        removeItem(item: item)
+
+                    }
                         .applyBG()
                         .tag(currentTab.rawValue)
             }
@@ -33,6 +37,14 @@ struct ContentView: View {
         withAnimation {
             let newItem = Item(text: text, color: ColorUtility.randomColorString())
             modelContext.insert(newItem)
+        }
+    }
+
+    private func removeItem(item: Item) {
+        withAnimation {
+            if let item = items.first {
+                modelContext.delete(item)
+            }
         }
     }
 }

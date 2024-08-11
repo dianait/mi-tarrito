@@ -11,7 +11,11 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView(selection: $currentTab) {
+        IntroView(){
+            text in
+            addItem(text: text)
+        }
+       /* TabView(selection: $currentTab) {
             switch currentTab {
                 case .home:
                     IntroView(){
@@ -21,16 +25,13 @@ struct ContentView: View {
                         .applyBG()
                         .tag(currentTab.rawValue)
                 case .list:
-                    ImageGalleryCarouselView() {
-                    item in
-                        removeItem(item: item)
-
-                    }
+                    ImageGalleryCarouselView()
                         .applyBG()
                         .tag(currentTab.rawValue)
             }
         }
         CustomTabbar(currentTab: $currentTab)
+        */
     }
     
     private func addItem(text: String) {
@@ -39,40 +40,12 @@ struct ContentView: View {
             modelContext.insert(newItem)
         }
     }
-
-    private func removeItem(item: Item) {
-        withAnimation {
-            if let item = items.first {
-                modelContext.delete(item)
-            }
-        }
-    }
 }
 
 extension View {
     func applyBG() -> some View {
         frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
-    }
-}
-
-struct ColorUtility {
-    static let availableColors = [
-        "blue",
-        "cyan",
-        "green",
-        "indigo",
-        "mint",
-        "orange",
-        "pink",
-        "purple",
-        "red",
-        "teal",
-        "yellow"
-    ]
-
-    static func randomColorString() -> String {
-        return availableColors.randomElement() ?? "gray"
     }
 }
 

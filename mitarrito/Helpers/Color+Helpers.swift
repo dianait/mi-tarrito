@@ -40,3 +40,28 @@ extension Color {
         }
     }
 }
+
+func colorForIndex(_ index: Int) -> Color {
+    let colors: [Color] = [.red, .blue, .green, .yellow, .purple]
+    return colors[index % max(colors.count, 1)]
+}
+
+struct ColorUtility {
+    static let availableColors = [
+        "blue",
+        "cyan",
+        "green",
+        "indigo",
+        "mint",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "teal",
+        "yellow"
+    ]
+
+    static func randomColorString() -> String {
+        return availableColors.randomElement() ?? "gray"
+    }
+}

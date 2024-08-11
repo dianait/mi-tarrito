@@ -2,7 +2,7 @@ import SwiftUI
 
 struct StickyView: View {
     var item: Item
-    var delete: ((Item) -> Void)? = nil
+    var delete: (() -> Void)? = nil
     
     var isEditMode: Bool {
         delete != nil
@@ -14,7 +14,7 @@ struct StickyView: View {
                 BackgroundImageView(color: item.color)
                 VStack {
                     if isEditMode {
-                        DeleteButtonView(action: { delete?(item) })
+                        DeleteButtonView(action: { delete?() })
                             .offset(x: -20, y: 20)
                         
                     }
@@ -43,6 +43,6 @@ let itemMock =  Item(
 }
 
 #Preview("✏️ Edit Mode") {
-    StickyView(item: itemMock) {_ in }
+    StickyView(item: itemMock){}
 }
 #endif

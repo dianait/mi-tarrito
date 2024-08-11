@@ -23,7 +23,7 @@
 		133D65AA2C68B7E10009DE41 /* ItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65A92C68B7E10009DE41 /* ItemTextView.swift */; };
 		133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AB2C68B8130009DE41 /* DateLabelView.swift */; };
 		133D65AE2C68B8450009DE41 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */; };
-		133D65B12C68B8990009DE41 /* fromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65B02C68B8990009DE41 /* fromString.swift */; };
+		133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65B02C68B8990009DE41 /* Color+Helpers.swift */; };
 		136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA6312BB3015A000049A1 /* TabBarView.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
@@ -101,7 +101,7 @@
 		133D65A92C68B7E10009DE41 /* ItemTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTextView.swift; sourceTree = "<group>"; };
 		133D65AB2C68B8130009DE41 /* DateLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelView.swift; sourceTree = "<group>"; };
 		133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
-		133D65B02C68B8990009DE41 /* fromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromString.swift; sourceTree = "<group>"; };
+		133D65B02C68B8990009DE41 /* Color+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helpers.swift"; sourceTree = "<group>"; };
 		136DA6312BB3015A000049A1 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		133D65AF2C68B88C0009DE41 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				133D65B02C68B8990009DE41 /* fromString.swift */,
+				133D65B02C68B8990009DE41 /* Color+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -500,7 +500,7 @@
 				138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */,
 				138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */,
 				13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */,
-				133D65B12C68B8990009DE41 /* fromString.swift in Sources */,
+				133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */,
 				1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */,
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,

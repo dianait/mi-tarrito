@@ -3,25 +3,27 @@ import SwiftUI
 
 struct TarritoView: View {
     @Query private var items: [Item]
-
+    
     var body: some View {
-        HStack {
-            Spacer()
-            ZStack(alignment: .top) {
-                Image(.tarrrito)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.top, 10)
-                    .padding(.trailing, 10)
-                    .frame(width: 100)
-
-                Text("\(items.count)")
-                    .font(.system(size: 20))
-                    .padding(.top, 25)
-                    .padding(.trailing, 8)
-                    .bold()
+        NavigationLink(destination: ImageGalleryCarouselView()) {
+            HStack {
+                Spacer()
+                ZStack(alignment: .top) {
+                    Image(.tarrrito)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.top, 10)
+                        .frame(width: 100)
+                    
+                    Text("\(items.count)")
+                        .font(.system(size: 20))
+                        .padding(.top, 27)
+                        .bold()
+                }
+                .padding(.trailing, -15)
             }
         }
+        
     }
 }
 

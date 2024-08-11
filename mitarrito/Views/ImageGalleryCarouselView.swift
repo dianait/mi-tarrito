@@ -3,10 +3,10 @@ import SwiftUI
 import SwiftData
 
 struct ImageGalleryCarouselView: View {
+    @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     @State private var currentIndex: Int = 0
     @State private var translation: CGFloat = 0
-    var delete: (Item) -> Void
 
     var body: some View {
         if items.isEmpty {
@@ -15,7 +15,7 @@ struct ImageGalleryCarouselView: View {
         } else {
             ZStack {
                 ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
-                    StickyView(item: item, delete: { item in delete(item) })
+                    StickyView(item: item, delete: { removeItem(item: item) })
                         .rotation3DEffect(
                             .degrees(Double(cardRotation(index))),
                             axis: (x: 0, y: 1, z: 0),
@@ -44,9 +44,12 @@ struct ImageGalleryCarouselView: View {
         }
     }
 
-    private func colorForIndex(_ index: Int) -> Color {
-        let colors: [Color] = [.red, .blue, .green, .yellow, .purple]
-        return colors[index % max(colors.count, 1)]
+    private func removeItem(item: Item) {
+        withAnimation {
+            if let item = items.first {
+                modelContext.delete(item)
+            }
+        }
     }
 
     private func cardRotation(_ index: Int) -> CGFloat {
@@ -60,9 +63,7 @@ struct ImageGalleryCarouselView: View {
     }
 }
 
-
-
 #Preview {
-    ImageGalleryCarouselView() { _ in }
+    ImageGalleryCarouselView()
         .modelContainer(for: Item.self, inMemory: true)
 }

@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item: Equatable {
+final class Item {
     var date: Date
     var text: String
     var color: String

@@ -19,6 +19,11 @@
 		1338C6F52BB0ACAB0061FBEB /* mitarritoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6F42BB0ACAB0061FBEB /* mitarritoWidget.swift */; };
 		1338C6F72BB0ACAD0061FBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1338C6F62BB0ACAD0061FBEB /* Assets.xcassets */; };
 		1338C6FB2BB0ACAD0061FBEB /* mitarritoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1338C6E92BB0ACAB0061FBEB /* mitarritoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65A72C68B7A20009DE41 /* DeleteButtonView.swift */; };
+		133D65AA2C68B7E10009DE41 /* ItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65A92C68B7E10009DE41 /* ItemTextView.swift */; };
+		133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AB2C68B8130009DE41 /* DateLabelView.swift */; };
+		133D65AE2C68B8450009DE41 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */; };
+		133D65B12C68B8990009DE41 /* fromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65B02C68B8990009DE41 /* fromString.swift */; };
 		136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA6312BB3015A000049A1 /* TabBarView.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
@@ -92,6 +97,11 @@
 		1338C6F42BB0ACAB0061FBEB /* mitarritoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoWidget.swift; sourceTree = "<group>"; };
 		1338C6F62BB0ACAD0061FBEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1338C6F82BB0ACAD0061FBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133D65A72C68B7A20009DE41 /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
+		133D65A92C68B7E10009DE41 /* ItemTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTextView.swift; sourceTree = "<group>"; };
+		133D65AB2C68B8130009DE41 /* DateLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelView.swift; sourceTree = "<group>"; };
+		133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		133D65B02C68B8990009DE41 /* fromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromString.swift; sourceTree = "<group>"; };
 		136DA6312BB3015A000049A1 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
@@ -176,7 +186,6 @@
 				138F89C42BB0513C00EA9F2F /* Tarrito3DView.swift */,
 				13D16F072BB1DC5C00507835 /* AddButtonView.swift */,
 				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
-				13D16F092BB1DDB300507835 /* StickyView.swift */,
 				13D16F0B2BB1DE8D00507835 /* StickiesView.swift */,
 				136DA6312BB3015A000049A1 /* TabBarView.swift */,
 			);
@@ -186,6 +195,7 @@
 		1338C6E32BB0A8C10061FBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				133D65A62C68B78E0009DE41 /* StickyView */,
 				138F89C22BB04A8300EA9F2F /* IntroView.swift */,
 				138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */,
 				13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */,
@@ -223,6 +233,26 @@
 			path = mitarritoWidget;
 			sourceTree = "<group>";
 		};
+		133D65A62C68B78E0009DE41 /* StickyView */ = {
+			isa = PBXGroup;
+			children = (
+				133D65A72C68B7A20009DE41 /* DeleteButtonView.swift */,
+				133D65A92C68B7E10009DE41 /* ItemTextView.swift */,
+				13D16F092BB1DDB300507835 /* StickyView.swift */,
+				133D65AB2C68B8130009DE41 /* DateLabelView.swift */,
+				133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */,
+			);
+			path = StickyView;
+			sourceTree = "<group>";
+		};
+		133D65AF2C68B88C0009DE41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				133D65B02C68B8990009DE41 /* fromString.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		138F89822BB02D1A00EA9F2F = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +279,7 @@
 		138F898D2BB02D1A00EA9F2F /* mitarrito */ = {
 			isa = PBXGroup;
 			children = (
+				133D65AF2C68B88C0009DE41 /* Helpers */,
 				1338C6E42BB0A8D30061FBEB /* Model */,
 				1338C6E32BB0A8C10061FBEB /* Views */,
 				1338C6E22BB0A8A40061FBEB /* Components */,
@@ -465,17 +496,22 @@
 			files = (
 				13D16F082BB1DC5C00507835 /* AddButtonView.swift in Sources */,
 				1338C6DD2BB0A2BF0061FBEB /* View+ConfettiCannon.swift in Sources */,
+				133D65AE2C68B8450009DE41 /* BackgroundImageView.swift in Sources */,
 				138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */,
 				138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */,
 				13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */,
+				133D65B12C68B8990009DE41 /* fromString.swift in Sources */,
 				1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */,
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,
+				133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */,
 				13D16F0E2BB1E17900507835 /* AddView.swift in Sources */,
+				133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */,
 				138F89932BB02D1A00EA9F2F /* Item.swift in Sources */,
 				136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */,
 				138F89C52BB0513C00EA9F2F /* Tarrito3DView.swift in Sources */,
 				1338C6DF2BB0A2BF0061FBEB /* Triangle.swift in Sources */,
+				133D65AA2C68B7E10009DE41 /* ItemTextView.swift in Sources */,
 				1338C6E02BB0A2BF0061FBEB /* SlimRectangle.swift in Sources */,
 				138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */,
 				13D16F0A2BB1DDB300507835 /* StickyView.swift in Sources */,

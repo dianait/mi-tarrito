@@ -9,8 +9,9 @@ public struct IntroView: View {
     
     public var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 100) {
                 TarritoView()
+                    .offset(x: 25, y: 2)
                 Spacer()
                 ZStack{
                     StickiesView()
@@ -33,6 +34,7 @@ public struct IntroView: View {
                      .hidden(!text.isEmpty)
                      */
                 }
+                .offset(x: 0, y: -25)
                 Spacer()
                 Button(action: {
                     if !text.isEmpty {

@@ -9,6 +9,7 @@ struct BackgroundImageView: View {
             .colorMultiply(Color.fromString(color))
             .aspectRatio(contentMode: .fill)
             .frame(width: 300, height: 300)
+            .shadow(color: .black.opacity(0.5), radius: 5, x: 5, y: 5)
     }
 }
 

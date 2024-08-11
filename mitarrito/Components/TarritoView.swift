@@ -23,7 +23,6 @@ struct TarritoView: View {
                 .padding(.trailing, -15)
             }
         }
-        
     }
 }
 

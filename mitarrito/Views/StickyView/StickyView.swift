@@ -16,7 +16,6 @@ struct StickyView: View {
                     if isEditMode {
                         DeleteButtonView(action: { delete?() })
                             .offset(x: -20, y: 20)
-                        
                     }
                     
                     ItemTextView(text: item.text)

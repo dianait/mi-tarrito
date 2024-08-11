@@ -4,7 +4,7 @@ import SwiftData
 
 struct ImageGalleryCarouselView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query(sort: \Item.date, order: .reverse) private var items: [Item]
     @State private var currentIndex: Int = 0
     @State private var translation: CGFloat = 0
 

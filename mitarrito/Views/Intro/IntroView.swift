@@ -13,6 +13,7 @@ public struct IntroView: View {
     var action: (String) -> Void
     @State private var showSaveIndicator = false
     @State private var showSavedMessage = false
+    @State private var showAboutView = false
 
     public var body: some View {
         NavigationStack {
@@ -34,14 +35,34 @@ public struct IntroView: View {
                 )
 
                 Spacer()
+
+                               // Info button at the bottom
+                               Button(action: {
+                                   showAboutView = true
+                               }) {
+                                   HStack {
+                                       Image(systemName: "info.circle.fill")
+                                           .foregroundColor(.white)
+                                       Text("Sobre Mi Tarrito")
+                                           .foregroundColor(.white)
+                                           .fontWeight(.medium)
+                                   }
+                                   .padding()
+                                   .background(Color.orange.opacity(0.8))
+                                   .cornerRadius(10)
+                               }
+                               .padding(.bottom, Space.medium)
             }
             .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                	showSavedMessage = false
+                    showSavedMessage = false
                 }
             })
             .confettiCannon(counter: $counter)
             .padding()
+            .sheet(isPresented: $showAboutView) {
+                AboutView()
+            }
         }
     }
 }

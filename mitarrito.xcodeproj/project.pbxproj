@@ -29,6 +29,7 @@
 		1361059F2D745513000309F4 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361059E2D745508000309F4 /* ConfirmationView.swift */; };
 		136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A02D745CDD000309F4 /* StickiesViewOverview.swift */; };
 		136105A32D746549000309F4 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A22D74653F000309F4 /* EmptyView.swift */; };
+		136105A52D746E10000309F4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A42D746E0C000309F4 /* AboutView.swift */; };
 		136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA6312BB3015A000049A1 /* TabBarView.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
@@ -112,6 +113,7 @@
 		1361059E2D745508000309F4 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		136105A02D745CDD000309F4 /* StickiesViewOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickiesViewOverview.swift; sourceTree = "<group>"; };
 		136105A22D74653F000309F4 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		136105A42D746E0C000309F4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		136DA6312BB3015A000049A1 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		1338C6E32BB0A8C10061FBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				136105A42D746E0C000309F4 /* AboutView.swift */,
 				136105A22D74653F000309F4 /* EmptyView.swift */,
 				133F23312CDCC5CA0086460E /* Intro */,
 				133D65A62C68B78E0009DE41 /* StickyView */,
@@ -530,6 +533,7 @@
 				13D58F192C77A7D5008058C5 /* A11y.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,
 				133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */,
+				136105A52D746E10000309F4 /* AboutView.swift in Sources */,
 				136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */,
 				13D16F0E2BB1E17900507835 /* AddView.swift in Sources */,
 				133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */,

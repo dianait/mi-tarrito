@@ -53,11 +53,7 @@ struct AboutView: View {
                             .font(.body)
                     }
 
-                    Text("Desarrollado con ❤️ por un @Dianait")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top)
+                    SocialLinks()
                 }
                 .padding()
             }

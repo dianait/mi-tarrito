@@ -31,6 +31,8 @@
 		136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A02D745CDD000309F4 /* StickiesViewOverview.swift */; };
 		136105A32D746549000309F4 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A22D74653F000309F4 /* EmptyView.swift */; };
 		136105A52D746E10000309F4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A42D746E0C000309F4 /* AboutView.swift */; };
+		136105A72D747D07000309F4 /* SocialLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A62D747CF3000309F4 /* SocialLinks.swift */; };
+		136105A92D747EF0000309F4 /* SocialLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A82D747EEA000309F4 /* SocialLink.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
 		138F89932BB02D1A00EA9F2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89922BB02D1A00EA9F2F /* Item.swift */; };
@@ -111,6 +113,8 @@
 		136105A02D745CDD000309F4 /* StickiesViewOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickiesViewOverview.swift; sourceTree = "<group>"; };
 		136105A22D74653F000309F4 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		136105A42D746E0C000309F4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		136105A62D747CF3000309F4 /* SocialLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinks.swift; sourceTree = "<group>"; };
+		136105A82D747EEA000309F4 /* SocialLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLink.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
 		138F89902BB02D1A00EA9F2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		1338C6E22BB0A8A40061FBEB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				136105A62D747CF3000309F4 /* SocialLinks.swift */,
 				1361059E2D745508000309F4 /* ConfirmationView.swift */,
 				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
 				13D16F0B2BB1DE8D00507835 /* StickiesView.swift */,
@@ -211,6 +216,7 @@
 		1338C6E42BB0A8D30061FBEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				136105A82D747EEA000309F4 /* SocialLink.swift */,
 				138F89922BB02D1A00EA9F2F /* Item.swift */,
 			);
 			path = Model;
@@ -509,11 +515,13 @@
 				133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */,
 				1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */,
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
+				136105A92D747EF0000309F4 /* SocialLink.swift in Sources */,
 				13D58F192C77A7D5008058C5 /* A11y.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,
 				133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */,
 				136105A52D746E10000309F4 /* AboutView.swift in Sources */,
 				136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */,
+				136105A72D747D07000309F4 /* SocialLinks.swift in Sources */,
 				133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */,
 				1361059F2D745513000309F4 /* ConfirmationView.swift in Sources */,
 				138F89932BB02D1A00EA9F2F /* Item.swift in Sources */,

@@ -1,14 +1,14 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct StickiesView: View {
     @Query(sort: \Item.date, order: .reverse) private var items: [Item]
-    @Binding  var mode: Mode
+    @Binding var mode: Mode
 
     var lastMessage: String {
-		switch mode {
-            case .view: items.first?.text ?? ""
-            case .edit: ""
+        switch mode {
+        case .view: items.first?.text ?? ""
+        case .edit: ""
         }
     }
 
@@ -29,11 +29,9 @@ struct StickiesView: View {
                     .onTapGesture {
                         openEdit()
                     }
-
             }
         }
     }
-
 
     private func openEdit() {
         mode = .edit

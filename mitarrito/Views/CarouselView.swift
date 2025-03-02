@@ -13,7 +13,7 @@ struct CarouselView: View {
             EmptyStateView()
         } else {
             ZStack {
-                ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                ForEach(Array(Array(items.prefix(20)).shuffled().enumerated()), id: \.element.id) { index, item in
                     StickyView(item: item, delete: { removeItem(item: item) })
                         .rotation3DEffect(
                             .degrees(Double(cardRotation(index))),

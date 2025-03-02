@@ -3,7 +3,6 @@ import SwiftUI
 struct HeaderView: View {
     @Binding var mode: Mode
     @Binding var text: String
-
     var body: some View {
         VStack(spacing: Space.small) {
             if mode == .edit && !text.isEmpty {
@@ -12,20 +11,17 @@ struct HeaderView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.orange)
                     .multilineTextAlignment(.center)
-
                 Text("Desliza hacia arriba para guardar")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
-
             } else {
                 Text("¡Es hora de celebrar tus logros!")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.orange)
                     .multilineTextAlignment(.center)
-
                 Text("Pulsa en la nota amarilla para empezar")
                     .font(.subheadline)
                     .foregroundColor(.gray)
@@ -46,12 +42,4 @@ struct HeaderView: View {
         .padding(.vertical, Space.medium)
         .frame(height: 60)
     }
-}
-
-#Preview("✍️ Edit mode") {
-    HeaderView(mode: .constant(.edit), text: .constant(""))
-}
-
-#Preview("👀 View mode") {
-    HeaderView(mode: .constant(.view), text: .constant(""))
 }

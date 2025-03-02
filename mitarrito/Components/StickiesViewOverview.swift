@@ -13,6 +13,7 @@ struct StickiesViewOverview: View {
     
     var action: (String) -> Void
 
+
     var body: some View {
         ZStack {
             if mode == .edit {
@@ -36,12 +37,11 @@ struct StickiesViewOverview: View {
                                 }
                             }
                             .padding([.leading, .trailing])
-                            .opacity(0)
+                            .opacity(.zero)
                             .frame(width: 250, height: 170)
 
-                        // Texto con opacidad completa
                         Text(text.isEmpty ? "Escribe aquí..." : text)
-                            .foregroundColor(.black)
+                            .foregroundColor(text == "Escribe aquí..." ? .gray : .black)
                             .opacity(1)
                             .frame(width: 250, height: 170)
                             .padding([.leading, .trailing])
@@ -62,10 +62,7 @@ struct StickiesViewOverview: View {
                             if gesture.translation.height < -50, !text.isEmpty {
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.notificationOccurred(.success)
-                                withAnimation(.interpolatingSpring(stiffness: 170, damping: 15)) {
-                                    dragOffset = CGSize(width: 0, height: -300)
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                     save()
                                     withAnimation {
                                         showSavedMessage = true

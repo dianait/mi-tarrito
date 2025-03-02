@@ -4,45 +4,34 @@ struct HeaderView: View {
     @Binding var mode: Mode
     @Binding var text: String
     @Environment(\.screenSize) private var screenSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    var viewTitle: String {
-        screenSize.width < 380 ? "¡Es hora de celebrar!" : "¡Es hora de celebrar tus logros!"
+    var shouldShowEditHeader: Bool {
+        mode == .edit && !text.isEmpty
     }
 
-    var viewDecription: String {
-        screenSize.width < 380 ? "Pulsa en la nota amarilla" : "Pulsa en la nota amarilla para empezar"
+    var title: String {
+        shouldShowEditHeader ? Copies.editTitle : Copies.viewTitle(screenWidth: screenSize.width)
     }
 
-    var editDescription: String {
-        screenSize.width < 380 ? "Desliza hacia arriba" : "Desliza hacia arriba para guardar"
+    var description: String {
+        shouldShowEditHeader ? Copies.editDescription(screenWidth: screenSize.width) : Copies.viewDecription(screenWidth: screenSize.width)
     }
 
     var body: some View {
         VStack {
-            if mode == .edit && !text.isEmpty {
-                Text("¿Has terminado?")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.orange)
-                    .multilineTextAlignment(.center)
-                Text(editDescription)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-            } else {
-                Text(viewTitle)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.orange)
-                    .multilineTextAlignment(.center)
-                Text(viewDecription)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-            }
+            Text(title)
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(.orange)
+                .multilineTextAlignment(.center)
+            Text(description)
+                .font(.subheadline)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
         }
+        .accessibilityElement(children: .combine)
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -52,19 +41,10 @@ struct HeaderView: View {
                         .stroke(Color.orange.opacity(0.5), lineWidth: 2)
                 )
         )
+        .fixedSize(horizontal: false, vertical: true)
+        .lineLimit(dynamicTypeSize.isAccessibilitySize ? 3 : nil)
+        .minimumScaleFactor(0.7)
     }
-}
-
-
-extension EnvironmentValues {
-    var screenSize: CGSize {
-        get { self[ScreenSizeKey.self] }
-        set { self[ScreenSizeKey.self] = newValue }
-    }
-}
-
-struct ScreenSizeKey: EnvironmentKey {
-    static let defaultValue: CGSize = UIScreen.main.bounds.size
 }
 
 #Preview {

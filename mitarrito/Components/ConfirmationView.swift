@@ -3,6 +3,8 @@ import SwiftUI
 struct ConfirmationView: View {
     @Binding var isPresented: Bool
     var onDismiss: (() -> Void)? = nil
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
         VStack {
@@ -12,24 +14,23 @@ struct ConfirmationView: View {
                     VStack(alignment: .center, spacing: 12) {
                         Spacer().frame(height: 25)
 
-                        Text("¡Logro guardado!")
+                        Text(Copies.ConfirmationView.title)
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
 
-                        Text("Tu tarrito crece con cada logro 🎉")
+                        Text(Copies.ConfirmationView.description)
                             .font(.subheadline)
                             .multilineTextAlignment(.center)
-                            .foregroundColor(.white.opacity(0.9))
-
+                            .foregroundColor(.white.opacity(reduceTransparency ? 1.0 : 0.9))
 
                         Button(action: {
-                            withAnimation {
+                            withAnimation(reduceMotion ? .none : .default) {
                                 isPresented = false
                                 onDismiss?()
                             }
                         }) {
-                            Text("Continuar")
+                            Text(Copies.ConfirmationView.button)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.green)
                                 .padding(.horizontal, 30)
@@ -45,32 +46,56 @@ struct ConfirmationView: View {
                         RoundedRectangle(cornerRadius: 30)
                             .fill(Color.green)
                     )
-                    .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 5)
+                    .shadow(color: reduceTransparency ? .clear : Color.black.opacity(0.1),
+                            radius: 8, x: 0, y: 5)
+
                     HStack(spacing: -10) {
                         ZStack {
                             Circle()
                                 .fill(Color.white)
                                 .frame(width: 70, height: 70)
-                                .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
+                                .shadow(color: reduceTransparency ? .clear : Color.black.opacity(0.1),
+                                        radius: 2, x: 0, y: 1)
+                                .accessibilityHidden(true)
 
                             Image(systemName: "checkmark")
                                 .font(.system(size: 32, weight: .bold))
                                 .foregroundColor(.green)
+                                .accessibilityHidden(true)
                         }
                     }
                     .offset(y: -25)
+                    .accessibilityHidden(true)
                 }
+                .accessibilityElement()
+                .accessibilityLabel(A11y.ConfirmationView.label)
+                .accessibilityHint(A11y.ConfirmationView.hint)
                 Spacer()
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 60)
         }
         .transition(.asymmetric(
-            insertion: .scale.combined(with: .opacity),
+            insertion: reduceMotion ? .opacity : .scale.combined(with: .opacity),
             removal: .opacity
         ))
-        .animation(.spring(), value: isPresented)
+        .animation(reduceMotion ? .none : .spring(), value: isPresented)
         .zIndex(100)
+        .onAppear {
+            UIAccessibility.post(
+                notification: .announcement,
+                argument: A11y.ConfirmationView.noti
+            )
+
+            if UIAccessibility.isVoiceOverRunning {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+                    if isPresented {
+                        isPresented = false
+                        onDismiss?()
+                    }
+                }
+            }
+        }
     }
 }
 

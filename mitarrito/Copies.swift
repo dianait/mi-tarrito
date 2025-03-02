@@ -14,6 +14,11 @@ struct Copies {
     }
 
     static let editTitle = "¿Has terminado?"
-
     static let aboutTitle = "Sobre Mi Tarrito"
+
+    struct ConfirmationView {
+        static let title = "¡Logro guardado!"
+        static let description = "Tu tarrito crece con cada logro 🎉"
+        static let button = "Continuar"
+    }
 }

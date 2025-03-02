@@ -18,4 +18,10 @@ enum A11y {
         static let aboutLabelButton = "Información sobre Mi Tarrito"
         static let aboutHintButton = "Muestra una ventana con información adicional sobre la aplicación"
     }
+
+    enum ConfirmationView {
+        static let label = "Confirmación: Logro guardado"
+        static let hint = "Tu tarrito crece con cada logro"
+        static let noti = "Logro guardado. Tu tarrito crece con cada logro."
+    }
 }

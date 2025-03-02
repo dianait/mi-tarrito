@@ -13,5 +13,7 @@ struct Copies {
         screenWidth < 380 ? "Desliza hacia arriba" : "Desliza hacia arriba para guardar"
     }
 
-    static let editTitle: String = "¿Has terminado?"
+    static let editTitle = "¿Has terminado?"
+
+    static let aboutTitle = "Sobre Mi Tarrito"
 }

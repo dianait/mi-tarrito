@@ -13,4 +13,9 @@ enum A11y {
             lastMessage.isEmpty ? "Escribe aquí..." : lastMessage
         }
     }
+
+    enum MainView {
+        static let aboutLabelButton = "Información sobre Mi Tarrito"
+        static let aboutHintButton = "Muestra una ventana con información adicional sobre la aplicación"
+    }
 }

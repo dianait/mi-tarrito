@@ -42,13 +42,15 @@ public struct MainView: View {
                     HStack {
                         Image(systemName: "info.circle.fill")
                             .foregroundColor(.white)
-                        Text("Sobre Mi Tarrito")
+                        Text(Copies.aboutTitle)
                             .foregroundColor(.white)
                     }
                     .padding(.vertical, Space.small)
                     .padding(.horizontal, Space.medium)
                     .background(Color.orange.opacity(0.8))
                     .cornerRadius(10)
+                    .accessibilityLabel(A11y.MainView.aboutLabelButton)
+                    .accessibilityHint(A11y.MainView.aboutHintButton)
                 }
             }
             .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {

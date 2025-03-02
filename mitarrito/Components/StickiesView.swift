@@ -7,34 +7,55 @@ struct StickiesView: View {
 
     var lastMessage: String {
         switch mode {
-        case .view: items.first?.text ?? ""
-        case .edit: ""
+        case .view: return items.first?.text ?? ""
+        case .edit: return ""
         }
     }
 
     var body: some View {
         HStack {
             ZStack {
-                StickyView(item: Accomplishment("Otro y otro", color: "soft-green"))
-                    .offset(x: -70, y: -30)
-                    .rotationEffect(Angle(degrees: -20))
-                StickyView(item: Accomplishment("Otro más!", color: "soft-blue"))
-                    .offset(x: 70, y: -30)
-                    .rotationEffect(Angle(degrees: 20))
-                StickyView(item: Accomplishment("🎉 Tu primer logro aquí", color: "soft-orange"))
-                    .offset(x: 10, y: 30)
-                    .rotationEffect(Angle(degrees: 10))
-                StickyView(item: Accomplishment(lastMessage, color: "soft-yellow"))
+                backgroundStickies()
+                StickyView(item: Accomplishment(lastMessage, color: "yellow"))
                     .offset(x: 0, y: 0)
                     .onTapGesture {
                         openEdit()
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(A11y.StickiesView.label(lastMessage: lastMessage))
+                    .accessibilityHint(A11y.StickiesView.hint)
+                    .accessibilityAddTraits([.isButton])
+            }
+            .accessibilityAction(.default) {
+                openEdit()
             }
         }
     }
 
+    @ViewBuilder
+    private func backgroundStickies() -> some View {
+        Group {
+            StickyView(item: Accomplishment("Otro y otro", color: "green"))
+                .offset(x: -70, y: -30)
+                .rotationEffect(Angle(degrees: -20))
+                .accessibilityHidden(true)
+
+            StickyView(item: Accomplishment("Otro más!", color: "blue"))
+                .offset(x: 70, y: -30)
+                .rotationEffect(Angle(degrees: 20))
+                .accessibilityHidden(true)
+
+            StickyView(item: Accomplishment("🎉 Tu primer logro aquí", color: "orange"))
+                .offset(x: 10, y: 30)
+                .rotationEffect(Angle(degrees: 10))
+                .accessibilityHidden(true)
+        }
+    }
+
     private func openEdit() {
-        mode = .edit
+        withAnimation {
+            mode = .edit
+        }
     }
 }
 

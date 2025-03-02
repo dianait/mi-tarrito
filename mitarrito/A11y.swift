@@ -6,4 +6,11 @@ enum A11y {
 
         static var hint = "Toca para ver tus logros en detalle"
     }
+
+    enum StickiesView {
+        static let hint = "Toca para crear tu primer logro"
+        static func label(lastMessage: String) -> String {
+            lastMessage.isEmpty ? "Escribe aquí..." : lastMessage
+        }
+    }
 }

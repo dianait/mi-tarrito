@@ -15,7 +15,7 @@ struct BackgroundImageView: View {
 
 #Preview {
     Group {
-        BackgroundImageView(color: "soft-yellow")
-        BackgroundImageView(color: "soft-green")
+        BackgroundImageView(color: "yellow")
+        BackgroundImageView(color: "green")
     }
 }

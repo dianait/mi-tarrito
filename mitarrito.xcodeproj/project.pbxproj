@@ -248,15 +248,15 @@
 		138F898D2BB02D1A00EA9F2F /* mitarrito */ = {
 			isa = PBXGroup;
 			children = (
-				13A53F5D2D74DF91009BF32A /* Copies.swift */,
 				133D65AF2C68B88C0009DE41 /* Helpers */,
 				1338C6E42BB0A8D30061FBEB /* Model */,
 				1338C6E32BB0A8C10061FBEB /* Views */,
 				1338C6E22BB0A8A40061FBEB /* Components */,
 				138F89902BB02D1A00EA9F2F /* ContentView.swift */,
-				13D58F182C77A7D5008058C5 /* A11y.swift */,
-				136105942D743DE3000309F4 /* Space.swift */,
 				138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */,
+				13D58F182C77A7D5008058C5 /* A11y.swift */,
+				13A53F5D2D74DF91009BF32A /* Copies.swift */,
+				136105942D743DE3000309F4 /* Space.swift */,
 				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
 				1338C6D62BB0A2BF0061FBEB /* Confetti */,
 				138F89962BB02D1C00EA9F2F /* Preview Content */,

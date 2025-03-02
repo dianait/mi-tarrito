@@ -1,18 +1,18 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct StickiesViewOverview: View {
     @FocusState private var responseIsFocussed: Bool
     @State private var dragOffset: CGSize = .zero
+    @State private var isEditModeActive: Bool = false
 
     @Binding var mode: Mode
     @Binding var text: String
     @Binding var counter: Int
     @Binding var showSaveIndicator: Bool
     @Binding var showSavedMessage: Bool
-    
-    var action: (String) -> Void
 
+    var action: (String) -> Void
 
     var body: some View {
         ZStack {
@@ -20,6 +20,7 @@ struct StickiesViewOverview: View {
                 VStack {
                     ZStack {
                         StickiesView(mode: $mode)
+                            .accessibilityHidden(true)
                         TextEditor(text: $text)
                             .focused($responseIsFocussed)
                             .background(Color.clear)
@@ -28,7 +29,19 @@ struct StickiesViewOverview: View {
                             .onAppear {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                     responseIsFocussed = true
+
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        UIAccessibility.post(
+                                            notification: .screenChanged,
+                                            argument: "Modo de edición activado. Escribe tu logro."
+                                        )
+                                    }
+
+                                    isEditModeActive = true
                                 }
+                            }
+                            .onDisappear {
+                                isEditModeActive = false
                             }
                             .onReceive(text.publisher.last()) {
                                 if ($0 as Character).asciiValue == 10 {
@@ -39,12 +52,16 @@ struct StickiesViewOverview: View {
                             .padding([.leading, .trailing])
                             .opacity(.zero)
                             .frame(width: 250, height: 170)
+                            .accessibilityLabel("Editor de texto para tu logro")
+                            .accessibilityHint("Escribe tu logro. Desliza hacia arriba para guardar.")
+                            .accessibilityIdentifier("logro-editor")
 
                         Text(text.isEmpty ? "Escribe aquí..." : text)
-                            .foregroundColor(text == "Escribe aquí..." ? .gray : .black)
+                            .foregroundColor(text.isEmpty ? .gray : .black)
                             .opacity(1)
                             .frame(width: 250, height: 170)
                             .padding([.leading, .trailing])
+                            .accessibilityHidden(true)
                     }
                 }
                 .offset(dragOffset)
@@ -56,6 +73,13 @@ struct StickiesViewOverview: View {
                                 let dampedAmount = min(0, dragAmount * 0.8)
                                 dragOffset = CGSize(width: 0, height: dampedAmount)
                                 showSaveIndicator = dragAmount < -100
+
+                                if dragAmount < -100, !showSaveIndicator {
+                                    UIAccessibility.post(
+                                        notification: .announcement,
+                                        argument: "Listo para guardar. Suelta para confirmar."
+                                    )
+                                }
                             }
                         }
                         .onEnded { gesture in
@@ -78,8 +102,23 @@ struct StickiesViewOverview: View {
                             }
                         }
                 )
+                .accessibilityAction(named: "Guardar logro") {
+                    if !text.isEmpty {
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                        save()
+                        showSavedMessage = true
+                    }
+                }
             } else {
                 StickiesView(mode: $mode)
+            }
+        }
+        .onChange(of: mode) { oldValue, newValue in
+            if newValue == .edit && oldValue == .view {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    responseIsFocussed = true
+                }
             }
         }
     }

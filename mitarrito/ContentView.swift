@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var items: [Accomplishment]
 
     var body: some View {
         MainView {
@@ -13,12 +13,12 @@ struct ContentView: View {
     }
 
     private func addItem(text: String) {
-        let newItem = Item(text)
+        let newItem = Accomplishment(text)
         modelContext.insert(newItem)
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Accomplishment.self, inMemory: true)
 }

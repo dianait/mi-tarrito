@@ -2,7 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct TarritoView: View {
-    @Query private var items: [Item]
+    @Query private var items: [Accomplishment]
 
     var body: some View {
         NavigationLink(destination: CarouselView()) {
@@ -29,6 +29,7 @@ struct TarritoView: View {
                 }
                 .padding(.trailing, 10)
             }
+            .offset(x: 25, y: 0)
         }
         .buttonStyle(PlainButtonStyle())
         .accessibilityLabel("Tarrito con \(items.count) elementos")
@@ -38,5 +39,5 @@ struct TarritoView: View {
 
 #Preview {
     TarritoView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Accomplishment.self, inMemory: true)
 }

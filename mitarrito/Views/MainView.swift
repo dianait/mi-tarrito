@@ -17,13 +17,10 @@ public struct MainView: View {
 
     public var body: some View {
         NavigationStack {
-            VStack(spacing: Space.extraExtraLarge) {
+            VStack(spacing: Space.extraLarge) {
                 TarritoView()
-                    .offset(x: Space.large, y: 2)
 
-                if !showSavedMessage {
-                    HeaderView(mode: $mode, text: $text)
-                }
+                HeaderView(mode: $mode, text: $text)
 
                 StickiesViewOverview(
                     mode: $mode,
@@ -44,13 +41,12 @@ public struct MainView: View {
                             .foregroundColor(.white)
                         Text("Sobre Mi Tarrito")
                             .foregroundColor(.white)
-                            .fontWeight(.medium)
                     }
-                    .padding()
+                    .padding(.vertical, Space.small)
+                    .padding(.horizontal, Space.medium)
                     .background(Color.orange.opacity(0.8))
                     .cornerRadius(10)
                 }
-                .padding(.bottom, Space.medium)
             }
             .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
@@ -58,15 +54,10 @@ public struct MainView: View {
                 }
             })
             .confettiCannon(counter: $counter)
-            .padding()
+            .padding(.horizontal)
             .sheet(isPresented: $showAboutView) {
                 AboutView()
             }
         }
     }
-}
-
-#Preview {
-    MainView { _ in }
-        .modelContainer(for: Item.self, inMemory: true)
 }

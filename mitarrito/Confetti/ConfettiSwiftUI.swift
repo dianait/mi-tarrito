@@ -129,13 +129,13 @@ public struct ConfettiCannon: View {
         .onAppear {
             firstAppear = true
         }
-        .onChange(of: counter) { value in
+        .onChange(of: counter) { _, newValue in
             if firstAppear {
                 for i in 0 ... confettiConfig.repetitions {
                     DispatchQueue.main.asyncAfter(deadline: .now() + confettiConfig.repetitionInterval * Double(i)) {
                         animate.append(false)
-                        if value > 0 && value < animate.count {
-                            animate[value - 1].toggle()
+                        if newValue > 0 && newValue < animate.count {
+                            animate[newValue - 1].toggle()
                         }
                     }
                 }
@@ -216,9 +216,12 @@ struct ConfettiView: View {
 
                     let randomAngle: CGFloat
                     if confettiConfig.openingAngle.degrees <= confettiConfig.closingAngle.degrees {
-                        randomAngle = CGFloat.random(in: CGFloat(confettiConfig.openingAngle.degrees) ... CGFloat(confettiConfig.closingAngle.degrees))
+                        randomAngle = CGFloat
+                            .random(in: CGFloat(confettiConfig.openingAngle.degrees) ... CGFloat(confettiConfig.closingAngle.degrees))
                     } else {
-                        randomAngle = CGFloat.random(in: CGFloat(confettiConfig.openingAngle.degrees) ... CGFloat(confettiConfig.closingAngle.degrees + 360)).truncatingRemainder(dividingBy: 360)
+                        randomAngle = CGFloat
+                            .random(in: CGFloat(confettiConfig.openingAngle.degrees) ... CGFloat(confettiConfig.closingAngle.degrees + 360))
+                            .truncatingRemainder(dividingBy: 360)
                     }
 
                     let distance = getDistance()
@@ -271,7 +274,20 @@ struct ConfettiAnimationView: View {
 }
 
 class ConfettiConfig: ObservableObject {
-    init(num: Int, shapes: [AnyView], colors: [Color], confettiSize: CGFloat, rainHeight: CGFloat, fadesOut: Bool, opacity: Double, openingAngle: Angle, closingAngle: Angle, radius: CGFloat, repetitions: Int, repetitionInterval: Double) {
+    init(
+        num: Int,
+        shapes: [AnyView],
+        colors: [Color],
+        confettiSize: CGFloat,
+        rainHeight: CGFloat,
+        fadesOut: Bool,
+        opacity: Double,
+        openingAngle: Angle,
+        closingAngle: Angle,
+        radius: CGFloat,
+        repetitions: Int,
+        repetitionInterval: Double
+    ) {
         self.num = num
         self.shapes = shapes
         self.colors = colors

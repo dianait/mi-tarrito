@@ -4,7 +4,7 @@ import SwiftData
 
 struct CarouselView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Item.date, order: .reverse) private var items: [Item]
+    @Query(sort: \Accomplishment.date, order: .reverse) private var items: [Accomplishment]
     @State private var currentIndex: Int = 0
     @State private var translation: CGFloat = 0
 
@@ -13,7 +13,7 @@ struct CarouselView: View {
             EmptyStateView()
         } else {
             ZStack {
-                ForEach(Array(Array(items.prefix(20)).shuffled().enumerated()), id: \.element.id) { index, item in
+                ForEach(Array(Array(items.prefix(20)).enumerated()), id: \.element.id) { index, item in
                     StickyView(item: item, delete: { removeItem(item: item) })
                         .rotation3DEffect(
                             .degrees(Double(cardRotation(index))),
@@ -43,7 +43,7 @@ struct CarouselView: View {
         }
     }
 
-    private func removeItem(item: Item) {
+    private func removeItem(item: Accomplishment) {
         withAnimation {
             if let item = items.first {
                 modelContext.delete(item)
@@ -64,5 +64,5 @@ struct CarouselView: View {
 
 #Preview {
     CarouselView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Accomplishment.self, inMemory: true)
 }

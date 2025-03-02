@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StickyView: View {
-    var item: Item
+    var item: Accomplishment
     var delete: (() -> Void)? = nil
     
     var isEditMode: Bool {
@@ -43,7 +43,7 @@ struct StickyView: View {
 }
 
 #if targetEnvironment(simulator)
-let itemMock =  Item(
+let itemMock =  Accomplishment(
     "🎉 Tu primer logro aquí",
     color: "yellow")
 

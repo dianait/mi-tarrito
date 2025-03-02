@@ -12,13 +12,6 @@
 		1338C6DF2BB0A2BF0061FBEB /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6DA2BB0A2BF0061FBEB /* Triangle.swift */; };
 		1338C6E02BB0A2BF0061FBEB /* SlimRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6DB2BB0A2BF0061FBEB /* SlimRectangle.swift */; };
 		1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6DC2BB0A2BF0061FBEB /* ConfettiSwiftUI.swift */; };
-		1338C6EC2BB0ACAB0061FBEB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1338C6EB2BB0ACAB0061FBEB /* WidgetKit.framework */; };
-		1338C6EE2BB0ACAB0061FBEB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1338C6ED2BB0ACAB0061FBEB /* SwiftUI.framework */; };
-		1338C6F12BB0ACAB0061FBEB /* mitarritoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6F02BB0ACAB0061FBEB /* mitarritoWidgetBundle.swift */; };
-		1338C6F32BB0ACAB0061FBEB /* mitarritoWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6F22BB0ACAB0061FBEB /* mitarritoWidgetLiveActivity.swift */; };
-		1338C6F52BB0ACAB0061FBEB /* mitarritoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338C6F42BB0ACAB0061FBEB /* mitarritoWidget.swift */; };
-		1338C6F72BB0ACAD0061FBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1338C6F62BB0ACAD0061FBEB /* Assets.xcassets */; };
-		1338C6FB2BB0ACAD0061FBEB /* mitarritoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1338C6E92BB0ACAB0061FBEB /* mitarritoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65A72C68B7A20009DE41 /* DeleteButtonView.swift */; };
 		133D65AA2C68B7E10009DE41 /* ItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65A92C68B7E10009DE41 /* ItemTextView.swift */; };
 		133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AB2C68B8130009DE41 /* DateLabelView.swift */; };
@@ -35,7 +28,7 @@
 		136105A92D747EF0000309F4 /* SocialLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A82D747EEA000309F4 /* SocialLink.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
-		138F89932BB02D1A00EA9F2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89922BB02D1A00EA9F2F /* Item.swift */; };
+		138F89932BB02D1A00EA9F2F /* Accomplishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89922BB02D1A00EA9F2F /* Accomplishment.swift */; };
 		138F89952BB02D1C00EA9F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138F89942BB02D1C00EA9F2F /* Assets.xcassets */; };
 		138F89982BB02D1C00EA9F2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138F89972BB02D1C00EA9F2F /* Preview Assets.xcassets */; };
 		138F89A22BB02D1C00EA9F2F /* mitarritoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89A12BB02D1C00EA9F2F /* mitarritoTests.swift */; };
@@ -50,13 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1338C6F92BB0ACAD0061FBEB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 138F89832BB02D1A00EA9F2F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1338C6E82BB0ACAB0061FBEB;
-			remoteInfo = mitarritoWidgetExtension;
-		};
 		138F899E2BB02D1C00EA9F2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 138F89832BB02D1A00EA9F2F /* Project object */;
@@ -80,7 +66,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1338C6FB2BB0ACAD0061FBEB /* mitarritoWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,14 +78,7 @@
 		1338C6DA2BB0A2BF0061FBEB /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		1338C6DB2BB0A2BF0061FBEB /* SlimRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlimRectangle.swift; sourceTree = "<group>"; };
 		1338C6DC2BB0A2BF0061FBEB /* ConfettiSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiSwiftUI.swift; sourceTree = "<group>"; };
-		1338C6E92BB0ACAB0061FBEB /* mitarritoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = mitarritoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		1338C6EB2BB0ACAB0061FBEB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1338C6ED2BB0ACAB0061FBEB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		1338C6F02BB0ACAB0061FBEB /* mitarritoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoWidgetBundle.swift; sourceTree = "<group>"; };
-		1338C6F22BB0ACAB0061FBEB /* mitarritoWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		1338C6F42BB0ACAB0061FBEB /* mitarritoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoWidget.swift; sourceTree = "<group>"; };
-		1338C6F62BB0ACAD0061FBEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1338C6F82BB0ACAD0061FBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		133D65A72C68B7A20009DE41 /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
 		133D65A92C68B7E10009DE41 /* ItemTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTextView.swift; sourceTree = "<group>"; };
 		133D65AB2C68B8130009DE41 /* DateLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelView.swift; sourceTree = "<group>"; };
@@ -118,7 +96,7 @@
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
 		138F89902BB02D1A00EA9F2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		138F89922BB02D1A00EA9F2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		138F89922BB02D1A00EA9F2F /* Accomplishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accomplishment.swift; sourceTree = "<group>"; };
 		138F89942BB02D1C00EA9F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		138F89972BB02D1C00EA9F2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mitarritoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,15 +112,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1338C6E62BB0ACAB0061FBEB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1338C6EE2BB0ACAB0061FBEB /* SwiftUI.framework in Frameworks */,
-				1338C6EC2BB0ACAB0061FBEB /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		138F89882BB02D1A00EA9F2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,14 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1338C6D62BB0A2BF0061FBEB /* Sources */ = {
+		1338C6D62BB0A2BF0061FBEB /* Confetti */ = {
 			isa = PBXGroup;
 			children = (
 				1338C6D72BB0A2BF0061FBEB /* View+ConfettiCannon.swift */,
 				1338C6D82BB0A2BF0061FBEB /* Shapes */,
 				1338C6DC2BB0A2BF0061FBEB /* ConfettiSwiftUI.swift */,
 			);
-			path = Sources;
+			path = Confetti;
 			sourceTree = "<group>";
 		};
 		1338C6D82BB0A2BF0061FBEB /* Shapes */ = {
@@ -217,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				136105A82D747EEA000309F4 /* SocialLink.swift */,
-				138F89922BB02D1A00EA9F2F /* Item.swift */,
+				138F89922BB02D1A00EA9F2F /* Accomplishment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,22 +194,9 @@
 		1338C6EA2BB0ACAB0061FBEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1338C6EB2BB0ACAB0061FBEB /* WidgetKit.framework */,
 				1338C6ED2BB0ACAB0061FBEB /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1338C6EF2BB0ACAB0061FBEB /* mitarritoWidget */ = {
-			isa = PBXGroup;
-			children = (
-				1338C6F02BB0ACAB0061FBEB /* mitarritoWidgetBundle.swift */,
-				1338C6F22BB0ACAB0061FBEB /* mitarritoWidgetLiveActivity.swift */,
-				1338C6F42BB0ACAB0061FBEB /* mitarritoWidget.swift */,
-				1338C6F62BB0ACAD0061FBEB /* Assets.xcassets */,
-				1338C6F82BB0ACAD0061FBEB /* Info.plist */,
-			);
-			path = mitarritoWidget;
 			sourceTree = "<group>";
 		};
 		133D65A62C68B78E0009DE41 /* StickyView */ = {
@@ -269,7 +225,6 @@
 				138F898D2BB02D1A00EA9F2F /* mitarrito */,
 				138F89A02BB02D1C00EA9F2F /* mitarritoTests */,
 				138F89AA2BB02D1C00EA9F2F /* mitarritoUITests */,
-				1338C6EF2BB0ACAB0061FBEB /* mitarritoWidget */,
 				1338C6EA2BB0ACAB0061FBEB /* Frameworks */,
 				138F898C2BB02D1A00EA9F2F /* Products */,
 			);
@@ -281,7 +236,6 @@
 				138F898B2BB02D1A00EA9F2F /* mitarrito.app */,
 				138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */,
 				138F89A72BB02D1C00EA9F2F /* mitarritoUITests.xctest */,
-				1338C6E92BB0ACAB0061FBEB /* mitarritoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,13 +247,13 @@
 				1338C6E42BB0A8D30061FBEB /* Model */,
 				1338C6E32BB0A8C10061FBEB /* Views */,
 				1338C6E22BB0A8A40061FBEB /* Components */,
-				138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */,
 				138F89902BB02D1A00EA9F2F /* ContentView.swift */,
-				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
-				138F89962BB02D1C00EA9F2F /* Preview Content */,
-				1338C6D62BB0A2BF0061FBEB /* Sources */,
 				13D58F182C77A7D5008058C5 /* A11y.swift */,
 				136105942D743DE3000309F4 /* Space.swift */,
+				138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */,
+				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
+				1338C6D62BB0A2BF0061FBEB /* Confetti */,
+				138F89962BB02D1C00EA9F2F /* Preview Content */,
 			);
 			path = mitarrito;
 			sourceTree = "<group>";
@@ -332,23 +286,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1338C6E82BB0ACAB0061FBEB /* mitarritoWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1338C6FC2BB0ACAD0061FBEB /* Build configuration list for PBXNativeTarget "mitarritoWidgetExtension" */;
-			buildPhases = (
-				1338C6E52BB0ACAB0061FBEB /* Sources */,
-				1338C6E62BB0ACAB0061FBEB /* Frameworks */,
-				1338C6E72BB0ACAB0061FBEB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = mitarritoWidgetExtension;
-			productName = mitarritoWidgetExtension;
-			productReference = 1338C6E92BB0ACAB0061FBEB /* mitarritoWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		138F898A2BB02D1A00EA9F2F /* mitarrito */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarrito" */;
@@ -361,7 +298,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1338C6FA2BB0ACAD0061FBEB /* PBXTargetDependency */,
 			);
 			name = mitarrito;
 			packageProductDependencies = (
@@ -417,9 +353,6 @@
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
-					1338C6E82BB0ACAB0061FBEB = {
-						CreatedOnToolsVersion = 15.1;
-					};
 					138F898A2BB02D1A00EA9F2F = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -452,20 +385,11 @@
 				138F898A2BB02D1A00EA9F2F /* mitarrito */,
 				138F899C2BB02D1C00EA9F2F /* mitarritoTests */,
 				138F89A62BB02D1C00EA9F2F /* mitarritoUITests */,
-				1338C6E82BB0ACAB0061FBEB /* mitarritoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1338C6E72BB0ACAB0061FBEB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1338C6F72BB0ACAD0061FBEB /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		138F89892BB02D1A00EA9F2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,16 +416,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1338C6E52BB0ACAB0061FBEB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1338C6F32BB0ACAB0061FBEB /* mitarritoWidgetLiveActivity.swift in Sources */,
-				1338C6F12BB0ACAB0061FBEB /* mitarritoWidgetBundle.swift in Sources */,
-				1338C6F52BB0ACAB0061FBEB /* mitarritoWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		138F89872BB02D1A00EA9F2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,7 +438,7 @@
 				136105A72D747D07000309F4 /* SocialLinks.swift in Sources */,
 				133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */,
 				1361059F2D745513000309F4 /* ConfirmationView.swift in Sources */,
-				138F89932BB02D1A00EA9F2F /* Item.swift in Sources */,
+				138F89932BB02D1A00EA9F2F /* Accomplishment.swift in Sources */,
 				1338C6DF2BB0A2BF0061FBEB /* Triangle.swift in Sources */,
 				133D65AA2C68B7E10009DE41 /* ItemTextView.swift in Sources */,
 				1338C6E02BB0A2BF0061FBEB /* SlimRectangle.swift in Sources */,
@@ -556,11 +470,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1338C6FA2BB0ACAD0061FBEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1338C6E82BB0ACAB0061FBEB /* mitarritoWidgetExtension */;
-			targetProxy = 1338C6F92BB0ACAD0061FBEB /* PBXContainerItemProxy */;
-		};
 		138F899F2BB02D1C00EA9F2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 138F898A2BB02D1A00EA9F2F /* mitarrito */;
@@ -574,60 +483,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1338C6FD2BB0ACAD0061FBEB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7G4S2SGHRL;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = mitarritoWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = mitarritoWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito.mitarritoWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1338C6FE2BB0ACAD0061FBEB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7G4S2SGHRL;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = mitarritoWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = mitarritoWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito.mitarritoWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		138F89AF2BB02D1C00EA9F2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -895,15 +750,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1338C6FC2BB0ACAD0061FBEB /* Build configuration list for PBXNativeTarget "mitarritoWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1338C6FD2BB0ACAD0061FBEB /* Debug */,
-				1338C6FE2BB0ACAD0061FBEB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "mitarrito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -52,7 +52,6 @@ struct HeaderView: View {
                         .stroke(Color.orange.opacity(0.5), lineWidth: 2)
                 )
         )
-        .padding(.horizontal)
     }
 }
 

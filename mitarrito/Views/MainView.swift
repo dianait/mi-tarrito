@@ -20,6 +20,9 @@ public struct MainView: View {
             VStack(spacing: Space.extraLarge) {
                 TarritoView()
 
+                Spacer()
+                    .frame(height: Space.medium)
+
                 HeaderView(mode: $mode, text: $text)
 
                 StickiesViewOverview(

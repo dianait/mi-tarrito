@@ -18,7 +18,7 @@ struct StickiesView: View {
                 StickyView(item: Item("Otro y otro", color: "green"))
                     .offset(x: -70, y: -30)
                     .rotationEffect(Angle(degrees: -20))
-                StickyView(item: Item("Otro más!", color: "pink"))
+                StickyView(item: Item("Otro más!", color: "blue"))
                     .offset(x: 70, y: -30)
                     .rotationEffect(Angle(degrees: 20))
                 StickyView(item: Item("🎉 Tu primer logro aquí", color: "orange"))

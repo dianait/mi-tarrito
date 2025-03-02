@@ -7,7 +7,15 @@ struct StickyView: View {
     var isEditMode: Bool {
         delete != nil
     }
-    
+
+    var widthOffset: CGFloat {
+        isEditMode ? 0 : -30
+    }
+
+    var heightOffset: CGFloat {
+        isEditMode ? -10 : 20
+    }
+
     var body: some View {
         VStack {
             ZStack(alignment: .topTrailing) {
@@ -21,8 +29,7 @@ struct StickyView: View {
                     ItemTextView(text: item.text)
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.gray.opacity(0.8))
-                        .offset(x: -30, y: 20)
+                        .offset(x: widthOffset, y: heightOffset)
                     if isEditMode {
                         DateLabelView(date: item.date)
                             .offset(x: -180, y: -250)

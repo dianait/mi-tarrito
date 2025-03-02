@@ -26,6 +26,9 @@
 		133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65B02C68B8990009DE41 /* Color+Helpers.swift */; };
 		136105952D743DE5000309F4 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105942D743DE3000309F4 /* Space.swift */; };
 		136105992D74454F000309F4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105982D74454F000309F4 /* HeaderView.swift */; };
+		1361059F2D745513000309F4 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361059E2D745508000309F4 /* ConfirmationView.swift */; };
+		136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A02D745CDD000309F4 /* StickiesViewOverview.swift */; };
+		136105A32D746549000309F4 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A22D74653F000309F4 /* EmptyView.swift */; };
 		136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA6312BB3015A000049A1 /* TabBarView.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
@@ -106,6 +109,9 @@
 		133D65B02C68B8990009DE41 /* Color+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helpers.swift"; sourceTree = "<group>"; };
 		136105942D743DE3000309F4 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		136105982D74454F000309F4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		1361059E2D745508000309F4 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		136105A02D745CDD000309F4 /* StickiesViewOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickiesViewOverview.swift; sourceTree = "<group>"; };
+		136105A22D74653F000309F4 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		136DA6312BB3015A000049A1 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
@@ -191,10 +197,12 @@
 		1338C6E22BB0A8A40061FBEB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1361059E2D745508000309F4 /* ConfirmationView.swift */,
 				138F89C42BB0513C00EA9F2F /* Tarrito3DView.swift */,
 				13D16F072BB1DC5C00507835 /* AddButtonView.swift */,
 				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
 				13D16F0B2BB1DE8D00507835 /* StickiesView.swift */,
+				136105A02D745CDD000309F4 /* StickiesViewOverview.swift */,
 				136DA6312BB3015A000049A1 /* TabBarView.swift */,
 				136105982D74454F000309F4 /* HeaderView.swift */,
 			);
@@ -204,6 +212,7 @@
 		1338C6E32BB0A8C10061FBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				136105A22D74653F000309F4 /* EmptyView.swift */,
 				133F23312CDCC5CA0086460E /* Intro */,
 				133D65A62C68B78E0009DE41 /* StickyView */,
 				138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */,
@@ -514,14 +523,17 @@
 				133D65AE2C68B8450009DE41 /* BackgroundImageView.swift in Sources */,
 				138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */,
 				13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */,
+				136105A32D746549000309F4 /* EmptyView.swift in Sources */,
 				133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */,
 				1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */,
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
 				13D58F192C77A7D5008058C5 /* A11y.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,
 				133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */,
+				136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */,
 				13D16F0E2BB1E17900507835 /* AddView.swift in Sources */,
 				133D65A82C68B7A20009DE41 /* DeleteButtonView.swift in Sources */,
+				1361059F2D745513000309F4 /* ConfirmationView.swift in Sources */,
 				138F89932BB02D1A00EA9F2F /* Item.swift in Sources */,
 				136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */,
 				138F89C52BB0513C00EA9F2F /* Tarrito3DView.swift in Sources */,

@@ -1,19 +1,32 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Binding var mode: Mode
+
     var body: some View {
         VStack(spacing: Space.small) {
-            Text("¡Es hora de celebrar tus logros!")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(.orange)
-                .multilineTextAlignment(.center)
+            if mode == .edit {
+                Text("Escribe y desliza hacia arriba")
+                    .font(.headline)
+                    .foregroundColor(.orange)
 
-            Text("Pulsa en la nota amarilla para empezar")
-                .font(.subheadline)
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
+                Image(systemName: "arrow.up")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 16, weight: .bold))
+
+            } else {
+                Text("¡Es hora de celebrar tus logros!")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.orange)
+                    .multilineTextAlignment(.center)
+
+                Text("Pulsa en la nota amarilla para empezar")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+            }
         }
         .padding()
         .background(
@@ -25,10 +38,18 @@ struct HeaderView: View {
                 )
         )
         .padding(.horizontal)
-        .transition(.move(edge: .top).combined(with: .opacity))
+        // .transition(.move(edge: .top).combined(with: .opacity))
+        .padding(.vertical, Space.medium)
+        .frame(height: 60)
+        // .transition(.opacity)
+        // .animation(.easeInOut(duration: 0.3), value: mode)
     }
 }
 
-#Preview {
-    HeaderView()
+#Preview("✍️ Edit mode") {
+    HeaderView(mode: .constant(.edit))
+}
+
+#Preview("👀 View mode") {
+    HeaderView(mode: .constant(.view))
 }

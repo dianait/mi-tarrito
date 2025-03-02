@@ -6,17 +6,15 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        IntroView(){
+        IntroView {
             text in
             addItem(text: text)
         }
     }
-    
+
     private func addItem(text: String) {
-        withAnimation {
-            let newItem = Item(text)
-            modelContext.insert(newItem)
-        }
+        let newItem = Item(text)
+        modelContext.insert(newItem)
     }
 }
 

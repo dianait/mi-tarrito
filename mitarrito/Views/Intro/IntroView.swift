@@ -9,105 +9,44 @@ enum Mode {
 public struct IntroView: View {
     @State private var text = ""
     @State private var counter: Int = 0
-    @FocusState private var responseIsFocussed: Bool
+    @State var mode: Mode = .view
     var action: (String) -> Void
-    @State var mode: Mode = .edit
+    @State private var showSaveIndicator = false
+    @State private var showSavedMessage = false
 
     public var body: some View {
         NavigationStack {
             VStack(spacing: Space.extraExtraLarge) {
                 TarritoView()
                     .offset(x: Space.large, y: 2)
-                HeaderView()
-                ZStack {
-                    StickiesView(mode: $mode)
 
-                    if mode == .edit {
-                        TextEditor(text: $text)
-                            .focused($responseIsFocussed)
-                            .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    responseIsFocussed = true
-                                }
-                            }
-                            .onReceive(text.publisher.last()) {
-                                if ($0 as Character).asciiValue == 10 {
-                                    responseIsFocussed = false
-                                    text.removeLast()
-                                }
-                            }
-                            .padding([.leading, .trailing])
-                            .opacity(0.2)
-                            .frame(width: 250, height: 170)
+                if !showSavedMessage {
+                    	HeaderView(mode: $mode)
                     }
-                }
-                .overlay(
-                    Group {
-                        if mode == .edit && !text.isEmpty {
-                            VStack {
-                                Spacer()
-                                HStack {
-                                    Spacer()
-                                    Button(
-                                        action: {
-                                        let generator = UIImpactFeedbackGenerator(style: .medium)
-                                        generator.impactOccurred()
-                                        save()
-                                    }) {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .font(.system(size: 44))
-                                            .foregroundColor(.green)
-                                            .background(Circle().fill(.white))
-                                            .shadow(radius: 3)
-                                    }
-                                    .padding(.trailing, 20)
-                                    .padding(.bottom, 20)
-                                    // .modifier(FloatingEffect())
-                                    .buttonStyle(PlainButtonStyle())
-                                }
-                            }
-                        }
-                    }
+
+                StickiesViewOverview(
+                    mode: $mode,
+                    text: $text,
+                    counter: $counter,
+                    showSaveIndicator: $showSaveIndicator,
+                    showSavedMessage: $showSavedMessage,
+                    action: action
                 )
+
                 Spacer()
             }
+            .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                	showSavedMessage = false
+                }
+            })
             .confettiCannon(counter: $counter)
             .padding()
         }
-    }
-
-    private func save() {
-        if !text.isEmpty {
-            action(text)
-            text = ""
-            counter += 1
-        }
-        mode = .view
-    }
-
-    private func openEdit() {
-        mode = .edit
     }
 }
 
 #Preview {
     IntroView { _ in }
         .modelContainer(for: Item.self, inMemory: true)
-}
-
-struct FloatingEffect: ViewModifier {
-    @State private var isAnimating = false
-
-    func body(content: Content) -> some View {
-        content
-            .offset(y: isAnimating ? -5 : 0)
-            .animation(
-                Animation.easeInOut(duration: 1.5)
-                    .repeatForever(autoreverses: true),
-                value: isAnimating
-            )
-            .onAppear {
-                isAnimating = true
-            }
-    }
 }

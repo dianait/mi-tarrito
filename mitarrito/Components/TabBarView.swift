@@ -7,7 +7,7 @@ struct TabBarView: View {
             Image(.tarrrito)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            StickiesView()
+            StickiesView(mode: .constant(.view))
             Spacer()
             TabBarShape()
                 .fill(Color.orange)

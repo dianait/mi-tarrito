@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,8 @@
 		133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AB2C68B8130009DE41 /* DateLabelView.swift */; };
 		133D65AE2C68B8450009DE41 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */; };
 		133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D65B02C68B8990009DE41 /* Color+Helpers.swift */; };
+		136105952D743DE5000309F4 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105942D743DE3000309F4 /* Space.swift */; };
+		136105992D74454F000309F4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105982D74454F000309F4 /* HeaderView.swift */; };
 		136DA6322BB3015A000049A1 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA6312BB3015A000049A1 /* TabBarView.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
@@ -35,7 +37,6 @@
 		138F89AE2BB02D1C00EA9F2F /* mitarritoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89AD2BB02D1C00EA9F2F /* mitarritoUITestsLaunchTests.swift */; };
 		138F89BD2BB0367400EA9F2F /* AddItemVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */; };
 		138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89BE2BB03C1700EA9F2F /* TarritoView.swift */; };
-		138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89C22BB04A8300EA9F2F /* IntroView.swift */; };
 		138F89C52BB0513C00EA9F2F /* Tarrito3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89C42BB0513C00EA9F2F /* Tarrito3DView.swift */; };
 		13B947132BBEF93C0076724B /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 13B947122BBEF93C0076724B /* Inject */; };
 		13D16F082BB1DC5C00507835 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D16F072BB1DC5C00507835 /* AddButtonView.swift */; };
@@ -43,6 +44,7 @@
 		13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D16F0B2BB1DE8D00507835 /* StickiesView.swift */; };
 		13D16F0E2BB1E17900507835 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D16F0D2BB1E17900507835 /* AddView.swift */; };
 		13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */; };
+		13D58F192C77A7D5008058C5 /* A11y.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D58F182C77A7D5008058C5 /* A11y.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		133D65AB2C68B8130009DE41 /* DateLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelView.swift; sourceTree = "<group>"; };
 		133D65AD2C68B8450009DE41 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		133D65B02C68B8990009DE41 /* Color+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helpers.swift"; sourceTree = "<group>"; };
+		136105942D743DE3000309F4 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		136105982D74454F000309F4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		136DA6312BB3015A000049A1 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
@@ -116,14 +120,18 @@
 		138F89AD2BB02D1C00EA9F2F /* mitarritoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVIew.swift; sourceTree = "<group>"; };
 		138F89BE2BB03C1700EA9F2F /* TarritoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarritoView.swift; sourceTree = "<group>"; };
-		138F89C22BB04A8300EA9F2F /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		138F89C42BB0513C00EA9F2F /* Tarrito3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarrito3DView.swift; sourceTree = "<group>"; };
 		13D16F072BB1DC5C00507835 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
 		13D16F092BB1DDB300507835 /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
 		13D16F0B2BB1DE8D00507835 /* StickiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickiesView.swift; sourceTree = "<group>"; };
 		13D16F0D2BB1E17900507835 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryCarouselView.swift; sourceTree = "<group>"; };
+		13D58F182C77A7D5008058C5 /* A11y.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11y.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		133F23312CDCC5CA0086460E /* Intro */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Intro; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1338C6E62BB0ACAB0061FBEB /* Frameworks */ = {
@@ -188,6 +196,7 @@
 				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
 				13D16F0B2BB1DE8D00507835 /* StickiesView.swift */,
 				136DA6312BB3015A000049A1 /* TabBarView.swift */,
+				136105982D74454F000309F4 /* HeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -195,8 +204,8 @@
 		1338C6E32BB0A8C10061FBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				133F23312CDCC5CA0086460E /* Intro */,
 				133D65A62C68B78E0009DE41 /* StickyView */,
-				138F89C22BB04A8300EA9F2F /* IntroView.swift */,
 				138F89BC2BB0367400EA9F2F /* AddItemVIew.swift */,
 				13D537652C66BF7500BA0C42 /* ImageGalleryCarouselView.swift */,
 				13D16F0D2BB1E17900507835 /* AddView.swift */,
@@ -288,6 +297,8 @@
 				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
 				138F89962BB02D1C00EA9F2F /* Preview Content */,
 				1338C6D62BB0A2BF0061FBEB /* Sources */,
+				13D58F182C77A7D5008058C5 /* A11y.swift */,
+				136105942D743DE3000309F4 /* Space.swift */,
 			);
 			path = mitarrito;
 			sourceTree = "<group>";
@@ -350,6 +361,9 @@
 			);
 			dependencies = (
 				1338C6FA2BB0ACAD0061FBEB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				133F23312CDCC5CA0086460E /* Intro */,
 			);
 			name = mitarrito;
 			packageProductDependencies = (
@@ -494,15 +508,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136105952D743DE5000309F4 /* Space.swift in Sources */,
 				13D16F082BB1DC5C00507835 /* AddButtonView.swift in Sources */,
 				1338C6DD2BB0A2BF0061FBEB /* View+ConfettiCannon.swift in Sources */,
 				133D65AE2C68B8450009DE41 /* BackgroundImageView.swift in Sources */,
-				138F89C32BB04A8300EA9F2F /* IntroView.swift in Sources */,
 				138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */,
 				13D537662C66BF7500BA0C42 /* ImageGalleryCarouselView.swift in Sources */,
 				133D65B12C68B8990009DE41 /* Color+Helpers.swift in Sources */,
 				1338C6E12BB0A2BF0061FBEB /* ConfettiSwiftUI.swift in Sources */,
 				138F89BF2BB03C1700EA9F2F /* TarritoView.swift in Sources */,
+				13D58F192C77A7D5008058C5 /* A11y.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,
 				133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */,
 				13D16F0E2BB1E17900507835 /* AddView.swift in Sources */,
@@ -517,6 +532,7 @@
 				13D16F0A2BB1DDB300507835 /* StickyView.swift in Sources */,
 				1338C6DE2BB0A2BF0061FBEB /* RoundedCross.swift in Sources */,
 				138F89BD2BB0367400EA9F2F /* AddItemVIew.swift in Sources */,
+				136105992D74454F000309F4 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

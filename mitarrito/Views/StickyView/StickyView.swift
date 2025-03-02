@@ -19,7 +19,10 @@ struct StickyView: View {
                     }
                     
                     ItemTextView(text: item.text)
-                        .offset(x: -6, y: -21)
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray.opacity(0.8))
+                        .offset(x: -30, y: 20)
                     if isEditMode {
                         DateLabelView(date: item.date)
                             .offset(x: -180, y: -250)
@@ -34,7 +37,7 @@ struct StickyView: View {
 
 #if targetEnvironment(simulator)
 let itemMock =  Item(
-    text: "🎉 Tu primer logro aquí",
+    "🎉 Tu primer logro aquí",
     color: "yellow")
 
 #Preview("👀 View Mode") {

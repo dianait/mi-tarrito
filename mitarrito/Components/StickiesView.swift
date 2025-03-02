@@ -3,28 +3,44 @@ import SwiftData
 
 struct StickiesView: View {
     @Query(sort: \Item.date, order: .reverse) private var items: [Item]
+    @Binding  var mode: Mode
+
+    var lastMessage: String {
+		switch mode {
+            case .view: items.first?.text ?? ""
+            case .edit: ""
+        }
+    }
 
     var body: some View {
         HStack {
             ZStack {
-                StickyView(item: Item(text: "Otro y otro", color: "green"))
+                StickyView(item: Item("Otro y otro", color: "green"))
                     .offset(x: -70, y: -30)
                     .rotationEffect(Angle(degrees: -20))
-                StickyView(item: Item(text: "Otro más!", color: "pink"))
+                StickyView(item: Item("Otro más!", color: "pink"))
                     .offset(x: 70, y: -30)
                     .rotationEffect(Angle(degrees: 20))
-                StickyView(item: Item(text: items.first?.text ?? "🎉 Tu primer logro aquí", color: "orange"))
+                StickyView(item: Item("🎉 Tu primer logro aquí", color: "orange"))
                     .offset(x: 10, y: 30)
                     .rotationEffect(Angle(degrees: 10))
-                StickyView(item: Item(text: "", color: "yellow"))
+                StickyView(item: Item(lastMessage, color: "yellow"))
                     .offset(x: 0, y: 0)
+                    .onTapGesture {
+                        openEdit()
+                    }
 
             }
         }
     }
+
+
+    private func openEdit() {
+        mode = .edit
+    }
 }
 
 #Preview {
-    StickiesView()
+    StickiesView(mode: .constant(.view))
         .modelContainer(for: Item.self, inMemory: true)
 }

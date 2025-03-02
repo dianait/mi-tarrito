@@ -12,6 +12,7 @@ struct TarritoView: View {
                     Image(.tarrrito)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .frame(width: 120, height: 75)
 
                     Text("\(items.count)")
                         .font(.system(size: 18, weight: .bold))
@@ -23,16 +24,15 @@ struct TarritoView: View {
                             Circle()
                                 .stroke(Color.white, lineWidth: 2)
                         )
-                        .offset(x: 1, y: 15)
+                        .offset(x: 1, y: 22)
                         .shadow(color: .gray.opacity(0.2), radius: 2, x: 0, y: 2)
                 }
                 .padding(.trailing, 10)
             }
         }
         .buttonStyle(PlainButtonStyle())
-        .accessibilityElement(children: .ignore)
         .accessibilityLabel("Tarrito con \(items.count) elementos")
-        .accessibilityHint("Toca para ver los elementos")
+        .accessibilityHint(A11y.hint)
     }
 }
 

@@ -6,7 +6,7 @@ enum Mode {
     case view
 }
 
-public struct IntroView: View {
+public struct MainView: View {
     @State private var text = ""
     @State private var counter: Int = 0
     @State var mode: Mode = .view
@@ -22,8 +22,8 @@ public struct IntroView: View {
                     .offset(x: Space.large, y: 2)
 
                 if !showSavedMessage {
-                    	HeaderView(mode: $mode)
-                    }
+                    HeaderView(mode: $mode, text: $text)
+                }
 
                 StickiesViewOverview(
                     mode: $mode,
@@ -36,22 +36,21 @@ public struct IntroView: View {
 
                 Spacer()
 
-                               // Info button at the bottom
-                               Button(action: {
-                                   showAboutView = true
-                               }) {
-                                   HStack {
-                                       Image(systemName: "info.circle.fill")
-                                           .foregroundColor(.white)
-                                       Text("Sobre Mi Tarrito")
-                                           .foregroundColor(.white)
-                                           .fontWeight(.medium)
-                                   }
-                                   .padding()
-                                   .background(Color.orange.opacity(0.8))
-                                   .cornerRadius(10)
-                               }
-                               .padding(.bottom, Space.medium)
+                Button(action: {
+                    showAboutView = true
+                }) {
+                    HStack {
+                        Image(systemName: "info.circle.fill")
+                            .foregroundColor(.white)
+                        Text("Sobre Mi Tarrito")
+                            .foregroundColor(.white)
+                            .fontWeight(.medium)
+                    }
+                    .padding()
+                    .background(Color.orange.opacity(0.8))
+                    .cornerRadius(10)
+                }
+                .padding(.bottom, Space.medium)
             }
             .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
@@ -68,6 +67,6 @@ public struct IntroView: View {
 }
 
 #Preview {
-    IntroView { _ in }
+    MainView { _ in }
         .modelContainer(for: Item.self, inMemory: true)
 }

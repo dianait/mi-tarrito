@@ -5,7 +5,7 @@ struct StickiesViewOverview: View {
     @FocusState private var responseIsFocussed: Bool
     @State private var dragOffset: CGSize = .zero
 
-    @Binding  var mode: Mode
+    @Binding var mode: Mode
     @Binding var text: String
     @Binding var counter: Int
     @Binding var showSaveIndicator: Bool
@@ -21,6 +21,9 @@ struct StickiesViewOverview: View {
                         StickiesView(mode: $mode)
                         TextEditor(text: $text)
                             .focused($responseIsFocussed)
+                            .background(Color.clear)
+                            .foregroundColor(.black)
+                            .font(.body)
                             .onAppear {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                     responseIsFocussed = true
@@ -33,8 +36,15 @@ struct StickiesViewOverview: View {
                                 }
                             }
                             .padding([.leading, .trailing])
-                            .opacity(0.2)
+                            .opacity(0)
                             .frame(width: 250, height: 170)
+
+                        // Texto con opacidad completa
+                        Text(text.isEmpty ? "Escribe aquí..." : text)
+                            .foregroundColor(.black)
+                            .opacity(1)
+                            .frame(width: 250, height: 170)
+                            .padding([.leading, .trailing])
                     }
                 }
                 .offset(dragOffset)

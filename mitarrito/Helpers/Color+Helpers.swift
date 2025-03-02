@@ -3,65 +3,49 @@ import SwiftUI
 extension Color {
     static func fromString(_ colorString: String) -> Color {
         switch colorString.lowercased() {
-            case "black":
-                return .black
-            case "blue":
-                return .blue
-            case "brown":
-                return .brown
-            case "clear":
-                return .clear
-            case "cyan":
-                return .cyan
-            case "gray":
-                return .gray
-            case "green":
-                return .green
-            case "indigo":
-                return .indigo
-            case "mint":
-                return .mint
-            case "orange":
-                return .orange
-            case "pink":
-                return .pink
-            case "purple":
-                return .purple
-            case "red":
-                return .red
-            case "teal":
-                return .teal
-            case "white":
-                return .white
-            case "yellow":
-                return .yellow
+            case "soft-blue":
+                return Color(red: 0.7, green: 0.85, blue: 0.95)
+            case "soft-green":
+                return Color(red: 0.75, green: 0.92, blue: 0.75)
+            case "soft-purple":
+                return Color(red: 0.85, green: 0.80, blue: 0.95)
+            case "soft-pink":
+                return Color(red: 0.95, green: 0.85, blue: 0.90)
+            case "soft-orange":
+                return Color(red: 1.0, green: 0.90, blue: 0.75)
+            case "soft-teal":
+                return Color(red: 0.75, green: 0.90, blue: 0.90)
+            case "soft-yellow":
+                return Color(red: 1.0, green: 0.90, blue: 0.60) 
             default:
-                return .gray
+                return Color(red: 0.85, green: 0.85, blue: 0.85) // Soft gray
         }
     }
 }
 
 func colorForIndex(_ index: Int) -> Color {
-    let colors: [Color] = [.red, .blue, .green, .yellow, .purple]
-    return colors[index % max(colors.count, 1)]
+    let softColors: [Color] = [
+        Color(red: 0.7, green: 0.85, blue: 0.95),   // Soft Blue
+        Color(red: 0.75, green: 0.92, blue: 0.75),  // Soft Green
+        Color(red: 0.85, green: 0.80, blue: 0.95), // Soft Purple
+        Color(red: 0.95, green: 0.90, blue: 0.75), // Soft Orange
+        Color(red: 0.75, green: 0.90, blue: 0.90)  // Soft Teal
+    ]
+    return softColors[index % max(softColors.count, 1)]
 }
 
 struct ColorUtility {
     static let availableColors = [
-        "blue",
-        "cyan",
-        "green",
-        "indigo",
-        "mint",
-        "orange",
-        "pink",
-        "purple",
-        "red",
-        "teal",
-        "yellow"
+        "soft-blue",
+        "soft-green",
+        "soft-purple",
+        "soft-pink",
+        "soft-orange",
+        "soft-teal",
+        "soft-yellow"
     ]
 
     static func randomColorString() -> String {
-        return availableColors.randomElement() ?? "gray"
+        return availableColors.randomElement() ?? "soft-gray"
     }
 }

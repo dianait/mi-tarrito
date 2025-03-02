@@ -5,7 +5,7 @@ struct TarritoView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationLink(destination: ImageGalleryCarouselView()) {
+        NavigationLink(destination: CarouselView()) {
             HStack {
                 Spacer()
                 ZStack(alignment: .top) {
@@ -40,4 +40,3 @@ struct TarritoView: View {
     TarritoView()
         .modelContainer(for: Item.self, inMemory: true)
 }
-

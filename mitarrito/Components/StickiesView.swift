@@ -15,16 +15,16 @@ struct StickiesView: View {
     var body: some View {
         HStack {
             ZStack {
-                StickyView(item: Item("Otro y otro", color: "green"))
+                StickyView(item: Item("Otro y otro", color: "soft-green"))
                     .offset(x: -70, y: -30)
                     .rotationEffect(Angle(degrees: -20))
-                StickyView(item: Item("Otro más!", color: "blue"))
+                StickyView(item: Item("Otro más!", color: "soft-blue"))
                     .offset(x: 70, y: -30)
                     .rotationEffect(Angle(degrees: 20))
-                StickyView(item: Item("🎉 Tu primer logro aquí", color: "orange"))
+                StickyView(item: Item("🎉 Tu primer logro aquí", color: "soft-orange"))
                     .offset(x: 10, y: 30)
                     .rotationEffect(Angle(degrees: 10))
-                StickyView(item: Item(lastMessage, color: "yellow"))
+                StickyView(item: Item(lastMessage, color: "soft-yellow"))
                     .offset(x: 0, y: 0)
                     .onTapGesture {
                         openEdit()

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-struct ImageGalleryCarouselView: View {
+struct CarouselView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Item.date, order: .reverse) private var items: [Item]
     @State private var currentIndex: Int = 0
@@ -63,6 +63,6 @@ struct ImageGalleryCarouselView: View {
 }
 
 #Preview {
-    ImageGalleryCarouselView()
+    CarouselView()
         .modelContainer(for: Item.self, inMemory: true)
 }

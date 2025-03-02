@@ -10,7 +10,7 @@ struct ImageGalleryCarouselView: View {
 
     var body: some View {
         if items.isEmpty {
-            EmptyView()
+            EmptyStateView()
         } else {
             ZStack {
                 ForEach(Array(items.enumerated()), id: \.element.id) { index, item in

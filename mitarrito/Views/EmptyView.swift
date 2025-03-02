@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct EmptyView: View {
+struct EmptyStateView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -121,5 +121,5 @@ struct EmptyView: View {
 }
 
 #Preview {
-    EmptyView()
+    EmptyStateView()
 }

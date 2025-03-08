@@ -3,7 +3,7 @@ import SwiftUI
 struct SocialLinks: View {
     var body: some View {
         VStack {
-            Text("Desarrollado con ❤️ por un @Dianait")
+            Text("Desarrollado con ❤️ por @Dianait")
                 .font(.caption)
             Text("Puedes encontrarme en:")
                 .font(.footnote)

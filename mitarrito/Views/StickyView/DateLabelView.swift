@@ -2,13 +2,21 @@ import SwiftUI
 
 struct DateLabelView: View {
     var date: Date
-    
+
+    private var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "es_ES")
+        formatter.dateFormat = "d MMM yyyy"
+        return formatter
+    }
+
     var body: some View {
         HStack {
             Spacer()
-            Text(date, style: .date)
+            Text(formatter.string(from: date))
                 .font(.caption)
-                .padding(6)
+                .padding(.vertical, Space.small)
+                .padding(.horizontal, Space.medium)
                 .background(Color.black.opacity(0.6))
                 .foregroundColor(.white)
                 .clipShape(Capsule())
@@ -18,8 +26,10 @@ struct DateLabelView: View {
     }
 }
 
+#if targetEnvironment(simulator)
 #Preview {
     DateLabelView(date: Date())
         .padding()
         .border(.red)
 }
+#endif

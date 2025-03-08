@@ -27,9 +27,9 @@ struct StickyView: View {
                     }
                     
                     ItemTextView(text: item.text)
-                        .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .offset(x: widthOffset, y: heightOffset)
+
                     if isEditMode {
                         DateLabelView(date: item.date)
                             .offset(x: -180, y: -250)
@@ -50,6 +50,19 @@ let itemMock =  Accomplishment(
 #Preview("👀 View Mode") {
     StickyView(item: itemMock)
 }
+
+#Preview("✏️ Texto largo") {
+    StickyView(item:  Accomplishment(
+        "🎉 Tu primer logro aquí esto es un texto muy largo que necestio de una línea para que se note el reajuste del layout",
+        color: "yellow")){}
+}
+
+#Preview("✏️ Texto más largo") {
+    StickyView(item:  Accomplishment(
+        "🎉 Tu primer logro aquí esto es un texto muy largo que necestio de una línea para que se note el reajuste del layout y el texto sea todavía mas largo",
+        color: "yellow")){}
+}
+
 
 #Preview("✏️ Edit Mode") {
     StickyView(item: itemMock){}

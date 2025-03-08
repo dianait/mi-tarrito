@@ -5,6 +5,8 @@ struct StickiesViewOverview: View {
     @FocusState private var responseIsFocussed: Bool
     @State private var dragOffset: CGSize = .zero
     @State private var isEditModeActive: Bool = false
+    @State private var characterCount: Int = 0
+    @State private var maxCharacters: Int = 140
 
     @Binding var mode: Mode
     @Binding var text: String
@@ -21,45 +23,64 @@ struct StickiesViewOverview: View {
                     ZStack {
                         StickiesView(mode: $mode)
                             .accessibilityHidden(true)
-                        TextEditor(text: $text)
-                            .focused($responseIsFocussed)
-                            .background(Color.clear)
-                            .foregroundColor(.black)
-                            .font(.body)
-                            .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                                    responseIsFocussed = true
+                        VStack {
+                            TextEditor(text: $text)
+                                .focused($responseIsFocussed)
+                                .background(Color.clear)
+                                .foregroundColor(.black)
+                                .font(.body)
+                                .onChange(of: text) { oldValue, newValue in
+                                    characterCount = newValue.count
 
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        UIAccessibility.post(
-                                            notification: .screenChanged,
-                                            argument: "Modo de edición activado. Escribe tu logro."
-                                        )
+                                    if newValue.count > maxCharacters {
+                                        text = String(newValue.prefix(maxCharacters))
+                                        characterCount = maxCharacters
                                     }
+                                }
+                                .onAppear {
+                                    characterCount = text.count
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                        responseIsFocussed = true
 
-                                    isEditModeActive = true
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            UIAccessibility.post(
+                                                notification: .screenChanged,
+                                                argument: "Modo de edición activado. Escribe tu logro."
+                                            )
+                                        }
+
+                                        isEditModeActive = true
+                                    }
                                 }
-                            }
-                            .onDisappear {
-                                isEditModeActive = false
-                            }
-                            .onReceive(text.publisher.last()) {
-                                if ($0 as Character).asciiValue == 10 {
-                                    responseIsFocussed = false
-                                    text.removeLast()
+                                .onDisappear {
+                                    isEditModeActive = false
                                 }
-                            }
-                            .padding([.leading, .trailing])
-                            .opacity(.zero)
-                            .frame(width: 250, height: 170)
-                            .accessibilityLabel("Editor de texto para tu logro")
-                            .accessibilityHint("Escribe tu logro. Desliza hacia arriba para guardar.")
-                            .accessibilityIdentifier("logro-editor")
+                                .onReceive(text.publisher.last()) {
+                                    if ($0 as Character).asciiValue == 10 {
+                                        responseIsFocussed = false
+                                        text.removeLast()
+                                        characterCount = text.count
+                                    }
+                                }
+                                .padding([.leading, .trailing])
+                                .opacity(.zero)
+                                .frame(width: 220, height: 150)
+                                .accessibilityLabel("Editor de texto para tu logro")
+                                .accessibilityHint("Escribe tu logro. Desliza hacia arriba para guardar.")
+                                .accessibilityIdentifier("logro-editor")
+
+                            Text("\(characterCount)/\(maxCharacters)")
+                                .font(.caption)
+                                .foregroundColor(characterCount > maxCharacters ? .red : .gray)
+                                .frame(width: 250, alignment: .trailing)
+                                .padding(.trailing)
+                                .accessibilityLabel("Contador de caracteres: \(characterCount) de \(maxCharacters)")
+                        }
 
                         Text(text.isEmpty ? "Escribe aquí..." : text)
                             .foregroundColor(text.isEmpty ? .gray : .black)
                             .opacity(1)
-                            .frame(width: 250, height: 170)
+                            .frame(width: 250, height: 150)
                             .padding([.leading, .trailing])
                             .accessibilityHidden(true)
                     }
@@ -128,6 +149,7 @@ struct StickiesViewOverview: View {
             action(text)
             text = ""
             counter += 1
+            characterCount = 0
         }
         mode = .view
     }

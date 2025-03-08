@@ -7,4 +7,6 @@ struct Space {
     static let large = CGFloat(24)
     static let extraLarge = CGFloat(48)
     static let extraExtraLarge = CGFloat(96)
+    static let extraExtraExtraLarge = CGFloat(192)
+    static let huge = CGFloat(384)
 }

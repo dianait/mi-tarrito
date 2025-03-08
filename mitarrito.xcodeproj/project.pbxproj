@@ -26,6 +26,7 @@
 		136105A52D746E10000309F4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A42D746E0C000309F4 /* AboutView.swift */; };
 		136105A72D747D07000309F4 /* SocialLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A62D747CF3000309F4 /* SocialLinks.swift */; };
 		136105A92D747EF0000309F4 /* SocialLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136105A82D747EEA000309F4 /* SocialLink.swift */; };
+		137E21472D7CCA7E0066A6A2 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E21462D7CCA7B0066A6A2 /* TimelineView.swift */; };
 		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
 		138F89932BB02D1A00EA9F2F /* Accomplishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89922BB02D1A00EA9F2F /* Accomplishment.swift */; };
@@ -95,6 +96,7 @@
 		136105A42D746E0C000309F4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		136105A62D747CF3000309F4 /* SocialLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinks.swift; sourceTree = "<group>"; };
 		136105A82D747EEA000309F4 /* SocialLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLink.swift; sourceTree = "<group>"; };
+		137E21462D7CCA7B0066A6A2 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
 		138F89902BB02D1A00EA9F2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		1338C6E22BB0A8A40061FBEB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				137E21462D7CCA7B0066A6A2 /* TimelineView.swift */,
 				136105A62D747CF3000309F4 /* SocialLinks.swift */,
 				1361059E2D745508000309F4 /* ConfirmationView.swift */,
 				138F89BE2BB03C1700EA9F2F /* TarritoView.swift */,
@@ -439,6 +442,7 @@
 				13A53F5E2D74DF96009BF32A /* Copies.swift in Sources */,
 				13D58F192C77A7D5008058C5 /* A11y.swift in Sources */,
 				13D16F0C2BB1DE8D00507835 /* StickiesView.swift in Sources */,
+				137E21472D7CCA7E0066A6A2 /* TimelineView.swift in Sources */,
 				133D65AC2C68B8130009DE41 /* DateLabelView.swift in Sources */,
 				136105A52D746E10000309F4 /* AboutView.swift in Sources */,
 				136105A12D745CDD000309F4 /* StickiesViewOverview.swift in Sources */,
@@ -626,6 +630,7 @@
 				DEVELOPMENT_TEAM = 7G4S2SGHRL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -635,7 +640,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
 					"-Xlinker",
 					"-interposable",
@@ -659,6 +664,7 @@
 				DEVELOPMENT_TEAM = 7G4S2SGHRL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -668,7 +674,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

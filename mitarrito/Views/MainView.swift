@@ -10,10 +10,9 @@ public struct MainView: View {
     @State private var text = ""
     @State private var counter: Int = 0
     @State var mode: Mode = .view
-    var action: (String) -> Void
     @State private var showSaveIndicator = false
     @State private var showSavedMessage = false
-    @State private var showAboutView = false
+    var action: (String) -> Void
 
     public var body: some View {
         NavigationStack {
@@ -21,7 +20,7 @@ public struct MainView: View {
                 TarritoView()
 
                 Spacer()
-                    .frame(height: Space.medium)
+                    .frame(height: Space.extraLarge)
 
                 HeaderView(mode: $mode, text: $text)
 
@@ -35,10 +34,7 @@ public struct MainView: View {
                 )
 
                 Spacer()
-
-                Button(action: {
-                    showAboutView = true
-                }) {
+                NavigationLink(destination: AboutView()) {
                     HStack {
                         Image(systemName: "info.circle.fill")
                             .foregroundColor(.white)
@@ -60,9 +56,6 @@ public struct MainView: View {
             })
             .confettiCannon(counter: $counter)
             .padding(.horizontal)
-            .sheet(isPresented: $showAboutView) {
-                AboutView()
-            }
         }
     }
 }

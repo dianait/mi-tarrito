@@ -6,22 +6,6 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "138F898A2BB02D1A00EA9F2F"
-               BuildableName = "mitarrito.app"
-               BlueprintName = "mitarrito"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -38,17 +22,6 @@
                BlueprintIdentifier = "138F899C2BB02D1C00EA9F2F"
                BuildableName = "mitarritoTests.xctest"
                BlueprintName = "mitarritoTests"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "138F89A62BB02D1C00EA9F2F"
-               BuildableName = "mitarritoUITests.xctest"
-               BlueprintName = "mitarritoUITests"
                ReferencedContainer = "container:mitarrito.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -75,16 +48,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "138F898A2BB02D1A00EA9F2F"
-            BuildableName = "mitarrito.app"
-            BlueprintName = "mitarrito"
-            ReferencedContainer = "container:mitarrito.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -92,16 +55,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "138F898A2BB02D1A00EA9F2F"
-            BuildableName = "mitarrito.app"
-            BlueprintName = "mitarrito"
-            ReferencedContainer = "container:mitarrito.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

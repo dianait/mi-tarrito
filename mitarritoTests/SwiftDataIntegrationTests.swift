@@ -19,7 +19,6 @@ final class SwiftDataIntegrationTests: XCTestCase {
         let text = "Test logro para SwiftData"
         let color = "yellow"
 
-        // Crear y guardar un logro
         let accomplishment = Accomplishment(text, color: color)
         modelContext.insert(accomplishment)
 

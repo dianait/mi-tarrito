@@ -11,33 +11,28 @@ final class MiTarritoUITests: XCTestCase {
         app.launch()
     }
 
-    func testAddNewAccomplishment() throws {
-        throw XCTSkip("WIP")
-        let stickyNote = app.otherElements["logro-editor"]
-        XCTAssert(stickyNote.exists)
-        stickyNote.tap()
+    func testAddNewAccomplishment() {
+        let stickie = app.buttons["Main Stickie"]
+        XCTAssert(stickie.waitForExistence(timeout: 1))
+        stickie.tap()
 
-        let textEditor = app.textViews.matching(identifier: "logro-editor").firstMatch
-        XCTAssertTrue(textEditor.exists)
-        textEditor.tap()
-        textEditor.typeText("Mi logro de test automatizado")
+        let textEditor = app.textViews["Text Editor"]
+        XCTAssert(textEditor.waitForExistence(timeout: 1))
 
-        textEditor.swipeUp()
+        textEditor.typeText("My amazing accomplishment 🚀!")
 
-        let confirmationText = app.staticTexts["¡Logro guardado!"]
-        XCTAssertTrue(confirmationText.waitForExistence(timeout: 2))
-    }
+        stickie.swipeUp()
 
-    func testViewAccomplishmentsInTarrito() throws {
-        throw XCTSkip("WIP")
-        try testAddNewAccomplishment()
+        let continueButton = app.buttons["Continue Button"]
+        XCTAssert(continueButton.waitForExistence(timeout: 1))
+        continueButton.tap()
 
-        let tarritoButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Tarrito con'")).firstMatch
-        XCTAssertTrue(tarritoButton.exists)
+        let tarritoButton = app.links["Tarrito Button"]
+        XCTAssert(tarritoButton.waitForExistence(timeout: 1))
         tarritoButton.tap()
 
-        let accomplishmentText = app.staticTexts["Mi logro de test automatizado"]
-        XCTAssertTrue(accomplishmentText.waitForExistence(timeout: 2))
+        let accomplishmentText = app.staticTexts["My amazing accomplishment 🚀!"]
+        XCTAssert(accomplishmentText.waitForExistence(timeout: 1))
     }
 
     func testNavigateToAboutView() {

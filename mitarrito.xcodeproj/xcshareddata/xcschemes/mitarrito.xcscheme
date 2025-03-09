@@ -46,7 +46,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "138F89A62BB02D1C00EA9F2F"
+               BlueprintIdentifier = "1313FB812D7DB54200C25462"
                BuildableName = "mitarritoUITests.xctest"
                BlueprintName = "mitarritoUITests"
                ReferencedContainer = "container:mitarrito.xcodeproj">

@@ -10,7 +10,6 @@ struct ItemTextView: View {
         return .largeTitle
     }
 
-
     var body: some View {
         Text(text)
             .font(textSize)

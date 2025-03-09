@@ -34,10 +34,10 @@ struct HeaderView: View {
         .accessibilityElement(children: .combine)
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: Space.small)
                 .fill(Color.yellow.opacity(0.2))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: CGFloat(Size.small.rawValue))
                         .stroke(Color.orange.opacity(0.5), lineWidth: 2)
                 )
         )
@@ -47,7 +47,12 @@ struct HeaderView: View {
     }
 }
 
-#Preview {
-    MainView { _ in }
-        .modelContainer(for: Accomplishment.self, inMemory: true)
-}
+#if targetEnvironment(simulator)
+    #Preview("✏️ Edit Mode") {
+        HeaderView(mode: .constant(.edit), text: .constant(""))
+    }
+
+    #Preview("👀 View Mode") {
+        HeaderView(mode: .constant(.view), text: .constant(""))
+    }
+#endif

@@ -29,7 +29,7 @@ struct StickiesViewOverview: View {
                                 .background(Color.clear)
                                 .foregroundColor(.black)
                                 .font(.body)
-                                .onChange(of: text) { oldValue, newValue in
+                                .onChange(of: text) { _, newValue in
                                     characterCount = newValue.count
 
                                     if newValue.count > maxCharacters {
@@ -45,7 +45,7 @@ struct StickiesViewOverview: View {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                             UIAccessibility.post(
                                                 notification: .screenChanged,
-                                                argument: "Modo de edición activado. Escribe tu logro."
+                                                argument: A11y.StickiesViewOverview.editModeNotification
                                             )
                                         }
 
@@ -65,19 +65,24 @@ struct StickiesViewOverview: View {
                                 .padding([.leading, .trailing])
                                 .opacity(.zero)
                                 .frame(width: 220, height: 150)
-                                .accessibilityLabel("Editor de texto para tu logro")
-                                .accessibilityHint("Escribe tu logro. Desliza hacia arriba para guardar.")
-                                .accessibilityIdentifier("logro-editor")
+                                .accessibilityLabel(A11y.StickiesViewOverview.textEditorLabel)
+                                .accessibilityHint(A11y.StickiesViewOverview.textEditorHint)
+                                .accessibilityIdentifier(A11y.StickiesViewOverview.textEditorIdentifer)
 
                             Text("\(characterCount)/\(maxCharacters)")
                                 .font(.caption)
                                 .foregroundColor(characterCount > maxCharacters ? .red : .gray)
                                 .frame(width: 250, alignment: .trailing)
                                 .padding(.trailing)
-                                .accessibilityLabel("Contador de caracteres: \(characterCount) de \(maxCharacters)")
+                                .accessibilityLabel(
+                                    A11y.StickiesViewOverview.charCounterLabel(
+                                        count: characterCount,
+                                        max: maxCharacters
+                                    )
+                                )
                         }
 
-                        Text(text.isEmpty ? "Escribe aquí..." : text)
+                        Text(text.isEmpty ? Copies.StickiesViewOverView.textEditorPlaceHolder : text)
                             .foregroundColor(text.isEmpty ? .gray : .black)
                             .opacity(1)
                             .frame(width: 250, height: 150)
@@ -87,7 +92,7 @@ struct StickiesViewOverview: View {
                 }
                 .offset(dragOffset)
                 .gesture(
-                    DragGesture(minimumDistance: 10)
+                    DragGesture(minimumDistance: CGFloat(Size.extraSmall.rawValue))
                         .onChanged { gesture in
                             if !text.isEmpty {
                                 let dragAmount = gesture.translation.height
@@ -98,7 +103,7 @@ struct StickiesViewOverview: View {
                                 if dragAmount < -100, !showSaveIndicator {
                                     UIAccessibility.post(
                                         notification: .announcement,
-                                        argument: "Listo para guardar. Suelta para confirmar."
+                                        argument: A11y.StickiesViewOverview.readyToSaveNotification
                                     )
                                 }
                             }
@@ -123,7 +128,7 @@ struct StickiesViewOverview: View {
                             }
                         }
                 )
-                .accessibilityAction(named: "Guardar logro") {
+                .accessibilityAction(named: A11y.StickiesViewOverview.saveAction) {
                     if !text.isEmpty {
                         let generator = UINotificationFeedbackGenerator()
                         generator.notificationOccurred(.success)

@@ -3,9 +3,9 @@ import SwiftUI
 struct SocialLinks: View {
     var body: some View {
         VStack {
-            Text("Desarrollado con ❤️ por @Dianait")
+            Text(Copies.AboutMe.Footer.title)
                 .font(.caption)
-            Text("Puedes encontrarme en:")
+            Text(Copies.AboutMe.Footer.socialLinks)
                 .font(.footnote)
                 .foregroundColor(.gray)
 

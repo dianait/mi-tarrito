@@ -11,8 +11,8 @@ struct ConfirmationView: View {
             HStack {
                 Spacer()
                 ZStack(alignment: .top) {
-                    VStack(alignment: .center, spacing: 12) {
-                        Spacer().frame(height: 25)
+                    VStack(alignment: .center, spacing: CGFloat(Size.small.rawValue)) {
+                        Spacer().frame(height: CGFloat(Size.large.rawValue))
 
                         Text(Copies.ConfirmationView.title)
                             .font(.title3)
@@ -33,23 +33,23 @@ struct ConfirmationView: View {
                             Text(Copies.ConfirmationView.button)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.green)
-                                .padding(.horizontal, 30)
-                                .padding(.vertical, 8)
+                                .padding(.horizontal, CGFloat(Size.extraLarge.rawValue))
+                                .padding(.vertical, CGFloat(Size.extraExtraSmall.rawValue))
                                 .background(Capsule().fill(Color.white))
                         }
-                        .padding(.top, 10)
+                        .padding(.top, CGFloat(Size.extraSmall.rawValue))
                     }
-                    .padding(.vertical, 25)
-                    .padding(.horizontal, 40)
+                    .padding(.vertical, CGFloat(Size.large.rawValue))
+                    .padding(.horizontal, CGFloat(Size.extraExtraLarge.rawValue))
                     .frame(width: UIScreen.main.bounds.width * 0.85)
                     .background(
-                        RoundedRectangle(cornerRadius: 30)
+                        RoundedRectangle(cornerRadius: CGFloat(Size.extraLarge.rawValue))
                             .fill(Color.green)
                     )
                     .shadow(color: reduceTransparency ? .clear : Color.black.opacity(0.1),
                             radius: 8, x: 0, y: 5)
 
-                    HStack(spacing: -10) {
+                    HStack(spacing: -CGFloat(Size.extraSmall.rawValue)) {
                         ZStack {
                             Circle()
                                 .fill(Color.white)
@@ -58,13 +58,13 @@ struct ConfirmationView: View {
                                         radius: 2, x: 0, y: 1)
                                 .accessibilityHidden(true)
 
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 32, weight: .bold))
+                            Image(systemName: Icon.checkmark.rawValue)
+                                .font(.system(size: CGFloat(Size.extraLarge.rawValue), weight: .bold))
                                 .foregroundColor(.green)
                                 .accessibilityHidden(true)
                         }
                     }
-                    .offset(y: -25)
+                    .offset(y: -CGFloat(Size.large.rawValue))
                     .accessibilityHidden(true)
                 }
                 .accessibilityElement()
@@ -73,7 +73,7 @@ struct ConfirmationView: View {
                 Spacer()
             }
             .frame(maxWidth: .infinity)
-            .padding(.top, 60)
+            .padding(.top, CGFloat(Size.extraExtraExtraLarge.rawValue))
         }
         .transition(.asymmetric(
             insertion: reduceMotion ? .opacity : .scale.combined(with: .opacity),

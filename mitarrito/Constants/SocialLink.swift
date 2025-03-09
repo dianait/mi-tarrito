@@ -8,18 +8,18 @@ struct SocialLink {
 
 let socialLinks: [SocialLink] = [
     SocialLink(
-        name: "GitHub",
-        iconName: "github",
+        name: "gitHub",
+        iconName: CustomImage.github.rawValue,
         url: URL(string: "https://github.com/dianait")!
     ),
     SocialLink(
-        name: "BlueSky",
-        iconName: "bluesky",
+        name: "bluesky",
+        iconName: CustomImage.bluesky.rawValue,
         url: URL(string: "https://bsky.app/profile/dianait.dev")!
     ),
     SocialLink(
-        name: "LinkedIn",
-        iconName: "linkedin",
+        name: "linkedin",
+        iconName: CustomImage.linkedin.rawValue,
         url: URL(string: "https://www.linkedin.com/in/dianahdezsoler/")!
     ),
 ]

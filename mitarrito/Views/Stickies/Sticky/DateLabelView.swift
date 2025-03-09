@@ -27,9 +27,9 @@ struct DateLabelView: View {
 }
 
 #if targetEnvironment(simulator)
-#Preview {
-    DateLabelView(date: Date())
-        .padding()
-        .border(.red)
-}
+    #Preview {
+        DateLabelView(date: Date())
+            .padding()
+            .border(.red)
+    }
 #endif

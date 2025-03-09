@@ -4,7 +4,7 @@ struct BackgroundImageView: View {
     var color: String
 
     var body: some View {
-        Image("postit")
+        Image(CustomImage.postit.rawValue)
             .resizable()
             .colorMultiply(Color.fromString(color))
             .aspectRatio(contentMode: .fill)

@@ -1,24 +1,25 @@
-import SwiftUI
 import Foundation
+import SwiftUI
 
 struct AboutView: View {
     @State private var scrollID = UUID()
     var body: some View {
-        VStack(alignment: .leading, spacing: Space.medium) {
-            Headline()
+        ScrollView {
+            LazyVStack(alignment: .center, spacing: Space.medium) {
+                Headline()
 
-            SectionCard(
-                title: "Tu privacidad es nuestra prioridad",
-                icon: "lock.shield.fill",
-                content: {
-                    Text("Cada logro que guardes permanecerá exclusivamente en tu dispositivo. Tus datos nunca abandonan tu teléfono.")
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-            )
-            TimelineView()
-                .id(scrollID)
+                SectionCard(
+                    title: Copies.AboutMe.Privacy.title,
+                    icon: Icon.lock.rawValue,
+                    content: {
+                        Text(Copies.AboutMe.Privacy.description)
+                    }
+                )
+                TimelineView()
+                SocialLinks()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
@@ -26,11 +27,15 @@ struct Headline: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: Space.small) {
-                Text("🫙 Mi Tarrito")
-                    .font(.system(size: 34, weight: .bold, design: .rounded))
+                Text(Copies.AboutMe.title)
+                    .font(.system(
+                        size: CGFloat(Size.extraLarge.rawValue),
+                        design: .rounded
+                    ))
                     .foregroundColor(.orange)
+                    .accessibilityIdentifier(A11y.MainView.titleIdentifier)
 
-                Text("Un espacio para guardar tus logros")
+                Text(Copies.AboutMe.description)
                     .font(.system(.subheadline, design: .rounded))
                     .fontWeight(.medium)
                     .foregroundColor(.gray)
@@ -38,8 +43,8 @@ struct Headline: View {
 
             Spacer()
 
-            Image(systemName: "sparkles")
-                .font(.system(size: 38))
+            Image(systemName: Icon.sparkles.rawValue)
+                .font(.system(size: CGFloat(Size.extraLarge.rawValue)))
                 .foregroundColor(.orange)
         }
         .padding(.bottom, Space.small)
@@ -71,7 +76,7 @@ struct SectionCard<Content: View>: View {
             }
 
             content
-                .font(.system(.body, design: .rounded))
+                .font(.body)
                 .foregroundColor(.secondary)
         }
         .padding()

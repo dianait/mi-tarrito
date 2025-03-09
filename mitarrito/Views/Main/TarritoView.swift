@@ -16,7 +16,10 @@ struct TarritoView: View {
                         .frame(width: 120, height: 75)
 
                     Text("\(items.count)")
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(
+                            size: CGFloat(Size.medium.rawValue),
+                            weight: .bold
+                        ))
                         .foregroundColor(.white)
                         .padding(5)
                         .background(reduceTransparency ? Color.orange : Color.orange.opacity(0.9))
@@ -25,12 +28,15 @@ struct TarritoView: View {
                             Circle()
                                 .stroke(Color.white, lineWidth: 2)
                         )
-                        .offset(x: 1, y: 22)
+                        .offset(
+                            x: 1,
+                            y: CGFloat(Size.mediumLarge.rawValue)
+                        )
                         .shadow(color: reduceTransparency ? .clear : .gray.opacity(0.2), radius: 2, x: 0, y: 2)
                 }
                 .padding(.trailing, Space.small)
             }
-            .offset(x: 25, y: 0)
+            .offset(x: CGFloat(Size.large.rawValue), y: .zero)
         }
         .buttonStyle(PlainButtonStyle())
         .accessibilityElement()

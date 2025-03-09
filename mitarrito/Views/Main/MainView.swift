@@ -16,11 +16,11 @@ public struct MainView: View {
 
     public var body: some View {
         NavigationStack {
-            VStack(spacing: Space.extraLarge) {
+            VStack(spacing: Space.extraLarge + Space.medium) {
                 TarritoView()
 
                 Spacer()
-                    .frame(height: Space.extraLarge)
+                    .frame(height: Space.large)
 
                 HeaderView(mode: $mode, text: $text)
 
@@ -36,7 +36,7 @@ public struct MainView: View {
                 Spacer()
                 NavigationLink(destination: AboutView()) {
                     HStack {
-                        Image(systemName: "info.circle.fill")
+                        Image(systemName: Icon.info.rawValue)
                             .foregroundColor(.white)
                         Text(Copies.aboutTitle)
                             .foregroundColor(.white)
@@ -44,9 +44,10 @@ public struct MainView: View {
                     .padding(.vertical, Space.small)
                     .padding(.horizontal, Space.medium)
                     .background(Color.orange.opacity(0.8))
-                    .cornerRadius(10)
+                    .cornerRadius(CGFloat(Size.extraSmall.rawValue))
                     .accessibilityLabel(A11y.MainView.aboutLabelButton)
                     .accessibilityHint(A11y.MainView.aboutHintButton)
+                    .accessibilityIdentifier(A11y.MainView.aboutIndentifierButton)
                 }
             }
             .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {
@@ -59,3 +60,9 @@ public struct MainView: View {
         }
     }
 }
+
+#if targetEnvironment(simulator)
+    #Preview {
+        MainView { _ in }
+    }
+#endif

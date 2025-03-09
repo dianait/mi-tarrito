@@ -30,6 +30,7 @@ struct StickiesView: View {
                 .accessibilityLabel(A11y.StickiesView.label(lastMessage: lastMessage))
                 .accessibilityHint(A11y.StickiesView.hint)
                 .accessibilityAddTraits([.isButton])
+                .accessibilityIdentifier(A11y.StickiesView.stickie)
             }
             .accessibilityAction(.default) {
                 openEdit()
@@ -77,9 +78,7 @@ struct StickiesView: View {
     }
 
     private func openEdit() {
-        withAnimation {
-            mode = .edit
-        }
+        mode = .edit
     }
 }
 

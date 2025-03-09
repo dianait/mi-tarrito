@@ -22,7 +22,6 @@ struct StickiesViewOverview: View {
                 VStack {
                     ZStack {
                         StickiesView(mode: $mode)
-                            .accessibilityHidden(true)
                         VStack {
                             TextEditor(text: $text)
                                 .focused($responseIsFocussed)

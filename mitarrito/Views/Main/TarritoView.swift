@@ -43,6 +43,7 @@ struct TarritoView: View {
         .accessibilityLabel(A11y.Tarrito.label(count: items.count))
         .accessibilityHint(A11y.Tarrito.hint)
         .accessibilityAddTraits([.isLink, .updatesFrequently])
+        .accessibilityIdentifier(A11y.Tarrito.identifier)
         .minimumScaleFactor(0.8)
         .frame(minWidth: Space.extraLarge, minHeight: Space.extraLarge)
     }

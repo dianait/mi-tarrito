@@ -38,7 +38,9 @@ struct ConfirmationView: View {
                                 .background(Capsule().fill(Color.white))
                         }
                         .padding(.top, CGFloat(Size.extraSmall.rawValue))
+                        .accessibilityIdentifier(A11y.ConfirmationView.button)
                     }
+
                     .padding(.vertical, CGFloat(Size.large.rawValue))
                     .padding(.horizontal, CGFloat(Size.extraExtraLarge.rawValue))
                     .frame(width: UIScreen.main.bounds.width * 0.85)
@@ -67,9 +69,8 @@ struct ConfirmationView: View {
                     .offset(y: -CGFloat(Size.large.rawValue))
                     .accessibilityHidden(true)
                 }
-                .accessibilityElement()
-                .accessibilityLabel(A11y.ConfirmationView.label)
-                .accessibilityHint(A11y.ConfirmationView.hint)
+                .accessibilityElement(children: .contain)
+                .accessibilityIdentifier(A11y.ConfirmationView.view)
                 Spacer()
             }
             .frame(maxWidth: .infinity)

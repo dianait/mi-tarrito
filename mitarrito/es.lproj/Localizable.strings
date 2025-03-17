@@ -1,0 +1,97 @@
+// View Titles
+"celebrate_title_short" = "¡Es hora de celebrar!";
+"celebrate_title_long" = "¡Es hora de celebrar tus logros!";
+"view_description_short" = "Pulsa en la nota amarilla";
+"view_description_long" = "Pulsa en la nota amarilla para empezar";
+"edit_description_short" = "Desliza hacia arriba";
+"edit_description_long" = "Desliza hacia arriba para guardar";
+"edit_title" = "¿Has terminado?";
+"about_title" = "Sobre Mi Tarrito";
+"settings_title" = "Ajustes";
+
+// Language Settings View
+"select_language" = "Selección de idioma";
+
+// Confirmation View
+"confirmation_title" = "¡Logro guardado!";
+"confirmation_description" = "Tu tarrito crece con cada logro 🎉";
+"confirmation_button" = "Continuar";
+
+// Stickis View
+"accomplishment_example1" = "🎉 Tu primer logro aquí";
+"accomplishment_example2" = "Otro más!";
+"accomplishment_example3" = "Otro y otro";
+
+// Stickies View Over View
+"text_editor_placeholder" = "Escribe aquí...";
+
+// Carrusel - Empty State
+"carousel_empty_title" = "¡Guarda tus logros!";
+"carousel_empty_description" = "Desbloquea todo tu potencial dándole valor a tus objetivos alcanzados";
+"carousel_empty_benefit1" = "Aumenta tu motivación diaria";
+"carousel_empty_benefit2" = "Mejora continua y medible";
+"carousel_empty_benefit3" = "Celebra tus victorias personales";
+"carousel_empty_add_button" = "Añadir nuevo logro";
+
+// About Me
+"about_me_title" = "🫙 Mi Tarrito";
+"about_me_description" = "Un espacio para guardar tus logros";
+
+// Privacy
+"privacy_title" = "Tu privacidad lo primero";
+"privacy_description" = "Cada logro que guardes permanecerá exclusivamente en tu dispositivo. Tus datos nunca abandonan tu teléfono.";
+
+// Timeline
+"timeline_title" = "Un poco de historia...";
+
+// Step 1
+"step1_title" = "Todo empezó en la LicorcaConf";
+"step1_description" = "En una charla sobre el síndrome del Impostor, Silvia comentó que tenía una carpeta donde guardaba las cosas buenas que le pasaban en el trabajo.";
+
+// Step 2
+"step2_title" = "Me compré un tarrito físico";
+"step2_description" = "Y empecé a llenarlo de notas con cosas que me hacían sentirme bien en el trabajo. Una manera práctica de recordar mis logros.";
+
+// Step 3
+"step3_title" = "Lo compartí en twitter";
+"step3_description" = "Y el resto es historia... Mi tarrito se hizo famoso, se hablo de él en el AntiEvent, TechFest, y Software Crafters de Barcelona. Gracias Silvia, Ari y Jordi 🫶";
+
+// Step 4
+"step4_title" = "Y esta es la versión digital";
+"step4_description" = "Quería publicar una app desde hace mucho tiempo, y aquí estamos. ¡Para que todos puedan tener su propio tarrito de logros!";
+
+// Footer
+"footer_title" = "Desarrollado con ❤️ por @Dianait";
+"footer_social_links" = "Puedes encontrarme en:";
+
+// A11y Copies
+"tarrito_button_identifier" = "Tarrito Button";
+"tarrito_button_label" = "Tarrito con {count} {plural}";
+"tarrito_singular" = "logro guardado";
+"tarrito_plural" = "logros guardados";
+"tarrito_button_hint" = "Toca para ver tus logros en detalle";
+
+"stickies_view_stickie" = "Main Stickie";
+"stickies_view_hint" = "Toca para crear tu primer logro";
+"stickies_view_label_empty" = "Escribe aquí...";
+
+"main_view_settings_label" = "Ajuste de idioma";
+"main_view_about_label" = "Información sobre Mi Tarrito";
+"main_view_about_hint" = "Muestra una ventana con información adicional sobre la aplicación";
+"main_view_about_identifier" = "About me Button";
+"main_view_settings_identifier" = "Settings Button";
+"main_view_title_identifier" = "About me Title";
+
+"confirmation_view_label" = "Confirmación: Logro guardado";
+"confirmation_view_hint" = "Tu tarrito crece con cada logro";
+"confirmation_view_notification" = "Logro guardado. Tu tarrito crece con cada logro.";
+"confirmation_view_identifier" = "Confimation Pop-Up";
+"confirmation_view_button" = "Continue Button";
+
+"stickies_overview_edit_mode" = "Modo de edición activado. Escribe tu logro.";
+"stickies_overview_text_editor_label" = "Editor de texto para tu logro";
+"stickies_overview_text_editor_hint" = "Editor de texto para tu logro";
+"stickies_overview_text_editor_identifier" = "Text Editor";
+"stickies_overview_char_counter" = "Contador de caracteres: {count} de {max}";
+"stickies_overview_ready_to_save" = "Listo para guardar. Suelta para confirmar.";
+"stickies_overview_save_action" = "Guardar logro";

@@ -97,6 +97,7 @@ struct ConfirmationView: View {
                 }
             }
         }
+        .localized()
     }
 }
 

@@ -2,6 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct StickiesViewOverview: View {
+    @EnvironmentObject var languageManager: LanguageManager
     @FocusState private var responseIsFocussed: Bool
     @State private var dragOffset: CGSize = .zero
     @State private var isEditModeActive: Bool = false
@@ -146,6 +147,7 @@ struct StickiesViewOverview: View {
                 }
             }
         }
+        .localized()
     }
 
     private func save() {

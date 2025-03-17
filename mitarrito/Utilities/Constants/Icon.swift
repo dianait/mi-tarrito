@@ -2,6 +2,7 @@ enum Icon: String {
     case sparkles
     case trash
     case checkmark
+    case settings = "gear"
     case info = "info.circle.fill"
     case lock = "lock.shield.fill"
     case chart = "chart.bar.fill"

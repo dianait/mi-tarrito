@@ -5,6 +5,7 @@ struct HeaderView: View {
     @Binding var text: String
     @Environment(\.screenSize) private var screenSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @EnvironmentObject var languageManager: LanguageManager
 
     var shouldShowEditHeader: Bool {
         mode == .edit && !text.isEmpty
@@ -44,15 +45,18 @@ struct HeaderView: View {
         .fixedSize(horizontal: false, vertical: true)
         .lineLimit(dynamicTypeSize.isAccessibilitySize ? 3 : nil)
         .minimumScaleFactor(0.7)
+        .localized()
     }
 }
 
 #if targetEnvironment(simulator)
     #Preview("✏️ Edit Mode") {
         HeaderView(mode: .constant(.edit), text: .constant(""))
+            .environmentObject(LanguageManager.shared)
     }
 
     #Preview("👀 View Mode") {
         HeaderView(mode: .constant(.view), text: .constant(""))
+            .environmentObject(LanguageManager.shared)
     }
 #endif

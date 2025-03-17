@@ -3,6 +3,8 @@ import SwiftUI
 
 @main
 struct MiTarritoApp: App {
+    @StateObject private var languageManager = LanguageManager.shared
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Accomplishment.self,
@@ -20,7 +22,8 @@ struct MiTarritoApp: App {
         WindowGroup {
             ContentView()
                 .background(.white)
+                .environmentObject(languageManager)
+                .modelContainer(sharedModelContainer)
         }
-        .modelContainer(sharedModelContainer)
     }
 }

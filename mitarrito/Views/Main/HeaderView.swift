@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @Binding var mode: Mode
-    @Binding var text: String
-    @Environment(\.screenSize) private var screenSize
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    
+    @Binding var mode: Mode 
+    @Binding var text: String 
+    @Environment(\.screenSize) private var screenSize 
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize 
     @EnvironmentObject var languageManager: LanguageManager
-
     var shouldShowEditHeader: Bool {
-        mode == .edit && !text.isEmpty
+        mode == .edit && !text.isEmpty 
     }
 
     var title: String {
@@ -16,7 +16,7 @@ struct HeaderView: View {
     }
 
     var description: String {
-        shouldShowEditHeader ? Copies.editDescription(screenWidth: screenSize.width) : Copies.viewDecription(screenWidth: screenSize.width)
+        shouldShowEditHeader ? Copies.editDescription(screenWidth: screenSize.width) : Copies.viewDescription(screenWidth: screenSize.width)
     }
 
     var body: some View {
@@ -26,26 +26,30 @@ struct HeaderView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.orange)
                 .multilineTextAlignment(.center)
+
             Text(description)
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }
+
         .accessibilityElement(children: .combine)
         .padding()
+
         .background(
             RoundedRectangle(cornerRadius: Space.small)
-                .fill(Color.yellow.opacity(0.2))
+                .fill(Color.yellow.opacity(0.2)) 
                 .overlay(
                     RoundedRectangle(cornerRadius: CGFloat(Size.small.rawValue))
-                        .stroke(Color.orange.opacity(0.5), lineWidth: 2)
+                        .stroke(Color.orange.opacity(0.5), lineWidth: 2) 
                 )
         )
+
         .fixedSize(horizontal: false, vertical: true)
-        .lineLimit(dynamicTypeSize.isAccessibilitySize ? 3 : nil)
-        .minimumScaleFactor(0.7)
-        .localized()
+        .lineLimit(dynamicTypeSize.isAccessibilitySize ? 3 : nil) 
+        .minimumScaleFactor(0.7) 
+        .localized() 
     }
 }
 
@@ -54,7 +58,6 @@ struct HeaderView: View {
         HeaderView(mode: .constant(.edit), text: .constant(""))
             .environmentObject(LanguageManager.shared)
     }
-
     #Preview("👀 View Mode") {
         HeaderView(mode: .constant(.view), text: .constant(""))
             .environmentObject(LanguageManager.shared)

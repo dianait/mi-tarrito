@@ -9,7 +9,7 @@ struct SocialLinks: View {
                 .font(.footnote)
                 .foregroundColor(.gray)
 
-            HStack(spacing: Space.large) {
+            HStack(spacing: Space.mediumLarge) {
                 ForEach(socialLinks, id: \.name) { link in
                     Button(action: {
                         UIApplication.shared.open(link.url)
@@ -18,7 +18,7 @@ struct SocialLinks: View {
                             Image(link.iconName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: Space.large, height: Space.large)
+                                .frame(width: Space.mediumLarge, height: Space.mediumLarge)
 
                             Text(link.name)
                                 .font(.caption)

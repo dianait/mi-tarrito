@@ -21,10 +21,8 @@ public struct MainView: View {
             VStack(spacing: Space.extraLarge + Space.medium) {
                 TarritoView()
 
-                Spacer()
-                    .frame(height: Space.large)
-
                 HeaderView(mode: $mode, text: $text)
+                    .padding(.top, Space.large)
 
                 StickiesViewOverview(
                     mode: $mode,

@@ -14,9 +14,9 @@ struct TimelineView: View {
                     .fontWeight(.bold)
                     .foregroundColor(primaryColor)
             }
-            .padding(.vertical, Space.large)
+            .padding(.vertical, Space.mediumLarge)
 
-            LazyVStack(alignment: .leading, spacing: Space.large) {
+            LazyVStack(alignment: .leading, spacing: Space.mediumLarge) {
 
                 ForEach(Copies.AboutMe.Timeline.steps, id: \.title) { step in
                     TimelineItem(
@@ -47,7 +47,7 @@ struct TimelineItem: View {
             HStack(spacing: Space.small) {
                 Image(systemName: icon)
                     .foregroundColor(.orange)
-                    .font(.system(size: Space.large))
+                    .font(.system(size: Space.mediumLarge))
 
                 Text(title)
                     .font(.system(.headline, design: .rounded))

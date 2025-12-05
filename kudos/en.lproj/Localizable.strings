@@ -6,7 +6,7 @@
 "edit_description_short" = "Swipe up";
 "edit_description_long" = "Swipe up to save";
 "edit_title" = "Are you done?";
-"about_title" = "About My Jar";
+"about_title" = "About Kudos";
 "settings_title" = "Settings";
 
 // Language Settings View
@@ -34,7 +34,7 @@
 "carousel_empty_add_button" = "Add new achievement";
 
 // About Me
-"about_me_title" = "🫙 My Jar";
+"about_me_title" = "🎉 Kudos";
 "about_me_description" = "A space to save your achievements";
 
 // Privacy
@@ -76,7 +76,7 @@
 "stickies_view_label_empty" = "Write here...";
 
 "main_view_settings_label" = "Language settings";
-"main_view_about_label" = "Information about My Jar";
+"main_view_about_label" = "Information about Kudos";
 "main_view_about_hint" = "Shows a window with additional information about the app";
 "main_view_about_identifier" = "About me Button";
 "main_view_settings_identifier" = "Settings Button";

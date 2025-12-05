@@ -17,7 +17,7 @@
 		1366E97C2D7DAC5A008FE4BE /* AccessibilityTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366E97B2D7DAC58008FE4BE /* AccessibilityTextTests.swift */; };
 		1366E97E2D7DAC7C008FE4BE /* SwiftDataIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366E97D2D7DAC7B008FE4BE /* SwiftDataIntegrationTests.swift */; };
 		1366E9802D7DAD45008FE4BE /* ViewComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366E97F2D7DAD38008FE4BE /* ViewComponentTests.swift */; };
-		138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */; };
+		138F898F2BB02D1A00EA9F2F /* kudosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F898E2BB02D1A00EA9F2F /* kudosApp.swift */; };
 		138F89912BB02D1A00EA9F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89902BB02D1A00EA9F2F /* ContentView.swift */; };
 		138F89932BB02D1A00EA9F2F /* Accomplishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F89922BB02D1A00EA9F2F /* Accomplishment.swift */; };
 		138F89952BB02D1C00EA9F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138F89942BB02D1C00EA9F2F /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1313FB822D7DB54200C25462 /* mitarritoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mitarritoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1313FB822D7DB54200C25462 /* kudosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kudosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1338C6D72BB0A2BF0061FBEB /* View+ConfettiCannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ConfettiCannon.swift"; sourceTree = "<group>"; };
 		1338C6D92BB0A2BF0061FBEB /* RoundedCross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCross.swift; sourceTree = "<group>"; };
 		1338C6DA2BB0A2BF0061FBEB /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
@@ -68,13 +68,13 @@
 		1366E97B2D7DAC58008FE4BE /* AccessibilityTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTextTests.swift; sourceTree = "<group>"; };
 		1366E97D2D7DAC7B008FE4BE /* SwiftDataIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataIntegrationTests.swift; sourceTree = "<group>"; };
 		1366E97F2D7DAD38008FE4BE /* ViewComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponentTests.swift; sourceTree = "<group>"; };
-		138F898B2BB02D1A00EA9F2F /* mitarrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitarrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mitarritoApp.swift; sourceTree = "<group>"; };
+		138F898B2BB02D1A00EA9F2F /* kudos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kudos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		138F898E2BB02D1A00EA9F2F /* kudosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kudosApp.swift; sourceTree = "<group>"; };
 		138F89902BB02D1A00EA9F2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		138F89922BB02D1A00EA9F2F /* Accomplishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accomplishment.swift; sourceTree = "<group>"; };
 		138F89942BB02D1C00EA9F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		138F89972BB02D1C00EA9F2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mitarritoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		138F899D2BB02D1C00EA9F2F /* kudosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kudosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -166,7 +166,7 @@
 		138F89822BB02D1A00EA9F2F = {
 			isa = PBXGroup;
 			children = (
-				138F898D2BB02D1A00EA9F2F /* mitarrito */,
+				138F898D2BB02D1A00EA9F2F /* kudos */,
 				138F89A02BB02D1C00EA9F2F /* mitarritoTests */,
 				1313FB832D7DB54300C25462 /* mitarritoUITests */,
 				1338C6EA2BB0ACAB0061FBEB /* Frameworks */,
@@ -177,14 +177,14 @@
 		138F898C2BB02D1A00EA9F2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				138F898B2BB02D1A00EA9F2F /* mitarrito.app */,
-				138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */,
-				1313FB822D7DB54200C25462 /* mitarritoUITests.xctest */,
+				138F898B2BB02D1A00EA9F2F /* kudos.app */,
+				138F899D2BB02D1C00EA9F2F /* kudosTests.xctest */,
+				1313FB822D7DB54200C25462 /* kudosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		138F898D2BB02D1A00EA9F2F /* mitarrito */ = {
+		138F898D2BB02D1A00EA9F2F /* kudos */ = {
 			isa = PBXGroup;
 			children = (
 				13A3F8112D8805A0002ED82B /* Utilities */,
@@ -193,12 +193,12 @@
 				1338C6E42BB0A8D30061FBEB /* Model */,
 				1338C6E32BB0A8C10061FBEB /* Views */,
 				138F89902BB02D1A00EA9F2F /* ContentView.swift */,
-				138F898E2BB02D1A00EA9F2F /* mitarritoApp.swift */,
+				138F898E2BB02D1A00EA9F2F /* kudosApp.swift */,
 				138F89942BB02D1C00EA9F2F /* Assets.xcassets */,
 				1338C6D62BB0A2BF0061FBEB /* Confetti */,
 				138F89962BB02D1C00EA9F2F /* Preview Content */,
 			);
-			path = mitarrito;
+			path = kudos;
 			sourceTree = "<group>";
 		};
 		138F89962BB02D1C00EA9F2F /* Preview Content */ = {
@@ -224,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1313FB812D7DB54200C25462 /* mitarritoUITests */ = {
+		1313FB812D7DB54200C25462 /* kudosUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1313FB8A2D7DB54300C25462 /* Build configuration list for PBXNativeTarget "mitarritoUITests" */;
+			buildConfigurationList = 1313FB8A2D7DB54300C25462 /* Build configuration list for PBXNativeTarget "kudosUITests" */;
 			buildPhases = (
 				1313FB7E2D7DB54200C25462 /* Sources */,
 				1313FB7F2D7DB54200C25462 /* Frameworks */,
@@ -240,16 +240,16 @@
 			fileSystemSynchronizedGroups = (
 				1313FB832D7DB54300C25462 /* mitarritoUITests */,
 			);
-			name = mitarritoUITests;
+			name = kudosUITests;
 			packageProductDependencies = (
 			);
 			productName = mitarritoUITests;
-			productReference = 1313FB822D7DB54200C25462 /* mitarritoUITests.xctest */;
+			productReference = 1313FB822D7DB54200C25462 /* kudosUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		138F898A2BB02D1A00EA9F2F /* mitarrito */ = {
+		138F898A2BB02D1A00EA9F2F /* kudos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarrito" */;
+			buildConfigurationList = 138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "kudos" */;
 			buildPhases = (
 				138F89872BB02D1A00EA9F2F /* Sources */,
 				138F89882BB02D1A00EA9F2F /* Frameworks */,
@@ -270,17 +270,17 @@
 				13A3F8112D8805A0002ED82B /* Utilities */,
 				13A3F8182D88082E002ED82B /* Settings */,
 			);
-			name = mitarrito;
+			name = kudos;
 			packageProductDependencies = (
 				13B947122BBEF93C0076724B /* Inject */,
 			);
-			productName = daymooddata;
-			productReference = 138F898B2BB02D1A00EA9F2F /* mitarrito.app */;
+			productName = kudos;
+			productReference = 138F898B2BB02D1A00EA9F2F /* kudos.app */;
 			productType = "com.apple.product-type.application";
 		};
-		138F899C2BB02D1C00EA9F2F /* mitarritoTests */ = {
+		138F899C2BB02D1C00EA9F2F /* kudosTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarritoTests" */;
+			buildConfigurationList = 138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "kudosTests" */;
 			buildPhases = (
 				138F89992BB02D1C00EA9F2F /* Sources */,
 				138F899A2BB02D1C00EA9F2F /* Frameworks */,
@@ -291,9 +291,9 @@
 			dependencies = (
 				138F899F2BB02D1C00EA9F2F /* PBXTargetDependency */,
 			);
-			name = mitarritoTests;
+			name = kudosTests;
 			productName = daymooddataTests;
-			productReference = 138F899D2BB02D1C00EA9F2F /* mitarritoTests.xctest */;
+			productReference = 138F899D2BB02D1C00EA9F2F /* kudosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -319,7 +319,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "mitarrito" */;
+			buildConfigurationList = 138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "kudos" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -336,9 +336,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				138F898A2BB02D1A00EA9F2F /* mitarrito */,
-				138F899C2BB02D1C00EA9F2F /* mitarritoTests */,
-				1313FB812D7DB54200C25462 /* mitarritoUITests */,
+				138F898A2BB02D1A00EA9F2F /* kudos */,
+				138F899C2BB02D1C00EA9F2F /* kudosTests */,
+				1313FB812D7DB54200C25462 /* kudosUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -387,7 +387,7 @@
 				138F89932BB02D1A00EA9F2F /* Accomplishment.swift in Sources */,
 				1338C6DF2BB0A2BF0061FBEB /* Triangle.swift in Sources */,
 				1338C6E02BB0A2BF0061FBEB /* SlimRectangle.swift in Sources */,
-				138F898F2BB02D1A00EA9F2F /* mitarritoApp.swift in Sources */,
+				138F898F2BB02D1A00EA9F2F /* kudosApp.swift in Sources */,
 				1338C6DE2BB0A2BF0061FBEB /* RoundedCross.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,12 +409,12 @@
 /* Begin PBXTargetDependency section */
 		1313FB892D7DB54300C25462 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 138F898A2BB02D1A00EA9F2F /* mitarrito */;
+			target = 138F898A2BB02D1A00EA9F2F /* kudos */;
 			targetProxy = 1313FB882D7DB54300C25462 /* PBXContainerItemProxy */;
 		};
 		138F899F2BB02D1C00EA9F2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 138F898A2BB02D1A00EA9F2F /* mitarrito */;
+			target = 138F898A2BB02D1A00EA9F2F /* kudos */;
 			targetProxy = 138F899E2BB02D1C00EA9F2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -434,7 +434,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = mitarrito;
+				TEST_TARGET_NAME = kudos;
 			};
 			name = Debug;
 		};
@@ -452,7 +452,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = mitarrito;
+				TEST_TARGET_NAME = kudos;
 			};
 			name = Release;
 		};
@@ -589,12 +589,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mitarrito/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"kudos/Preview Content\"";
 				DEVELOPMENT_TEAM = 7G4S2SGHRL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = mitarrito/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_FILE = kudos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kudos;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -610,7 +611,7 @@
 					"-Xlinker",
 					"-interposable",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.kudos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -629,12 +630,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mitarrito/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"kudos/Preview Content\"";
 				DEVELOPMENT_TEAM = 7G4S2SGHRL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = mitarrito/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_FILE = kudos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kudos;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -646,7 +648,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.mitarrito;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.dianait.kudos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -677,7 +679,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mitarrito.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mitarrito";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kudos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kudos";
 			};
 			name = Debug;
 		};
@@ -700,14 +702,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mitarrito.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mitarrito";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kudos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kudos";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1313FB8A2D7DB54300C25462 /* Build configuration list for PBXNativeTarget "mitarritoUITests" */ = {
+		1313FB8A2D7DB54300C25462 /* Build configuration list for PBXNativeTarget "kudosUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1313FB8B2D7DB54300C25462 /* Debug */,
@@ -716,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "mitarrito" */ = {
+		138F89862BB02D1A00EA9F2F /* Build configuration list for PBXProject "kudos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89AF2BB02D1C00EA9F2F /* Debug */,
@@ -725,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarrito" */ = {
+		138F89B12BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "kudos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89B22BB02D1C00EA9F2F /* Debug */,
@@ -734,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "mitarritoTests" */ = {
+		138F89B42BB02D1C00EA9F2F /* Build configuration list for PBXNativeTarget "kudosTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				138F89B52BB02D1C00EA9F2F /* Debug */,

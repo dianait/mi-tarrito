@@ -20,9 +20,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "138F899C2BB02D1C00EA9F2F"
-               BuildableName = "mitarritoTests.xctest"
-               BlueprintName = "mitarritoTests"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
+               BuildableName = "kudosTests.xctest"
+               BlueprintName = "kudosTests"
+               ReferencedContainer = "container:kudos.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -33,7 +33,7 @@
                BlueprintIdentifier = "1313FB6A2D7DB2CD00C25462"
                BuildableName = "miTarritoUITests.xctest"
                BlueprintName = "miTarritoUITests"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
+               ReferencedContainer = "container:kudos.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

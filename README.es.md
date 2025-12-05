@@ -1,15 +1,15 @@
-# 🫙 Mi Tarrito
+# 🎉 Kudos
 
-Una aplicación iOS para guardar y celebrar tus logros personales. Un espacio digital donde puedes registrar tus victorias y ver cómo crece tu tarrito con cada logro alcanzado.
+Una aplicación iOS para guardar y celebrar tus logros personales. Un espacio digital donde puedes registrar tus victorias y ver cómo crece tu colección con cada logro alcanzado.
 
 ## 📱 Descripción
 
-Mi Tarrito es una aplicación que te permite guardar tus logros como notas adhesivas digitales. Cada vez que guardas un logro, tu tarrito crece y puedes celebrarlo con animaciones de confetti. La aplicación está diseñada con un enfoque en la privacidad: todos tus datos permanecen exclusivamente en tu dispositivo.
+Kudos es una aplicación que te permite guardar tus logros como notas adhesivas digitales. Cada vez que guardas un logro, tu colección crece y puedes celebrarlo con animaciones de confetti. La aplicación está diseñada con un enfoque en la privacidad: todos tus datos permanecen exclusivamente en tu dispositivo.
 
 ## ✨ Características
 
 - **Guardar logros**: Crea notas adhesivas con tus logros y victorias personales
-- **Contador visual**: Ve cuántos logros has guardado en tu tarrito
+- **Contador visual**: Ve cuántos logros has guardado en tu colección
 - **Animaciones de celebración**: Confetti animado cuando guardas un nuevo logro
 - **Carrusel de logros**: Navega por todos tus logros guardados con un gesto de deslizamiento
 - **Multiidioma**: Soporte para español e inglés con cambio de idioma en tiempo real
@@ -25,16 +25,19 @@ Mi Tarrito es una aplicación que te permite guardar tus logros como notas adhes
 
 ## 📖 Cómo Usar
 
-1. **Agregar un logro**: 
+1. **Agregar un logro**:
+
    - Toca la nota amarilla en la pantalla principal
    - Escribe tu logro en el editor de texto
    - Desliza hacia arriba para guardar
 
 2. **Ver tus logros**:
-   - Toca el tarrito en la parte superior para ver todos tus logros guardados
+
+   - Toca el contador en la parte superior para ver todos tus logros guardados
    - Desliza horizontalmente para navegar entre ellos
 
 3. **Cambiar idioma**:
+
    - Toca el botón "Ajustes" en la parte inferior
    - Selecciona tu idioma preferido
 
@@ -50,7 +53,8 @@ Mi Tarrito es una aplicación que te permite guardar tus logros como notas adhes
 
 ## 🔒 Privacidad
 
-Mi Tarrito está comprometido con tu privacidad:
+Kudos está comprometido con tu privacidad:
+
 - Todos los datos se almacenan localmente en tu dispositivo
 - No se recopila información personal
 - No hay conexión a servidores externos
@@ -58,14 +62,14 @@ Mi Tarrito está comprometido con tu privacidad:
 
 ## 📚 Historia del Proyecto
 
-La idea de Mi Tarrito nació en la LicorcaConf durante una charla sobre el síndrome del Impostor. Silvia compartió que tenía una carpeta física donde guardaba las cosas buenas que le pasaban en el trabajo. Inspirada por esta idea, se creó un tarrito físico que se llenó de notas con logros personales.
+La idea de Kudos nació en la LicorcaConf durante una charla sobre el síndrome del Impostor. Silvia compartió que tenía una carpeta en el pc donde guardaba las cosas buenas que le pasaban en el trabajo. Inspirada por esta idea, y por un mala racha en cuanto a no sentirme valida en el curro, me compre un tarrito físico que fui llenando de cosas buenas que me pasaban en el curro, un agradecimiento de un compi, una commentario bonito de una PR, la primera vez que me atrevi a representar a mi equipo en un Cluster Review... Y el tarrito no dejaba de llenarse, ya no era tanto volver a abrirlo y leer lo que habia conseguido, que tambien ayuda en momentos dificiles, sino el hecho de ir verlo llenarse dia a dia de cosas buenas.
 
-El concepto se compartió en Twitter y ganó popularidad, siendo mencionado en eventos como AntiEvent, TechFest y Software Crafters de Barcelona. Esta aplicación es la versión digital de ese tarrito físico, permitiendo que todos puedan tener su propio espacio para celebrar sus logros.
+Lo comparti en Twitter y ganó popularidad, siendo mencionado en eventos como AntiEvent, TechFest y Software Crafters de Barcelona. Esta aplicación es la versión digital de ese tarrito físico, permitiendo que todos puedan tener su propio espacio para celebrar sus logros.
 
 ## 👤 Autor
 
-Desarrollado con ❤️ por [@Dianait](https://linkedi/in/dianait)
+Desarrollado con ❤️ por [@Dianait](https://linkedin/in/dianait)
 
 ---
 
-¡Celebra tus logros y haz crecer tu tarrito! 🎉
+¡Celebra tus logros y haz crecer tu colección de kudos! 🎉

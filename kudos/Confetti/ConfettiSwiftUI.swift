@@ -174,16 +174,19 @@ struct ConfettiView: View {
     @StateObject var confettiConfig: ConfettiConfig
 
     func getShape() -> AnyView {
-        return confettiConfig.shapes.randomElement()!
+        // Safe use of randomElement with default value
+        return confettiConfig.shapes.randomElement() ?? AnyView(Circle())
     }
 
     func getColor() -> Color {
-        return confettiConfig.colors.randomElement()!
+        // Safe use of randomElement with default value
+        return confettiConfig.colors.randomElement() ?? .blue
     }
 
     func getSpinDirection() -> CGFloat {
         let spinDirections: [CGFloat] = [-1.0, 1.0]
-        return spinDirections.randomElement()!
+        // Safe use of randomElement with default value
+        return spinDirections.randomElement() ?? 1.0
     }
 
     func getRandomExplosionTimeVariation() -> CGFloat {

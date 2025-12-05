@@ -6,6 +6,14 @@
 	<string></string>
 	<key>English</key>
 	<string></string>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
 	<key>Spanish</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 </dict>

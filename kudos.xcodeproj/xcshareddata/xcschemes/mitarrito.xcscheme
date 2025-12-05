@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "138F898A2BB02D1A00EA9F2F"
-               BuildableName = "mitarrito.app"
-               BlueprintName = "mitarrito"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
+               BuildableName = "kudos.app"
+               BlueprintName = "kudos"
+               ReferencedContainer = "container:kudos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "138F899C2BB02D1C00EA9F2F"
-               BuildableName = "mitarritoTests.xctest"
-               BlueprintName = "mitarritoTests"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
+               BuildableName = "kudosTests.xctest"
+               BlueprintName = "kudosTests"
+               ReferencedContainer = "container:kudos.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1313FB812D7DB54200C25462"
-               BuildableName = "mitarritoUITests.xctest"
-               BlueprintName = "mitarritoUITests"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
+               BuildableName = "kudosUITests.xctest"
+               BlueprintName = "kudosUITests"
+               ReferencedContainer = "container:kudos.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -60,7 +60,7 @@
                BlueprintIdentifier = "1313FB6A2D7DB2CD00C25462"
                BuildableName = "miTarritoUITests.xctest"
                BlueprintName = "miTarritoUITests"
-               ReferencedContainer = "container:mitarrito.xcodeproj">
+               ReferencedContainer = "container:kudos.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "138F898A2BB02D1A00EA9F2F"
-            BuildableName = "mitarrito.app"
-            BlueprintName = "mitarrito"
-            ReferencedContainer = "container:mitarrito.xcodeproj">
+            BuildableName = "kudos.app"
+            BlueprintName = "kudos"
+            ReferencedContainer = "container:kudos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -97,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "138F898A2BB02D1A00EA9F2F"
-            BuildableName = "mitarrito.app"
-            BlueprintName = "mitarrito"
-            ReferencedContainer = "container:mitarrito.xcodeproj">
+            BuildableName = "kudos.app"
+            BlueprintName = "kudos"
+            ReferencedContainer = "container:kudos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

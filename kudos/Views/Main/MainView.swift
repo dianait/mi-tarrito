@@ -22,7 +22,7 @@ public struct MainView: View {
                 TarritoView()
 
                 HeaderView(mode: $mode, text: $text)
-                    .padding(.top, Space.large)
+                    .padding(.top, Space.mediumLarge)
 
                 StickiesViewOverview(
                     mode: $mode,

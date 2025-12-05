@@ -6,7 +6,7 @@
 "edit_description_short" = "Desliza hacia arriba";
 "edit_description_long" = "Desliza hacia arriba para guardar";
 "edit_title" = "¿Has terminado?";
-"about_title" = "Sobre Mi Tarrito";
+"about_title" = "Sobre Kudos";
 "settings_title" = "Ajustes";
 
 // Language Settings View
@@ -34,7 +34,7 @@
 "carousel_empty_add_button" = "Añadir nuevo logro";
 
 // About Me
-"about_me_title" = "🫙 Mi Tarrito";
+"about_me_title" = "🎉 Kudos";
 "about_me_description" = "Un espacio para guardar tus logros";
 
 // Privacy
@@ -76,7 +76,7 @@
 "stickies_view_label_empty" = "Escribe aquí...";
 
 "main_view_settings_label" = "Ajuste de idioma";
-"main_view_about_label" = "Información sobre Mi Tarrito";
+"main_view_about_label" = "Información sobre Kudos";
 "main_view_about_hint" = "Muestra una ventana con información adicional sobre la aplicación";
 "main_view_about_identifier" = "About me Button";
 "main_view_settings_identifier" = "Settings Button";

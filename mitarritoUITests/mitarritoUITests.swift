@@ -1,7 +1,7 @@
 import XCTest
 @testable import mitarrito
 
-final class MiTarritoUITests: XCTestCase {
+final class KudosUITests: XCTestCase {
     var app: XCUIApplication!
 
     override func setUp() {

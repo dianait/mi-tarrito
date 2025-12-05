@@ -2,11 +2,11 @@ import XCTest
 import SwiftUI
 @testable import mitarrito
 
-final class ColorUtilityTests: XCTestCase {
+final class AccomplishmentColorTests: XCTestCase {
 
     func testRandomColorString() {
-        let randomColor = ColorUtility.randomColorString()
-        XCTAssertTrue(ColorUtility.availableColors.contains(randomColor))
+        let randomColor = AccomplishmentColor.randomColorString()
+        XCTAssertTrue(AccomplishmentColor.availableColorStrings.contains(randomColor))
     }
 
     func testColorFromString() {
@@ -17,5 +17,25 @@ final class ColorUtilityTests: XCTestCase {
         XCTAssertNotNil(blueColor)
         XCTAssertNotNil(greenColor)
         XCTAssertNotNil(defaultColor)
+    }
+    
+    func testAccomplishmentColorEnum() {
+        // Test that all cases are accessible
+        XCTAssertEqual(AccomplishmentColor.allCases.count, 7)
+        
+        // Test that each color has valid RGB values
+        for colorCase in AccomplishmentColor.allCases {
+            let rgb = colorCase.rgbValues
+            XCTAssertGreaterThanOrEqual(rgb.red, 0.0)
+            XCTAssertLessThanOrEqual(rgb.red, 1.0)
+            XCTAssertGreaterThanOrEqual(rgb.green, 0.0)
+            XCTAssertLessThanOrEqual(rgb.green, 1.0)
+            XCTAssertGreaterThanOrEqual(rgb.blue, 0.0)
+            XCTAssertLessThanOrEqual(rgb.blue, 1.0)
+            
+            // Test that color property works
+            let color = colorCase.color
+            XCTAssertNotNil(color)
+        }
     }
 }

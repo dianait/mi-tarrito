@@ -19,6 +19,6 @@ final class AccomplishmentTests: XCTestCase {
         let accomplishment = Accomplishment(text)
 
         XCTAssertEqual(accomplishment.text, text)
-        XCTAssertTrue(ColorUtility.availableColors.contains(accomplishment.color))
+        XCTAssertTrue(AccomplishmentColor.availableColorStrings.contains(accomplishment.color))
     }
 }

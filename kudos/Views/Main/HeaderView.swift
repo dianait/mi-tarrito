@@ -24,11 +24,11 @@ struct HeaderView: View {
             Text(title)
                 .font(.title2)
                 .fontWeight(.bold)
-                .foregroundColor(.orange)
+                .foregroundColor(.purple)
                 .multilineTextAlignment(.center)
             Text(description)
                 .font(.subheadline)
-                .foregroundColor(.gray)
+                .foregroundColor(Color.black.opacity(0.6))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }
@@ -36,10 +36,10 @@ struct HeaderView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: Space.small)
-                .fill(Color.yellow.opacity(0.2))
+                .fill(Color.purple.opacity(0.2))
                 .overlay(
                     RoundedRectangle(cornerRadius: CGFloat(Size.small.rawValue))
-                        .stroke(Color.orange.opacity(0.5), lineWidth: 2)
+                        .stroke(Color.purple.opacity(0.5), lineWidth: 2)
                 )
         )
         .fixedSize(horizontal: false, vertical: true)

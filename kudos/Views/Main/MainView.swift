@@ -43,7 +43,7 @@ public struct MainView: View {
                     }
                     .padding(.vertical, Space.small)
                     .padding(.horizontal, Space.medium)
-                    .background(Color.orange.opacity(0.8))
+                    .background(Color.purple.opacity(0.8))
                     .cornerRadius(CGFloat(Size.extraSmall.rawValue))
                     .accessibilityIdentifier(A11y.MainView.settingsIndentifierButton)
                     .accessibilityAddTraits(.isButton)
@@ -60,7 +60,7 @@ public struct MainView: View {
                         }
                         .padding(.vertical, Space.small)
                         .padding(.horizontal, Space.medium)
-                        .background(Color.orange.opacity(0.8))
+                        .background(Color.purple.opacity(0.8))
                         .cornerRadius(CGFloat(Size.extraSmall.rawValue))
                         .accessibilityLabel(A11y.MainView.aboutLabelButton)
                         .accessibilityHint(A11y.MainView.aboutHintButton)

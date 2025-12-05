@@ -25,7 +25,7 @@ struct EmptyStateView: View {
             RoundedRectangle(cornerRadius: CGFloat(Size.extraLarge.rawValue))
                 .fill(
                     LinearGradient(
-                        gradient: Gradient(colors: [Color.orange, Color.orange.opacity(0.8)]),
+                        gradient: Gradient(colors: [Color.purple, Color.purple.opacity(0.8)]),
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -114,7 +114,7 @@ struct EmptyStateView: View {
             .padding(.horizontal, CGFloat(Size.extraExtraLarge.rawValue))
             .padding(.vertical, CGFloat(Size.mediumSmall.rawValue))
             .background(Capsule().fill(Color.white))
-            .foregroundColor(.orange)
+            .foregroundColor(.purple)
             .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 4)
         }
         .padding(.top, CGFloat(Size.mediumSmall.rawValue))
@@ -135,8 +135,8 @@ struct EmptyStateView: View {
 
             Image(systemName: Icon.star.rawValue)
                 .font(.system(size: iconSize, weight: .bold))
-                .foregroundColor(.orange)
-                .shadow(color: Color.orange.opacity(0.5), radius: 2, x: 0, y: 0)
+                .foregroundColor(.purple)
+                .shadow(color: Color.purple.opacity(0.5), radius: 2, x: 0, y: 0)
         }
     }
 }

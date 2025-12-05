@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TimelineView: View {
-    private var primaryColor: Color { Color.orange }
+    private var primaryColor: Color { Color.purple }
     var body: some View {
         VStack(alignment: .leading, spacing: Space.small) {
             HStack {
@@ -46,7 +46,7 @@ struct TimelineItem: View {
         VStack(alignment: .leading, spacing: Space.small) {
             HStack(spacing: Space.small) {
                 Image(systemName: icon)
-                    .foregroundColor(.orange)
+                    .foregroundColor(.purple)
                     .font(.system(size: Space.mediumLarge))
 
                 Text(title)

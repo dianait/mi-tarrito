@@ -33,7 +33,7 @@ struct Headline: View {
                         size: CGFloat(Size.extraLarge.rawValue),
                         design: .rounded
                     ))
-                    .foregroundColor(.orange)
+                    .foregroundColor(.purple)
                     .accessibilityIdentifier(A11y.MainView.titleIdentifier)
 
                 Text(Copies.AboutMe.description)
@@ -46,7 +46,7 @@ struct Headline: View {
 
             Image(systemName: Icon.sparkles.rawValue)
                 .font(.system(size: CGFloat(Size.extraLarge.rawValue)))
-                .foregroundColor(.orange)
+                .foregroundColor(.purple)
         }
         .padding(.bottom, Space.small)
     }
@@ -68,7 +68,7 @@ struct SectionCard<Content: View>: View {
             HStack {
                 Image(systemName: icon)
                     .font(.title2)
-                    .foregroundColor(.orange)
+                    .foregroundColor(.purple)
 
                 Text(title)
                     .font(.system(.title3, design: .rounded))

@@ -50,15 +50,15 @@
 
 // Step 2
 "step2_title" = "Me compré un tarrito físico";
-"step2_description" = "Y empecé a llenarlo de notas con cosas que me hacían sentirme bien en el trabajo. Una manera práctica de recordar mis logros.";
+"step2_description" = "Y empecé a llenarlo de notas con cosas que me hacían sentirme bien en el trabajo.";
 
 // Step 3
 "step3_title" = "Lo compartí en twitter";
-"step3_description" = "Y el resto es historia... Mi tarrito se hizo famoso, se hablo de él en el AntiEvent, TechFest, y Software Crafters de Barcelona. Gracias Silvia, Ari y Jordi 🫶";
+"step3_description" = "Y el resto es historia... Se hablo de él en el AntiEvent, TechFest, y Software Crafters de Barcelona. Gracias Silvia, Ari y Jordi 🫶";
 
 // Step 4
 "step4_title" = "Y esta es la versión digital";
-"step4_description" = "Quería publicar una app desde hace mucho tiempo, y aquí estamos. ¡Para que todos puedan tener su propio tarrito de logros!";
+"step4_description" = "Quería publicar una app desde hace mucho tiempo, y que mejor oportunidad que esta.";
 
 // Footer
 "footer_title" = "Desarrollado con ❤️ por @Dianait";

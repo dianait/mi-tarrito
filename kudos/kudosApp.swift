@@ -57,7 +57,7 @@ struct ErrorView: View {
         VStack(spacing: 20) {
             Image(systemName: "exclamationmark.triangle")
                 .font(.system(size: 50))
-                .foregroundColor(.orange)
+                .foregroundColor(.purple)
             Text("Error loading application")
                 .font(.headline)
             if let error = error {

@@ -2,33 +2,37 @@ import SwiftUI
 
 // MARK: - Accomplishment Color System
 /// Enum that defines all available colors for accomplishments with their RGB values
+/// Palette based on warm yellows and soft oranges for a positive, cohesive app experience
 enum AccomplishmentColor: String, CaseIterable {
+    case yellow
+    case orange
     case blue
     case green
-    case purple
     case pink
-    case orange
     case teal
-    case yellow
     
     /// RGB values for each color (0.0 - 1.0 range)
-    /// Colors are balanced - not too soft, not too strong, consistent with the app icon palette
+    /// Colors are warm, positive, and cohesive with the app's yellow/orange theme
     var rgbValues: (red: Double, green: Double, blue: Double) {
         switch self {
-        case .blue:
-            return (0.65, 0.80, 0.90) // Medium blue
-        case .green:
-            return (0.70, 0.88, 0.75) // Medium mint green
-        case .purple:
-            return (0.80, 0.70, 0.88) // Medium purple, works better with stickers
-        case .pink:
-            return (0.92, 0.80, 0.88) // Medium rose pink
-        case .orange:
-            return (0.95, 0.82, 0.70) // Medium peach orange, consistent with icon notes
-        case .teal:
-            return (0.70, 0.85, 0.85) // Medium aqua teal
         case .yellow:
-            return (0.96, 0.88, 0.65) // Medium golden yellow, consistent with icon stars
+            // #F7DFA1 - amarillo pastel cálido (primary)
+            return (0.968, 0.875, 0.631)
+        case .orange:
+            // #EBA86B - naranja melocotón suave (accent)
+            return (0.922, 0.659, 0.420)
+        case .blue:
+            // Soft blue that complements the warm palette
+            return (0.70, 0.82, 0.90)
+        case .green:
+            // Soft mint green that works with warm tones
+            return (0.75, 0.88, 0.78)
+        case .pink:
+            // Soft rose pink that harmonizes with yellows
+            return (0.95, 0.85, 0.82)
+        case .teal:
+            // Soft aqua that complements the palette
+            return (0.75, 0.88, 0.85)
         }
     }
     
@@ -61,5 +65,12 @@ extension Color {
         }
         return accomplishmentColor.color
     }
+    
+    // MARK: - App Color Palette
+    /// Primary warm yellow - #F7DFA1 (amarillo pastel cálido)
+    static let appPrimaryYellow = Color(red: 0.968, green: 0.875, blue: 0.631)
+    
+    /// Secondary golden yellow - #F3C879 (amarillo dorado suave)
+    static let appGoldenYellow = Color(red: 0.953, green: 0.784, blue: 0.475)
 }
 

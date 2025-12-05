@@ -22,7 +22,7 @@ struct TarritoView: View {
                         ))
                         .foregroundColor(.white)
                         .padding(5)
-                        .background(reduceTransparency ? Color.purple : Color.purple.opacity(0.9))
+                        .background(reduceTransparency ? Color.orange : Color.orange.opacity(0.9))
                         .clipShape(Circle())
                         .overlay(
                             Circle()

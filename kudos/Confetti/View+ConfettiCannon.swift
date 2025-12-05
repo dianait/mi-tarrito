@@ -46,7 +46,7 @@ public extension View {
         counter: Binding<Int>,
         num: Int = 30,
         confettis: [ConfettiType] = ConfettiType.allCases,
-        colors: [Color] = [.blue, .red, .green, .yellow, .pink, .purple, .orange],
+        colors: [Color] = [.blue, .red, .green, .yellow, .pink, .orange],
         confettiSize: CGFloat = 12.0,
         rainHeight: CGFloat = 600.0,
         fadesOut: Bool = true,

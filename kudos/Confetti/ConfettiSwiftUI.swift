@@ -74,7 +74,7 @@ public struct ConfettiCannon: View {
     public init(counter: Binding<Int>,
                 num: Int = 20,
                 confettis: [ConfettiType] = ConfettiType.allCases,
-                colors: [Color] = [.blue, .red, .green, .yellow, .pink, .purple, .orange],
+                colors: [Color] = [.blue, .red, .green, .yellow, .pink, .orange],
                 confettiSize: CGFloat = 10.0,
                 rainHeight: CGFloat = 600.0,
                 fadesOut: Bool = true,

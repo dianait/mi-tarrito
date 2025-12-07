@@ -16,7 +16,7 @@ struct EmptyStateView: View {
                 Spacer()
             }
             .frame(maxWidth: .infinity)
-            .background(Color.white.opacity(0.97))
+            .background(Color("MainBackground"))
         }
     }
 
@@ -144,5 +144,6 @@ struct EmptyStateView: View {
 #if targetEnvironment(simulator)
     #Preview {
         EmptyStateView()
+            .preferredColorScheme(.dark)
     }
 #endif

@@ -36,7 +36,7 @@ struct KudosApp: App {
         WindowGroup {
             if let container = modelContainer {
                 ContentView()
-                    .background(.white)
+                    .background(Color("MainBackground"))
                     .environmentObject(languageManager)
                     .modelContainer(container)
             } else {

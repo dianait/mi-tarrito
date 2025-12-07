@@ -4,21 +4,26 @@ import SwiftUI
 struct AboutView: View {
     @State private var scrollID = UUID()
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .center, spacing: Space.medium) {
-                Headline()
-
-                SectionCard(
-                    title: Copies.AboutMe.Privacy.title,
-                    icon: Icon.lock.rawValue,
-                    content: {
-                        Text(Copies.AboutMe.Privacy.description)
-                    }
-                )
-                TimelineView()
-                SocialLinks()
+        ZStack {
+            Color("MainBackground")
+                .ignoresSafeArea()
+            ScrollView {
+                LazyVStack(alignment: .center, spacing: Space.medium) {
+                    Headline()
+                    
+                    SectionCard(
+                        title: Copies.AboutMe.Privacy.title,
+                        icon: Icon.lock.rawValue,
+                        content: {
+                            Text(Copies.AboutMe.Privacy.description)
+                        }
+                    )
+                    SocialLinks()
+                    TimelineView()
+                }
+                .padding()
+                .background(Color("MainBackground"))
             }
-            .padding()
         }
         .localized()
     }

@@ -21,6 +21,8 @@ struct CarouselView: View {
             EmptyStateView()
         } else {
             ZStack {
+                Color("MainBackground")
+                         .ignoresSafeArea()  
                 // Only render visible items to improve performance
                 ForEach(Array(visibleRange), id: \.self) { index in
                     if index < items.count {
@@ -86,4 +88,5 @@ struct CarouselView: View {
 #Preview {
     CarouselView()
         .modelContainer(for: Accomplishment.self, inMemory: true)
+        .preferredColorScheme(.dark)
 }

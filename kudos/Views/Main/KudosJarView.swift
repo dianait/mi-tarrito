@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-struct TarritoView: View {
+struct KudosJarView: View {
     @Query private var items: [Accomplishment]
     @Environment(\.accessibilityReduceTransparency) var reduceTransparency
 
@@ -10,7 +10,7 @@ struct TarritoView: View {
             HStack {
                 Spacer()
                 ZStack(alignment: .top) {
-                    Image(.tarrrito)
+                    Image(.kudosjar)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120, height: 75)
@@ -50,6 +50,6 @@ struct TarritoView: View {
 }
 
 #Preview {
-    TarritoView()
+    KudosJarView()
         .modelContainer(for: Accomplishment.self, inMemory: true)
 }

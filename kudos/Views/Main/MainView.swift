@@ -19,7 +19,7 @@ public struct MainView: View {
     public var body: some View {
         NavigationStack {
             VStack(spacing: Space.extraLarge + Space.medium) {
-                TarritoView()
+                KudosJarView()
 
                 HeaderView(mode: $mode, text: $text)
                     .padding(.top, Space.mediumLarge)
@@ -43,7 +43,7 @@ public struct MainView: View {
                     }
                     .padding(.vertical, Space.small)
                     .padding(.horizontal, Space.medium)
-                    .background(Color.orange.opacity(0.8))
+                    .background(Color("PrimaryButtonBackground"))
                     .cornerRadius(CGFloat(Size.extraSmall.rawValue))
                     .accessibilityIdentifier(A11y.MainView.settingsIndentifierButton)
                     .accessibilityAddTraits(.isButton)
@@ -60,7 +60,7 @@ public struct MainView: View {
                         }
                         .padding(.vertical, Space.small)
                         .padding(.horizontal, Space.medium)
-                        .background(Color.orange.opacity(0.8))
+                        .background(Color("PrimaryButtonBackground"))
                         .cornerRadius(CGFloat(Size.extraSmall.rawValue))
                         .accessibilityLabel(A11y.MainView.aboutLabelButton)
                         .accessibilityHint(A11y.MainView.aboutHintButton)
@@ -81,6 +81,7 @@ public struct MainView: View {
                     .presentationDetents([.height(180)])
             }
             .localized()
+            .background(Color("MainBackground"))
         }
     }
 }
@@ -89,5 +90,7 @@ public struct MainView: View {
     #Preview {
         MainView { _ in }
             .environmentObject(LanguageManager.shared)
+            .preferredColorScheme(.dark)
+        
     }
 #endif

@@ -60,6 +60,7 @@ struct TimelineItem: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.leading, Space.small)
         }
+        .background(Color("MainBackground"))
     }
 }
 

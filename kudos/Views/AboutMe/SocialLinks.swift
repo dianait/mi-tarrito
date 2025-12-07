@@ -33,6 +33,7 @@ struct SocialLinks: View {
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .padding(.top)
+        .background(Color("MainBackground"))
     }
 }
 

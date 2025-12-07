@@ -28,7 +28,7 @@ struct HeaderView: View {
                 .multilineTextAlignment(.center)
             Text(description)
                 .font(.subheadline)
-                .foregroundColor(Color.black.opacity(0.6))
+                .foregroundColor(Color("TextColor"))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }

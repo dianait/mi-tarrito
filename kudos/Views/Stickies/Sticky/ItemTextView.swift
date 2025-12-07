@@ -11,7 +11,7 @@ struct ItemTextView: View {
     }
 
     var body: some View {
-        Text(text)
+        Text(text.trimmingCharacters(in: .whitespaces).isEmpty ? "" : text)
             .font(textSize)
             .frame(width: 200, height: 200)
             .multilineTextAlignment(.center)

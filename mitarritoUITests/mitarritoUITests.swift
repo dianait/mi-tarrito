@@ -1,5 +1,5 @@
 import XCTest
-@testable import mitarrito
+@testable import kudos
 
 final class KudosUITests: XCTestCase {
     var app: XCUIApplication!
@@ -36,9 +36,8 @@ final class KudosUITests: XCTestCase {
     }
 
     func testNavigateToAboutView() {
-        let aboutButton = app.buttons["About me Button-About me Button"]
-        // TODO: Check this identifier issue
-        XCTAssert(aboutButton.exists)
+        let aboutButton = app.buttons["About me Button"]
+        XCTAssert(aboutButton.waitForExistence(timeout: 2))
         aboutButton.tap()
 
         let aboutTitle = app.staticTexts["About me Title"]

@@ -1,4 +1,4 @@
-@testable import mitarrito
+@testable import kudos
 import SwiftData
 import SwiftUI
 import XCTest

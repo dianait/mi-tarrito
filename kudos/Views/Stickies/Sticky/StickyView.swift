@@ -37,20 +37,23 @@ struct StickyView: View {
 
                     if isEditMode {
                         DateLabelView(date: item.date)
-                            .offset(x: -180, y: -250)
+                            .offset(x: Dimensions.dateLabelXOffset, y: Dimensions.dateLabelYOffset)
+                            .accessibilityLabel(A11y.StickyView.dateLabel(date: item.date))
                     }
                 }
                 .padding()
             }
         }
-        .frame(width: 200, height: 200)
+        .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(A11y.StickyView.label)
     }
 }
 
 #if targetEnvironment(simulator)
     let itemMock = Accomplishment(
-        "🎉 Tu primer logro aquí",
-        color: "yellow"
+        validatedText: "🎉 Tu primer logro aquí",
+        validatedColor: "yellow"
     )
 
     #Preview("👀 View Mode") {
@@ -59,15 +62,15 @@ struct StickyView: View {
 
     #Preview("✏️ Texto largo") {
         StickyView(item: Accomplishment(
-            "🎉 Tu primer logro aquí esto es un texto muy largo que necestio de una línea para que se note el reajuste del layout",
-            color: "yellow"
+            validatedText: "🎉 Tu primer logro aquí esto es un texto muy largo que necestio de una línea para que se note el reajuste del layout",
+            validatedColor: "yellow"
         )) {}
     }
 
     #Preview("✏️ Texto más largo") {
         StickyView(item: Accomplishment(
-            "🎉 Tu primer logro aquí esto es un texto muy largo que necestio de una línea para que se note el reajuste del layout y el texto sea todavía mas largo",
-            color: "yellow"
+            validatedText: "🎉 Tu primer logro aquí esto es un texto muy largo que necestio de una línea para que se note el reajuste del layout y el texto sea todavía mas largo",
+            validatedColor: "yellow"
         )) {}
     }
 

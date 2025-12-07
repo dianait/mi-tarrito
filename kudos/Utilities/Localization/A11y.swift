@@ -1,3 +1,5 @@
+import Foundation
+
 enum A11y {
     enum Tarrito {
         static let identifier = "tarrito_button_identifier".localized
@@ -42,5 +44,27 @@ enum A11y {
         }
         static let readyToSaveNotification = "stickies_overview_ready_to_save".localized
         static let saveAction = "stickies_overview_save_action".localized
+    }
+    
+    enum CarouselView {
+        static let label = "carousel_view_label".localized
+        static let hint = "carousel_view_hint".localized
+        static func itemLabel(index: Int, total: Int) -> String {
+            "carousel_view_item_label".localized
+                .replacingOccurrences(of: "{index}", with: "\(index + 1)")
+                .replacingOccurrences(of: "{total}", with: "\(total)")
+        }
+        static let itemHint = "carousel_view_item_hint".localized
+        static let deleteHint = "carousel_view_delete_hint".localized
+    }
+    
+    enum StickyView {
+        static let label = "sticky_view_label".localized
+        static func dateLabel(date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            return "sticky_view_date_label".localized.replacingOccurrences(of: "{date}", with: formatter.string(from: date))
+        }
     }
 }

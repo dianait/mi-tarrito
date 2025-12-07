@@ -95,3 +95,24 @@
 "stickies_overview_char_counter" = "Contador de caracteres: {count} de {max}";
 "stickies_overview_ready_to_save" = "Listo para guardar. Suelta para confirmar.";
 "stickies_overview_save_action" = "Guardar logro";
+
+// Error View
+"error_view_title" = "Error al cargar la aplicación";
+"error_view_message" = "Por favor, reinicia la aplicación";
+"error_view_description" = "Se ha producido un error al inicializar los datos de la aplicación.";
+
+// Validation Errors
+"validation_error_empty_text" = "El texto no puede estar vacío";
+"validation_error_text_too_long" = "El texto no puede tener más de {max} caracteres";
+"validation_error_invalid_color" = "El color especificado no es válido";
+
+// Carousel View A11y
+"carousel_view_label" = "Carrusel de logros";
+"carousel_view_hint" = "Desliza horizontalmente para navegar entre tus logros";
+"carousel_view_item_label" = "Logro {index} de {total}";
+"carousel_view_item_hint" = "Desliza para ver más logros";
+"carousel_view_delete_hint" = "Eliminar este logro";
+
+// Sticky View A11y
+"sticky_view_label" = "Nota con logro";
+"sticky_view_date_label" = "Guardado el {date}";

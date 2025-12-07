@@ -4,18 +4,19 @@ import SwiftUI
 struct StickiesViewOverview: View {
     @EnvironmentObject var languageManager: LanguageManager
     @FocusState private var responseIsFocussed: Bool
-    @State private var dragOffset: CGSize = .zero
     @State private var isEditModeActive: Bool = false
     @State private var characterCount: Int = 0
-    @State private var maxCharacters: Int = 140
+    private let maxCharacters: Int = Limits.maxCharacters
 
     @Binding var mode: Mode
     @Binding var text: String
     @Binding var counter: Int
     @Binding var showSaveIndicator: Bool
     @Binding var showSavedMessage: Bool
+    @Binding var dragOffset: CGSize
 
     var action: (String) -> Void
+    var onSave: () -> Void
 
     var body: some View {
         ZStack {
@@ -23,56 +24,70 @@ struct StickiesViewOverview: View {
                 VStack {
                     ZStack {
                         StickiesView(mode: $mode)
+                        
                         VStack {
-                            TextEditor(text: $text)
-                                .focused($responseIsFocussed)
-                                .background(Color.clear)
-                                .foregroundColor(.black)
-                                .font(.body)
-                                .onChange(of: text) { _, newValue in
-                                    characterCount = newValue.count
-
-                                    if newValue.count > maxCharacters {
-                                        text = String(newValue.prefix(maxCharacters))
-                                        characterCount = maxCharacters
-                                    }
+                            ZStack(alignment: .topLeading) {
+                                // Placeholder text - only visible when text is empty
+                                if text.isEmpty {
+                                    Text(Copies.StickiesViewOverView.textEditorPlaceHolder)
+                                        .foregroundColor(.gray)
+                                        .font(.body)
+                                        .padding([.leading, .trailing])
+                                        .padding(.top, 8)
+                                        .accessibilityHidden(true)
                                 }
-                                .onAppear {
-                                    characterCount = text.count
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                                        responseIsFocussed = true
+                                
+                                // TextEditor - always present but only visible when there's text
+                                TextEditor(text: $text)
+                                    .focused($responseIsFocussed)
+                                    .scrollContentBackground(.hidden)
+                                    .background(Color.clear)
+                                    .foregroundColor(.black)
+                                    .font(.body)
+                                    .onChange(of: text) { _, newValue in
+                                        characterCount = newValue.count
 
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                            UIAccessibility.post(
-                                                notification: .screenChanged,
-                                                argument: A11y.StickiesViewOverview.editModeNotification
-                                            )
+                                        if newValue.count > maxCharacters {
+                                            text = String(newValue.prefix(maxCharacters))
+                                            characterCount = maxCharacters
                                         }
-
-                                        isEditModeActive = true
                                     }
-                                }
-                                .onDisappear {
-                                    isEditModeActive = false
-                                }
-                                .onReceive(text.publisher.last()) {
-                                    if ($0 as Character).asciiValue == 10 {
-                                        responseIsFocussed = false
-                                        text.removeLast()
+                                    .onAppear {
                                         characterCount = text.count
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + Timing.focusDelay) {
+                                            responseIsFocussed = true
+
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + Timing.accessibilityNotificationDelay) {
+                                                UIAccessibility.post(
+                                                    notification: .screenChanged,
+                                                    argument: A11y.StickiesViewOverview.editModeNotification
+                                                )
+                                            }
+
+                                            isEditModeActive = true
+                                        }
                                     }
-                                }
-                                .padding([.leading, .trailing])
-                                .opacity(.zero)
-                                .frame(width: 220, height: 150)
-                                .accessibilityLabel(A11y.StickiesViewOverview.textEditorLabel)
-                                .accessibilityHint(A11y.StickiesViewOverview.textEditorHint)
-                                .accessibilityIdentifier(A11y.StickiesViewOverview.textEditorIdentifer)
+                                    .onDisappear {
+                                        isEditModeActive = false
+                                    }
+                                    .onReceive(text.publisher.last()) {
+                                        if ($0 as Character).asciiValue == 10 {
+                                            responseIsFocussed = false
+                                            text.removeLast()
+                                            characterCount = text.count
+                                        }
+                                    }
+                                    .padding([.leading, .trailing])
+                                    .frame(width: Dimensions.textEditorWidth, height: Dimensions.textEditorHeight)
+                                    .accessibilityLabel(A11y.StickiesViewOverview.textEditorLabel)
+                                    .accessibilityHint(A11y.StickiesViewOverview.textEditorHint)
+                                    .accessibilityIdentifier(A11y.StickiesViewOverview.textEditorIdentifer)
+                            }
 
                             Text("\(characterCount)/\(maxCharacters)")
                                 .font(.caption)
                                 .foregroundColor(characterCount > maxCharacters ? .red : .gray)
-                                .frame(width: 250, alignment: .trailing)
+                                .frame(width: Dimensions.counterFrameWidth, alignment: .trailing)
                                 .padding(.trailing)
                                 .accessibilityLabel(
                                     A11y.StickiesViewOverview.charCounterLabel(
@@ -81,13 +96,6 @@ struct StickiesViewOverview: View {
                                     )
                                 )
                         }
-
-                        Text(text.isEmpty ? Copies.StickiesViewOverView.textEditorPlaceHolder : text)
-                            .foregroundColor(text.isEmpty ? .gray : .black)
-                            .opacity(1)
-                            .frame(width: 250, height: 150)
-                            .padding([.leading, .trailing])
-                            .accessibilityHidden(true)
                     }
                 }
                 .offset(dragOffset)
@@ -96,11 +104,11 @@ struct StickiesViewOverview: View {
                         .onChanged { gesture in
                             if !text.isEmpty {
                                 let dragAmount = gesture.translation.height
-                                let dampedAmount = min(0, dragAmount * 0.8)
+                                let dampedAmount = min(0, dragAmount * Limits.dragDampingFactor)
                                 dragOffset = CGSize(width: 0, height: dampedAmount)
-                                showSaveIndicator = dragAmount < -100
+                                showSaveIndicator = dragAmount < Limits.saveIndicatorThreshold
 
-                                if dragAmount < -100, !showSaveIndicator {
+                                if dragAmount < Limits.saveIndicatorThreshold, !showSaveIndicator {
                                     UIAccessibility.post(
                                         notification: .announcement,
                                         argument: A11y.StickiesViewOverview.readyToSaveNotification
@@ -109,10 +117,10 @@ struct StickiesViewOverview: View {
                             }
                         }
                         .onEnded { gesture in
-                            if gesture.translation.height < -50, !text.isEmpty {
+                            if gesture.translation.height < Limits.saveDragThreshold, !text.isEmpty {
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.notificationOccurred(.success)
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + Timing.saveActionDelay) {
                                     save()
                                     withAnimation {
                                         showSavedMessage = true
@@ -121,7 +129,7 @@ struct StickiesViewOverview: View {
                                     }
                                 }
                             } else {
-                                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                withAnimation(.spring(response: AnimationConstants.springResponse, dampingFraction: AnimationConstants.springDampingFraction)) {
                                     dragOffset = .zero
                                     showSaveIndicator = false
                                 }
@@ -142,7 +150,7 @@ struct StickiesViewOverview: View {
         }
         .onChange(of: mode) { oldValue, newValue in
             if newValue == .edit && oldValue == .view {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Timing.accessibilityNotificationDelay) {
                     responseIsFocussed = true
                 }
             }
@@ -151,12 +159,20 @@ struct StickiesViewOverview: View {
     }
 
     private func save() {
-        if !text.isEmpty {
-            action(text)
-            text = ""
-            counter += 1
+        // Validate text before saving
+        let validationResult = AccomplishmentValidator.validateText(text)
+        
+        switch validationResult {
+        case .success(let validatedText):
+            action(validatedText)
             characterCount = 0
+            onSave()
+            mode = .view
+        case .failure(let error):
+            // Validation failed - don't save
+            // The UI already prevents saving empty text, but this adds an extra safety layer
+            print("Validation error: \(error.localizedDescription)")
+            mode = .view
         }
-        mode = .view
     }
 }

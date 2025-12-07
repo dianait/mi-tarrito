@@ -8,7 +8,7 @@ struct StickiesView: View {
     var lastMessage: String {
         switch mode {
         case .view: return items.first?.text ?? ""
-        case .edit: return ""
+        case .edit: return "" // In edit mode, don't show placeholder in StickyView
         }
     }
 
@@ -18,8 +18,8 @@ struct StickiesView: View {
                 backgroundStickies()
                 StickyView(
                     item: Accomplishment(
-                        lastMessage,
-                        color: Copies.Colors.yellow.rawValue
+                        validatedText: lastMessage.isEmpty ? " " : lastMessage,
+                        validatedColor: Copies.Colors.yellow.rawValue
                     )
                 )
                 .offset(x: .zero, y: .zero)
@@ -41,7 +41,7 @@ struct StickiesView: View {
     @ViewBuilder
     private func backgroundStickies() -> some View {
         Group {
-            StickyView(item: Accomplishment(Copies.StickisView.accomplishmentExample3, color: Copies.Colors.green.rawValue))
+            StickyView(item: Accomplishment(validatedText: Copies.StickisView.accomplishmentExample3, validatedColor: Copies.Colors.green.rawValue))
                 .offset(
                     x: -CGFloat(Size.extraExtraExtraLarge.rawValue),
                     y: -CGFloat(Size.extraExtraLarge.rawValue)
@@ -51,8 +51,8 @@ struct StickiesView: View {
 
             StickyView(
                 item: Accomplishment(
-                    Copies.StickisView.accomplishmentExample2,
-                    color: Copies.Colors.blue.rawValue
+                    validatedText: Copies.StickisView.accomplishmentExample2,
+                    validatedColor: Copies.Colors.blue.rawValue
                 )
             )
             .offset(
@@ -64,8 +64,8 @@ struct StickiesView: View {
 
             StickyView(
                 item: Accomplishment(
-                    Copies.StickisView.accomplishmentExample1,
-                    color: Copies.Colors.orange.rawValue
+                    validatedText: Copies.StickisView.accomplishmentExample1,
+                    validatedColor: Copies.Colors.orange.rawValue
                 )
             )
             .offset(

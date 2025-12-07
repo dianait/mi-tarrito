@@ -1,6 +1,6 @@
 import XCTest
 import SwiftUI
-@testable import mitarrito
+@testable import kudos
 
 final class AccomplishmentColorTests: XCTestCase {
 

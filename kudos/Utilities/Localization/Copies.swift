@@ -192,4 +192,18 @@ enum Copies {
             }
         }
     }
+
+    enum ErrorView {
+        static var title: String {
+            return "error_view_title".localized
+        }
+
+        static var message: String {
+            return "error_view_message".localized
+        }
+
+        static var description: String {
+            return "error_view_description".localized
+        }
+    }
 }

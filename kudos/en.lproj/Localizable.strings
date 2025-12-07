@@ -95,3 +95,24 @@
 "stickies_overview_char_counter" = "Character counter: {count} of {max}";
 "stickies_overview_ready_to_save" = "Ready to save. Release to confirm.";
 "stickies_overview_save_action" = "Save achievement";
+
+// Error View
+"error_view_title" = "Error loading application";
+"error_view_message" = "Please restart the application";
+"error_view_description" = "An error occurred while initializing the application data.";
+
+// Validation Errors
+"validation_error_empty_text" = "Text cannot be empty";
+"validation_error_text_too_long" = "Text cannot exceed {max} characters";
+"validation_error_invalid_color" = "The specified color is invalid";
+
+// Carousel View A11y
+"carousel_view_label" = "Achievements carousel";
+"carousel_view_hint" = "Swipe horizontally to navigate through your achievements";
+"carousel_view_item_label" = "Achievement {index} of {total}";
+"carousel_view_item_hint" = "Swipe to see more achievements";
+"carousel_view_delete_hint" = "Delete this achievement";
+
+// Sticky View A11y
+"sticky_view_label" = "Achievement note";
+"sticky_view_date_label" = "Saved on {date}";

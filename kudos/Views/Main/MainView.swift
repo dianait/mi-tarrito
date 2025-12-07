@@ -7,12 +7,7 @@ enum Mode {
 }
 
 public struct MainView: View {
-    @State private var text = ""
-    @State private var counter: Int = 0
-    @State var mode: Mode = .view
-    @State private var showSaveIndicator = false
-    @State private var showSavedMessage = false
-    @State private var showLanguageSettings = false
+    @StateObject private var viewModel = MainViewModel()
     @EnvironmentObject var languageManager: LanguageManager
     var action: (String) -> Void
 
@@ -21,16 +16,21 @@ public struct MainView: View {
             VStack(spacing: Space.extraLarge + Space.medium) {
                 KudosJarView()
 
-                HeaderView(mode: $mode, text: $text)
+                HeaderView(mode: $viewModel.mode, text: $viewModel.text)
                     .padding(.top, Space.mediumLarge)
 
                 StickiesViewOverview(
-                    mode: $mode,
-                    text: $text,
-                    counter: $counter,
-                    showSaveIndicator: $showSaveIndicator,
-                    showSavedMessage: $showSavedMessage,
-                    action: action
+                    mode: $viewModel.mode,
+                    text: $viewModel.text,
+                    counter: $viewModel.counter,
+                    showSaveIndicator: $viewModel.showSaveIndicator,
+                    showSavedMessage: $viewModel.showSavedMessage,
+                    dragOffset: $viewModel.dragOffset,
+                    action: action,
+                    onSave: {
+                        viewModel.incrementCounter()
+                        viewModel.resetText()
+                    }
                 )
 
                 Spacer()
@@ -48,7 +48,7 @@ public struct MainView: View {
                     .accessibilityIdentifier(A11y.MainView.settingsIndentifierButton)
                     .accessibilityAddTraits(.isButton)
                     .onTapGesture {
-                        showLanguageSettings = true
+                        viewModel.showLanguageSettings = true
                     }
 
                     NavigationLink(destination: AboutView()) {
@@ -62,21 +62,21 @@ public struct MainView: View {
                         .padding(.horizontal, Space.medium)
                         .background(Color("PrimaryButtonBackground"))
                         .cornerRadius(CGFloat(Size.extraSmall.rawValue))
-                        .accessibilityLabel(A11y.MainView.aboutLabelButton)
-                        .accessibilityHint(A11y.MainView.aboutHintButton)
-                        .accessibilityIdentifier(A11y.MainView.aboutIndentifierButton)
                     }
+                    .accessibilityLabel(A11y.MainView.aboutLabelButton)
+                    .accessibilityHint(A11y.MainView.aboutHintButton)
+                    .accessibilityIdentifier(A11y.MainView.aboutIndentifierButton)
                 }
 
             }
-            .savedConfirmation(isPresented: $showSavedMessage, onDismiss: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                    showSavedMessage = false
+            .savedConfirmation(isPresented: $viewModel.showSavedMessage, onDismiss: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Timing.savedMessageDismissDelay) {
+                    viewModel.hideSavedMessage()
                 }
             })
-            .confettiCannon(counter: $counter)
+            .confettiCannon(counter: $viewModel.counter)
             .padding(.horizontal)
-            .sheet(isPresented: $showLanguageSettings) {
+            .sheet(isPresented: $viewModel.showLanguageSettings) {
                 LanguageSettingsView()
                     .presentationDetents([.height(180)])
             }

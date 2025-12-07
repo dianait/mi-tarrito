@@ -1,5 +1,5 @@
 import XCTest
-@testable import mitarrito
+@testable import kudos
 
 final class AccessibilityTextTests: XCTestCase {
 

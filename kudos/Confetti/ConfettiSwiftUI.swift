@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 public enum ConfettiType: CaseIterable, Hashable {
     public enum Shape {
@@ -197,8 +198,8 @@ struct ConfettiView: View {
         return 0.2 + confettiConfig.explosionAnimationDuration + getRandomExplosionTimeVariation()
     }
 
-    func getAnimation() -> Animation {
-        return Animation.timingCurve(0.1, 0.8, 0, 1, duration: getAnimationDuration())
+    func getAnimation() -> SwiftUI.Animation {
+        return SwiftUI.Animation.timingCurve(0.1, 0.8, 0, 1, duration: getAnimationDuration())
     }
 
     func getDistance() -> CGFloat {
@@ -234,7 +235,7 @@ struct ConfettiView: View {
                 }
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + getDelayBeforeRainAnimation()) {
-                    withAnimation(Animation.timingCurve(0.12, 0, 0.39, 0, duration: confettiConfig.rainAnimationDuration)) {
+                    withAnimation(SwiftUI.Animation.timingCurve(0.12, 0, 0.39, 0, duration: confettiConfig.rainAnimationDuration)) {
                         location.y += confettiConfig.rainHeight
                         opacity = confettiConfig.fadesOut ? 0 : confettiConfig.opacity
                     }
@@ -264,9 +265,9 @@ struct ConfettiAnimationView: View {
         shape
             .foregroundColor(color)
             .rotation3DEffect(.degrees(move ? 360 : 0), axis: (x: spinDirX, y: 0, z: 0))
-            .animation(Animation.linear(duration: xSpeed).repeatCount(10, autoreverses: false), value: move)
+            .animation(SwiftUI.Animation.linear(duration: xSpeed).repeatCount(10, autoreverses: false), value: move)
             .rotation3DEffect(.degrees(move ? 360 : 0), axis: (x: 0, y: 0, z: spinDirZ), anchor: UnitPoint(x: anchor, y: anchor))
-            .animation(Animation.linear(duration: zSpeed).repeatForever(autoreverses: false), value: move)
+            .animation(SwiftUI.Animation.linear(duration: zSpeed).repeatForever(autoreverses: false), value: move)
             .onAppear {
                 if firstAppear {
                     move = true

@@ -40,37 +40,9 @@ struct KudosApp: App {
                     .environmentObject(languageManager)
                     .modelContainer(container)
             } else {
-                // Elegant error view instead of crash
                 ErrorView(error: modelContainerError)
                     .environmentObject(languageManager)
             }
         }
-    }
-}
-
-// Error view to display when data initialization fails
-struct ErrorView: View {
-    let error: Error?
-    @EnvironmentObject var languageManager: LanguageManager
-    
-    var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "exclamationmark.triangle")
-                .font(.system(size: 50))
-                .foregroundColor(.orange)
-            Text("Error loading application")
-                .font(.headline)
-            if let error = error {
-                Text(error.localizedDescription)
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
-            Text("Please restart the application")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-        }
-        .padding()
     }
 }

@@ -206,4 +206,52 @@ enum Copies {
             return "error_view_description".localized
         }
     }
+    
+    enum ValidationAlert {
+        static var title: String {
+            return "validation_alert_title".localized
+        }
+
+        static var okButton: String {
+            return "validation_alert_ok".localized
+        }
+
+        static var defaultMessage: String {
+            return "validation_alert_default_message".localized
+        }
+    }
+
+    enum AccomplishmentDetail {
+        static var dateLabel: String {
+            return "accomplishment_detail_date_label".localized
+        }
+        
+        static var deleteButton: String {
+            return "accomplishment_detail_delete_button".localized
+        }
+        
+        static var deleteHint: String {
+            return "accomplishment_detail_delete_hint".localized
+        }
+        
+        static var closeButton: String {
+            return "accomplishment_detail_close_button".localized
+        }
+        
+        static var deleteConfirmationTitle: String {
+            return "accomplishment_detail_delete_confirmation_title".localized
+        }
+        
+        static var deleteConfirmationMessage: String {
+            return "accomplishment_detail_delete_confirmation_message".localized
+        }
+        
+        static var deleteCancel: String {
+            return "accomplishment_detail_delete_cancel".localized
+        }
+        
+        static var deleteConfirm: String {
+            return "accomplishment_detail_delete_confirm".localized
+        }
+    }
 }

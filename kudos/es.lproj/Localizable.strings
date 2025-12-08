@@ -116,3 +116,18 @@
 // Sticky View A11y
 "sticky_view_label" = "Nota con logro";
 "sticky_view_date_label" = "Guardado el {date}";
+
+// Validation Alert
+"validation_alert_title" = "No se puede guardar";
+"validation_alert_ok" = "OK";
+"validation_alert_default_message" = "Por favor, revisa tu texto e inténtalo de nuevo";
+
+// Accomplishment Detail View
+"accomplishment_detail_date_label" = "Fecha";
+"accomplishment_detail_delete_button" = "Eliminar logro";
+"accomplishment_detail_delete_hint" = "Elimina este logro permanentemente";
+"accomplishment_detail_close_button" = "Cerrar";
+"accomplishment_detail_delete_confirmation_title" = "¿Eliminar logro?";
+"accomplishment_detail_delete_confirmation_message" = "Esta acción no se puede deshacer. El logro se eliminará permanentemente.";
+"accomplishment_detail_delete_cancel" = "Cancelar";
+"accomplishment_detail_delete_confirm" = "Eliminar";

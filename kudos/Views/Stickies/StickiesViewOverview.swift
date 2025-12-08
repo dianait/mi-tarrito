@@ -6,6 +6,8 @@ struct StickiesViewOverview: View {
     @FocusState private var responseIsFocussed: Bool
     @State private var isEditModeActive: Bool = false
     @State private var characterCount: Int = 0
+    @State private var validationError: ValidationError?
+    @State private var showValidationError: Bool = false
     private let maxCharacters: Int = Limits.maxCharacters
 
     @Binding var mode: Mode
@@ -155,13 +157,20 @@ struct StickiesViewOverview: View {
                 }
             }
         }
+        .alert(Copies.ValidationAlert.title, isPresented: $showValidationError) {
+            Button(Copies.ValidationAlert.okButton, role: .cancel) {
+                showValidationError = false
+            }
+        } message: {
+            Text(validationError?.errorDescription ?? Copies.ValidationAlert.defaultMessage)
+        }
         .localized()
     }
 
     private func save() {
         // Validate text before saving
         let validationResult = AccomplishmentValidator.validateText(text)
-        
+
         switch validationResult {
         case .success(let validatedText):
             action(validatedText)
@@ -169,10 +178,11 @@ struct StickiesViewOverview: View {
             onSave()
             mode = .view
         case .failure(let error):
-            // Validation failed - don't save
-            // The UI already prevents saving empty text, but this adds an extra safety layer
-            print("Validation error: \(error.localizedDescription)")
-            mode = .view
+            // Validation failed - keep edit mode and show error to user
+            validationError = error
+            showValidationError = true
+            // Keep focus on text editor so user can fix the issue
+            responseIsFocussed = true
         }
     }
 }

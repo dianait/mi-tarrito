@@ -116,3 +116,18 @@
 // Sticky View A11y
 "sticky_view_label" = "Achievement note";
 "sticky_view_date_label" = "Saved on {date}";
+
+// Validation Alert
+"validation_alert_title" = "Cannot save";
+"validation_alert_ok" = "OK";
+"validation_alert_default_message" = "Please check your text and try again";
+
+// Accomplishment Detail View
+"accomplishment_detail_date_label" = "Date";
+"accomplishment_detail_delete_button" = "Delete achievement";
+"accomplishment_detail_delete_hint" = "Permanently delete this achievement";
+"accomplishment_detail_close_button" = "Close";
+"accomplishment_detail_delete_confirmation_title" = "Delete achievement?";
+"accomplishment_detail_delete_confirmation_message" = "This action cannot be undone. The achievement will be permanently deleted.";
+"accomplishment_detail_delete_cancel" = "Cancel";
+"accomplishment_detail_delete_confirm" = "Delete";

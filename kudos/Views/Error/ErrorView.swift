@@ -52,3 +52,4 @@ struct ErrorView: View {
         .environmentObject(LanguageManager.shared)
 }
 #endif
+

@@ -10,3 +10,4 @@ enum AnimationConstants {
     static let carouselRotationDegrees: CGFloat = 15
     static let carouselOffsetMultiplier: CGFloat = 300
 }
+

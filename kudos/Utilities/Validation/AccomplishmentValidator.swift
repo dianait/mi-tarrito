@@ -35,3 +35,4 @@ struct AccomplishmentValidator {
         return .success(trimmedText)
     }
 }
+

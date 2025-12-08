@@ -1,23 +1,16 @@
 import Foundation
 import SwiftUI
 
-/// Thread-safe language manager for app localization.
-/// Uses @MainActor to ensure all state changes happen on the main thread,
-/// which is required for ObservableObject publishers.
 @MainActor
 final class LanguageManager: ObservableObject {
     @Published var currentLanguage: String
 
-    /// Thread-safe singleton using nonisolated(unsafe) for static initialization
-    nonisolated(unsafe) static let shared: LanguageManager = {
-        // Must use MainActor.assumeIsolated since we're in a static context
-        // but the init requires MainActor isolation
+    static let shared: LanguageManager = {
         let instance = LanguageManager()
         return instance
     }()
 
     static let supportedLanguages = ["es", "en"]
-
     private static let languageKey = "selectedLanguage"
 
     private init() {

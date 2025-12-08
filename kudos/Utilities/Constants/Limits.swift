@@ -9,8 +9,10 @@ enum Limits {
     static let saveIndicatorThreshold: CGFloat = -100
     static let carouselSwipeThreshold: CGFloat = 50
     static let dragDampingFactor: CGFloat = 0.8
+    static let carouselDragMinimumDistance: CGFloat = 30
     
     // Carousel visibility
     static let carouselWindowSize: Int = 3
     static let carouselVisibilityThreshold: Int = 2
 }
+

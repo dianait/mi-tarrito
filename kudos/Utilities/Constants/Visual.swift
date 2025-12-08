@@ -5,3 +5,4 @@ enum Visual {
     static let minimumScaleFactorSmall: CGFloat = 0.7
     static let minimumScaleFactorMedium: CGFloat = 0.8
 }
+

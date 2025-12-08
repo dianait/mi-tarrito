@@ -7,9 +7,24 @@ struct CarouselView: View {
     @Query(sort: \Accomplishment.date, order: .reverse) private var items: [Accomplishment]
     @State private var currentIndex: Int = 0
     @State private var translation: CGFloat = 0
-    
+    @State private var selectedItem: Accomplishment? = nil
+
+    // Drag state management with session tracking to prevent race conditions
+    @State private var dragSessionId: UUID?
+    @State private var lastDragEndTime: Date = .distantPast
+
     // Cache for item indices to optimize removal
     @State private var itemIndexMap: [PersistentIdentifier: Int] = [:]
+
+    // Computed property to check if we're in a drag session
+    private var isDragging: Bool {
+        dragSessionId != nil
+    }
+
+    // Check if enough time has passed since last drag to allow tap
+    private var canTap: Bool {
+        Date().timeIntervalSince(lastDragEndTime) > Timing.carouselTapDelay
+    }
 
     // Calculate the range of visible items to optimize performance
     private var visibleRange: Range<Int> {
@@ -29,55 +44,100 @@ struct CarouselView: View {
     }
     
     var body: some View {
-        if items.isEmpty {
-            EmptyStateView()
-        } else {
-            ZStack {
-                Color("MainBackground")
-                    .ignoresSafeArea()
-                
-                // Only render visible items using persistent IDs for better performance
-                ForEach(visibleItems, id: \.item.persistentModelID) { index, item in
-                    cardView(for: item, at: index)
+        NavigationStack {
+            if items.isEmpty {
+                EmptyStateView()
+            } else {
+                ZStack {
+                    Color("MainBackground")
+                        .ignoresSafeArea()
+                    
+                    // Only render visible items using persistent IDs for better performance
+                    ForEach(visibleItems, id: \.item.persistentModelID) { index, item in
+                        cardView(for: item, at: index)
+                    }
                 }
-            }
-            .gesture(dragGesture)
-            .accessibilityElement(children: .contain)
-            .accessibilityLabel(A11y.CarouselView.label)
-            .accessibilityHint(A11y.CarouselView.hint)
-            .onAppear {
-                updateIndexMap()
-            }
-            .onChange(of: items.count) { _, _ in
-                updateIndexMap()
+                .highPriorityGesture(dragGesture)
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel(A11y.CarouselView.label)
+                .accessibilityHint(A11y.CarouselView.itemHint)
+                .onAppear {
+                    updateIndexMap()
+                }
+                .onChange(of: items.count) { _, _ in
+                    updateIndexMap()
+                }
+                .navigationDestination(isPresented: Binding(
+                    get: { selectedItem != nil },
+                    set: { if !$0 { selectedItem = nil } }
+                )) {
+                    if let item = selectedItem {
+                        AccomplishmentDetailView(accomplishment: item)
+                    }
+                }
             }
         }
     }
     
     @ViewBuilder
     private func cardView(for item: Accomplishment, at index: Int) -> some View {
-        StickyView(item: item, delete: { removeItem(item: item) })
-            .rotation3DEffect(
-                .degrees(Double(cardRotation(index))),
-                axis: (x: 0, y: 1, z: 0),
-                anchor: .center,
-                perspective: AnimationConstants.carouselPerspective
-            )
-            .offset(x: cardOffset(index))
-            .opacity(cardOpacity(index))
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel(A11y.CarouselView.itemLabel(index: index, total: items.count))
-            .accessibilityHint(A11y.CarouselView.itemHint)
-            .accessibilityAddTraits(.isButton)
+        ZStack {
+            // Show delete button and date in carousel
+            StickyView(item: item, delete: { removeItem(item: item) })
+            
+            // Tap gesture for navigation - only active when not dragging
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    // Only navigate if we're not dragging and enough time has passed
+                    if !isDragging && canTap {
+                        selectedItem = item
+                    }
+                }
+        }
+        .rotation3DEffect(
+            .degrees(Double(cardRotation(index))),
+            axis: (x: 0, y: 1, z: 0),
+            anchor: .center,
+            perspective: AnimationConstants.carouselPerspective
+        )
+        .offset(x: cardOffset(index))
+        .opacity(cardOpacity(index))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(A11y.CarouselView.itemLabel(index: index, total: items.count))
+        .accessibilityHint(A11y.CarouselView.itemHint)
+        .accessibilityAddTraits(.isButton)
     }
     
     private var dragGesture: some Gesture {
-        DragGesture()
+        DragGesture(minimumDistance: Limits.carouselDragMinimumDistance)
             .onChanged { gesture in
-                translation = gesture.translation.width
+                // Start new drag session if not already dragging
+                if dragSessionId == nil {
+                    dragSessionId = UUID()
+                }
+                // Only update translation if drag is significant
+                if abs(gesture.translation.width) > 10 {
+                    translation = gesture.translation.width
+                }
             }
             .onEnded { gesture in
+                // Capture current session ID before async delay
+                let currentSessionId = dragSessionId
+
                 handleDragEnd(gesture: gesture)
+
+                // Record end time for tap delay calculation
+                lastDragEndTime = Date()
+
+                // Reset drag session after animation completes
+                // Using session ID comparison prevents race conditions with rapid gestures
+                DispatchQueue.main.asyncAfter(deadline: .now() + Timing.carouselTapDelay) {
+                    // Only clear if this is still the same session
+                    if dragSessionId == currentSessionId {
+                        dragSessionId = nil
+                    }
+                }
             }
     }
     

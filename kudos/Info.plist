@@ -6,6 +6,8 @@
 	<string></string>
 	<key>English</key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>Kudos needs access to your camera to take photos of your achievements</string>
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array/>
 	<key>NSPrivacyCollectedDataTypes</key>

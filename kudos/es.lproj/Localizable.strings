@@ -101,6 +101,11 @@
 "error_view_message" = "Por favor, reinicia la aplicación";
 "error_view_description" = "Se ha producido un error al inicializar los datos de la aplicación.";
 
+// In-Memory Warning
+"in_memory_warning_title" = "Los datos no se guardarán";
+"in_memory_warning_message" = "Hubo un problema al acceder al almacenamiento. Tus logros solo se guardarán temporalmente y se perderán cuando cierres la app.";
+"in_memory_warning_ok" = "Entendido";
+
 // Validation Errors
 "validation_error_empty_text" = "El texto no puede estar vacío";
 "validation_error_text_too_long" = "El texto no puede tener más de {max} caracteres";

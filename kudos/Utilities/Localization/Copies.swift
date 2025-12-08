@@ -206,6 +206,20 @@ enum Copies {
             return "error_view_description".localized
         }
     }
+
+    enum InMemoryWarning {
+        static var title: String {
+            return "in_memory_warning_title".localized
+        }
+
+        static var message: String {
+            return "in_memory_warning_message".localized
+        }
+
+        static var okButton: String {
+            return "in_memory_warning_ok".localized
+        }
+    }
     
     enum ValidationAlert {
         static var title: String {

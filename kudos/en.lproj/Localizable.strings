@@ -101,6 +101,11 @@
 "error_view_message" = "Please restart the application";
 "error_view_description" = "An error occurred while initializing the application data.";
 
+// In-Memory Warning
+"in_memory_warning_title" = "Data will not be saved";
+"in_memory_warning_message" = "There was a problem accessing storage. Your achievements will only be saved temporarily and will be lost when you close the app.";
+"in_memory_warning_ok" = "I understand";
+
 // Validation Errors
 "validation_error_empty_text" = "Text cannot be empty";
 "validation_error_text_too_long" = "Text cannot exceed {max} characters";

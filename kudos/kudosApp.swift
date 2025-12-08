@@ -6,6 +6,8 @@ struct KudosApp: App {
     @StateObject private var languageManager = LanguageManager.shared
     @State private var modelContainerError: Error?
     @State private var modelContainer: ModelContainer?
+    @State private var isUsingInMemoryFallback: Bool = false
+    @State private var showInMemoryWarning: Bool = false
 
     init() {
         // Initialize ModelContainer safely
@@ -16,6 +18,7 @@ struct KudosApp: App {
 
         do {
             _modelContainer = State(initialValue: try ModelContainer(for: schema, configurations: [modelConfiguration]))
+            _isUsingInMemoryFallback = State(initialValue: false)
         } catch {
             // Instead of fatalError, save the error and use an in-memory container as fallback
             print("Error creating ModelContainer: \(error.localizedDescription)")
@@ -24,6 +27,8 @@ struct KudosApp: App {
             do {
                 let fallbackConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
                 _modelContainer = State(initialValue: try ModelContainer(for: schema, configurations: [fallbackConfiguration]))
+                _isUsingInMemoryFallback = State(initialValue: true)
+                _showInMemoryWarning = State(initialValue: true)
                 print("Using in-memory ModelContainer as fallback")
             } catch {
                 print("Error creating fallback ModelContainer: \(error.localizedDescription)")
@@ -39,6 +44,13 @@ struct KudosApp: App {
                     .background(Color("MainBackground"))
                     .environmentObject(languageManager)
                     .modelContainer(container)
+                    .alert(Copies.InMemoryWarning.title, isPresented: $showInMemoryWarning) {
+                        Button(Copies.InMemoryWarning.okButton, role: .cancel) {
+                            showInMemoryWarning = false
+                        }
+                    } message: {
+                        Text(Copies.InMemoryWarning.message)
+                    }
             } else {
                 ErrorView(error: modelContainerError)
                     .environmentObject(languageManager)

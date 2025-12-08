@@ -2,8 +2,6 @@ import SwiftUI
 
 struct EmptyStateView: View {
     @Environment(\.dismiss) private var dismiss
-    private let cardWidth: CGFloat = 0.90
-    private let circleSize: CGFloat = 90
     private let iconSize: CGFloat = .init(Size.extraExtraLarge.rawValue)
 
     var body: some View {
@@ -11,7 +9,7 @@ struct EmptyStateView: View {
             VStack(alignment: .center) {
                 Spacer()
 
-                cardView(width: min(geometry.size.width * cardWidth, 500))
+                cardView(width: min(geometry.size.width * Dimensions.emptyStateCardWidthRatio, Dimensions.emptyStateCardMaxWidth))
 
                 Spacer()
             }
@@ -44,18 +42,18 @@ struct EmptyStateView: View {
             .padding(.vertical, CGFloat(Size.extraExtraLarge.rawValue))
             .padding(.horizontal, CGFloat(Size.large.rawValue))
             topCircleWithStar()
-                .offset(y: -45)
+                .offset(y: Dimensions.emptyStateCircleOffset)
         }
     }
 
     private func backgroundCircles() -> some View {
-        ForEach(0 ..< 15, id: \.self) { _ in
+        ForEach(0 ..< Dimensions.emptyStateBackgroundCircleCount, id: \.self) { _ in
             Circle()
                 .fill(Color.white.opacity(0.1))
-                .frame(width: 20, height: 20)
+                .frame(width: Dimensions.emptyStateBackgroundCircleSize, height: Dimensions.emptyStateBackgroundCircleSize)
                 .offset(
-                    x: CGFloat.random(in: -150 ... 150),
-                    y: CGFloat.random(in: -250 ... 250)
+                    x: CGFloat.random(in: Dimensions.emptyStateBackgroundCircleRangeX),
+                    y: CGFloat.random(in: Dimensions.emptyStateBackgroundCircleRangeY)
                 )
         }
     }
@@ -130,7 +128,7 @@ struct EmptyStateView: View {
                         endPoint: .bottom
                     )
                 )
-                .frame(width: circleSize, height: circleSize)
+                .frame(width: Dimensions.emptyStateCircleSize, height: Dimensions.emptyStateCircleSize)
                 .shadow(color: Color.black.opacity(0.3), radius: 8, x: 0, y: 4)
 
             Image(systemName: Icon.star.rawValue)

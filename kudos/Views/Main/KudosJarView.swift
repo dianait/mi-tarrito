@@ -13,7 +13,7 @@ struct KudosJarView: View {
                     Image(.kudosjar)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 75)
+                        .frame(width: Dimensions.kudosJarWidth, height: Dimensions.kudosJarHeight)
 
                     Text("\(items.count)")
                         .font(.system(
@@ -21,18 +21,18 @@ struct KudosJarView: View {
                             weight: .bold
                         ))
                         .foregroundColor(.white)
-                        .padding(5)
+                        .padding(Dimensions.kudosJarBadgePadding)
                         .background(reduceTransparency ? Color.orange : Color.orange.opacity(0.9))
                         .clipShape(Circle())
                         .overlay(
                             Circle()
-                                .stroke(Color.white, lineWidth: 2)
+                                .stroke(Color.white, lineWidth: Dimensions.kudosJarBadgeStrokeWidth)
                         )
                         .offset(
-                            x: 1,
+                            x: Dimensions.kudosJarBadgeOffsetX,
                             y: CGFloat(Size.mediumLarge.rawValue)
                         )
-                        .shadow(color: reduceTransparency ? .clear : .gray.opacity(0.2), radius: 2, x: 0, y: 2)
+                        .shadow(color: reduceTransparency ? .clear : .gray.opacity(0.2), radius: Dimensions.kudosJarShadowRadius, x: 0, y: 2)
                 }
                 .padding(.trailing, Space.small)
             }

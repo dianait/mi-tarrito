@@ -9,7 +9,10 @@ enum Mode {
 public struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
     @EnvironmentObject var languageManager: LanguageManager
-    var action: (String) -> Void
+    @State private var selectedImage: UIImage?
+
+    var textAction: (String) -> Void
+    var photoAction: (Data, String?) -> Void
 
     public var body: some View {
         NavigationStack {
@@ -26,10 +29,15 @@ public struct MainView: View {
                     showSaveIndicator: $viewModel.showSaveIndicator,
                     showSavedMessage: $viewModel.showSavedMessage,
                     dragOffset: $viewModel.dragOffset,
-                    action: action,
+                    selectedPhotoData: $viewModel.selectedPhotoData,
+                    onShowCamera: {
+                        viewModel.showCamera = true
+                    },
+                    textAction: textAction,
+                    photoAction: photoAction,
                     onSave: {
                         viewModel.incrementCounter()
-                        viewModel.resetText()
+                        viewModel.resetAllInput()
                     }
                 )
 
@@ -80,6 +88,23 @@ public struct MainView: View {
                 LanguageSettingsView()
                     .presentationDetents([.height(180)])
             }
+            .sheet(isPresented: $viewModel.showCamera) {
+                if isCameraAvailable() {
+                    CameraPickerView(selectedImage: $selectedImage)
+                } else {
+                    Text(Copies.Camera.notAvailable)
+                        .padding()
+                }
+            }
+            .onChange(of: selectedImage) { _, newImage in
+                if let image = newImage {
+                    // Compress and store the image
+                    if let compressedData = compressImage(image) {
+                        viewModel.selectedPhotoData = compressedData
+                    }
+                    selectedImage = nil
+                }
+            }
             .localized()
             .background(Color("MainBackground"))
         }
@@ -88,9 +113,8 @@ public struct MainView: View {
 
 #if targetEnvironment(simulator)
     #Preview {
-        MainView { _ in }
+        MainView(textAction: { _ in }, photoAction: { _, _ in })
             .environmentObject(LanguageManager.shared)
             .preferredColorScheme(.dark)
-        
     }
 #endif

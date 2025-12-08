@@ -120,7 +120,20 @@
 
 // Sticky View A11y
 "sticky_view_label" = "Nota con logro";
+"sticky_view_photo_only" = "Logro con foto";
+"sticky_view_photo_with_caption" = "Logro con foto y texto";
 "sticky_view_date_label" = "Guardado el {date}";
+
+// Camera
+"camera_add_photo" = "Añadir foto";
+"camera_change_photo" = "Cambiar foto";
+"camera_remove_photo" = "Eliminar foto";
+"camera_add_photo_hint" = "Toma una foto de tu logro";
+"camera_not_available" = "Cámara no disponible en este dispositivo";
+
+// Validation Errors - Photo
+"validation_error_empty_photo" = "La foto no puede estar vacía";
+"validation_error_empty_content" = "Por favor, añade texto o una foto";
 
 // Validation Alert
 "validation_alert_title" = "No se puede guardar";

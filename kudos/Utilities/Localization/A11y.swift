@@ -60,6 +60,8 @@ enum A11y {
     
     enum StickyView {
         static let label = "sticky_view_label".localized
+        static let photoOnly = "sticky_view_photo_only".localized
+        static let photoWithCaption = "sticky_view_photo_with_caption".localized
         static func dateLabel(date: Date) -> String {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium

@@ -16,4 +16,7 @@ enum Icon: String {
     case bird = "bird.fill"
     case iphone = "iphone.gen3"
     case trophy = "trophy.fill"
+    case camera = "camera.fill"
+    case photo = "photo.fill"
+    case xmark = "xmark.circle.fill"
 }

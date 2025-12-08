@@ -7,16 +7,20 @@ struct ContentView: View {
     @Query private var items: [Accomplishment]
 
     var body: some View {
-        MainView {
-            text in
-            addItem(text: text)
-        }
+        MainView(
+            textAction: { text in
+                addTextItem(text: text)
+            },
+            photoAction: { photoData, caption in
+                addPhotoItem(photoData: photoData, caption: caption)
+            }
+        )
     }
 
-    private func addItem(text: String) {
+    private func addTextItem(text: String) {
         // Validate before creating Accomplishment
         let validationResult = AccomplishmentValidator.validateText(text)
-        
+
         switch validationResult {
         case .success(let validatedText):
             do {
@@ -28,8 +32,17 @@ struct ContentView: View {
             }
         case .failure(let error):
             // Validation failed - log error
-            // In a production app, you might want to show an alert to the user
             print("Validation error: \(error.localizedDescription)")
+        }
+    }
+
+    private func addPhotoItem(photoData: Data, caption: String?) {
+        do {
+            let newItem = try Accomplishment(photoData: photoData, text: caption)
+            modelContext.insert(newItem)
+        } catch {
+            // Log error but don't crash
+            print("Error creating photo Accomplishment: \(error.localizedDescription)")
         }
     }
 }
@@ -37,5 +50,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .modelContainer(for: Accomplishment.self, inMemory: true)
-        .environmentObject(LanguageManager.shared) // Añade esto solo para el preview
+        .environmentObject(LanguageManager.shared)
 }

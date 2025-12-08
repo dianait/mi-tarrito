@@ -16,95 +16,44 @@ struct StickiesViewOverview: View {
     @Binding var showSaveIndicator: Bool
     @Binding var showSavedMessage: Bool
     @Binding var dragOffset: CGSize
+    @Binding var selectedPhotoData: Data?
 
-    var action: (String) -> Void
+    var onShowCamera: () -> Void
+    var textAction: (String) -> Void
+    var photoAction: (Data, String?) -> Void
     var onSave: () -> Void
+
+    /// Whether there is content to save (text or photo)
+    private var hasContent: Bool {
+        !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || selectedPhotoData != nil
+    }
 
     var body: some View {
         ZStack {
             if mode == .edit {
                 VStack {
                     ZStack {
-                        StickiesView(mode: $mode)
-                        
-                        VStack {
-                            ZStack(alignment: .topLeading) {
-                                // Placeholder text - only visible when text is empty
-                                if text.isEmpty {
-                                    Text(Copies.StickiesViewOverView.textEditorPlaceHolder)
-                                        .foregroundColor(.gray)
-                                        .font(.body)
-                                        .padding([.leading, .trailing])
-                                        .padding(.top, 8)
-                                        .accessibilityHidden(true)
-                                }
-                                
-                                // TextEditor - always present but only visible when there's text
-                                TextEditor(text: $text)
-                                    .focused($responseIsFocussed)
-                                    .scrollContentBackground(.hidden)
-                                    .background(Color.clear)
-                                    .foregroundColor(.black)
-                                    .font(.body)
-                                    .onChange(of: text) { _, newValue in
-                                        characterCount = newValue.count
+                        // Show photo preview if selected, otherwise show sticky background
+                        if let photoData = selectedPhotoData, let uiImage = UIImage(data: photoData) {
+                            photoPreviewView(image: uiImage)
+                        } else {
+                            StickiesView(mode: $mode)
+                        }
 
-                                        if newValue.count > maxCharacters {
-                                            text = String(newValue.prefix(maxCharacters))
-                                            characterCount = maxCharacters
-                                        }
-                                    }
-                                    .onAppear {
-                                        characterCount = text.count
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + Timing.focusDelay) {
-                                            responseIsFocussed = true
-
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + Timing.accessibilityNotificationDelay) {
-                                                UIAccessibility.post(
-                                                    notification: .screenChanged,
-                                                    argument: A11y.StickiesViewOverview.editModeNotification
-                                                )
-                                            }
-
-                                            isEditModeActive = true
-                                        }
-                                    }
-                                    .onDisappear {
-                                        isEditModeActive = false
-                                    }
-                                    .onReceive(text.publisher.last()) {
-                                        if ($0 as Character).asciiValue == 10 {
-                                            responseIsFocussed = false
-                                            text.removeLast()
-                                            characterCount = text.count
-                                        }
-                                    }
-                                    .padding([.leading, .trailing])
-                                    .frame(width: Dimensions.textEditorWidth, height: Dimensions.textEditorHeight)
-                                    .accessibilityLabel(A11y.StickiesViewOverview.textEditorLabel)
-                                    .accessibilityHint(A11y.StickiesViewOverview.textEditorHint)
-                                    .accessibilityIdentifier(A11y.StickiesViewOverview.textEditorIdentifer)
-                            }
-
-                            Text("\(characterCount)/\(maxCharacters)")
-                                .font(.caption)
-                                .foregroundColor(characterCount > maxCharacters ? .red : .gray)
-                                .frame(width: Dimensions.counterFrameWidth, alignment: .trailing)
-                                .padding(.trailing)
-                                .accessibilityLabel(
-                                    A11y.StickiesViewOverview.charCounterLabel(
-                                        count: characterCount,
-                                        max: maxCharacters
-                                    )
-                                )
+                        // Text input overlay (only when no photo selected)
+                        if selectedPhotoData == nil {
+                            textInputView
                         }
                     }
+
+                    // Camera button
+                    cameraButton
                 }
                 .offset(dragOffset)
                 .gesture(
                     DragGesture(minimumDistance: CGFloat(Size.extraSmall.rawValue))
                         .onChanged { gesture in
-                            if !text.isEmpty {
+                            if hasContent {
                                 let dragAmount = gesture.translation.height
                                 let dampedAmount = min(0, dragAmount * Limits.dragDampingFactor)
                                 dragOffset = CGSize(width: 0, height: dampedAmount)
@@ -119,7 +68,7 @@ struct StickiesViewOverview: View {
                             }
                         }
                         .onEnded { gesture in
-                            if gesture.translation.height < Limits.saveDragThreshold, !text.isEmpty {
+                            if gesture.translation.height < Limits.saveDragThreshold, hasContent {
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.notificationOccurred(.success)
                                 DispatchQueue.main.asyncAfter(deadline: .now() + Timing.saveActionDelay) {
@@ -139,7 +88,7 @@ struct StickiesViewOverview: View {
                         }
                 )
                 .accessibilityAction(named: A11y.StickiesViewOverview.saveAction) {
-                    if !text.isEmpty {
+                    if hasContent {
                         let generator = UINotificationFeedbackGenerator()
                         generator.notificationOccurred(.success)
                         save()
@@ -168,12 +117,23 @@ struct StickiesViewOverview: View {
     }
 
     private func save() {
-        // Validate text before saving
+        // Check if we have a photo to save
+        if let photoData = selectedPhotoData {
+            // Save with photo (text is optional caption)
+            let caption = text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : text
+            photoAction(photoData, caption)
+            characterCount = 0
+            onSave()
+            mode = .view
+            return
+        }
+
+        // No photo - validate text before saving
         let validationResult = AccomplishmentValidator.validateText(text)
 
         switch validationResult {
         case .success(let validatedText):
-            action(validatedText)
+            textAction(validatedText)
             characterCount = 0
             onSave()
             mode = .view
@@ -184,5 +144,129 @@ struct StickiesViewOverview: View {
             // Keep focus on text editor so user can fix the issue
             responseIsFocussed = true
         }
+    }
+
+    // MARK: - Subviews
+
+    @ViewBuilder
+    private var textInputView: some View {
+        VStack {
+            ZStack(alignment: .topLeading) {
+                // Placeholder text - only visible when text is empty
+                if text.isEmpty {
+                    Text(Copies.StickiesViewOverView.textEditorPlaceHolder)
+                        .foregroundColor(.gray)
+                        .font(.body)
+                        .padding([.leading, .trailing])
+                        .padding(.top, 8)
+                        .accessibilityHidden(true)
+                }
+
+                // TextEditor - always present but only visible when there's text
+                TextEditor(text: $text)
+                    .focused($responseIsFocussed)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .foregroundColor(.black)
+                    .font(.body)
+                    .onChange(of: text) { _, newValue in
+                        characterCount = newValue.count
+
+                        if newValue.count > maxCharacters {
+                            text = String(newValue.prefix(maxCharacters))
+                            characterCount = maxCharacters
+                        }
+                    }
+                    .onAppear {
+                        characterCount = text.count
+                        DispatchQueue.main.asyncAfter(deadline: .now() + Timing.focusDelay) {
+                            responseIsFocussed = true
+
+                            DispatchQueue.main.asyncAfter(deadline: .now() + Timing.accessibilityNotificationDelay) {
+                                UIAccessibility.post(
+                                    notification: .screenChanged,
+                                    argument: A11y.StickiesViewOverview.editModeNotification
+                                )
+                            }
+
+                            isEditModeActive = true
+                        }
+                    }
+                    .onDisappear {
+                        isEditModeActive = false
+                    }
+                    .onReceive(text.publisher.last()) {
+                        if ($0 as Character).asciiValue == 10 {
+                            responseIsFocussed = false
+                            text.removeLast()
+                            characterCount = text.count
+                        }
+                    }
+                    .padding([.leading, .trailing])
+                    .frame(width: Dimensions.textEditorWidth, height: Dimensions.textEditorHeight)
+                    .accessibilityLabel(A11y.StickiesViewOverview.textEditorLabel)
+                    .accessibilityHint(A11y.StickiesViewOverview.textEditorHint)
+                    .accessibilityIdentifier(A11y.StickiesViewOverview.textEditorIdentifer)
+            }
+
+            Text("\(characterCount)/\(maxCharacters)")
+                .font(.caption)
+                .foregroundColor(characterCount > maxCharacters ? .red : .gray)
+                .frame(width: Dimensions.counterFrameWidth, alignment: .trailing)
+                .padding(.trailing)
+                .accessibilityLabel(
+                    A11y.StickiesViewOverview.charCounterLabel(
+                        count: characterCount,
+                        max: maxCharacters
+                    )
+                )
+        }
+    }
+
+    @ViewBuilder
+    private func photoPreviewView(image: UIImage) -> some View {
+        ZStack(alignment: .topTrailing) {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
+                .clipShape(RoundedRectangle(cornerRadius: CGFloat(Size.small.rawValue)))
+                .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 3)
+
+            // Remove photo button
+            Button {
+                withAnimation {
+                    selectedPhotoData = nil
+                }
+            } label: {
+                Image(systemName: Icon.xmark.rawValue)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .background(Circle().fill(Color.black.opacity(0.6)).frame(width: 30, height: 30))
+            }
+            .padding(8)
+            .accessibilityLabel(Copies.Camera.removePhoto)
+        }
+    }
+
+    @ViewBuilder
+    private var cameraButton: some View {
+        Button {
+            onShowCamera()
+        } label: {
+            HStack(spacing: Space.small) {
+                Image(systemName: Icon.camera.rawValue)
+                Text(selectedPhotoData == nil ? Copies.Camera.addPhoto : Copies.Camera.changePhoto)
+            }
+            .font(.subheadline)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+            .padding(.horizontal, Space.medium)
+            .padding(.vertical, Space.small)
+            .background(Capsule().fill(Color.orange))
+        }
+        .padding(.top, Space.small)
+        .accessibilityLabel(Copies.Camera.addPhoto)
+        .accessibilityHint(Copies.Camera.addPhotoHint)
     }
 }

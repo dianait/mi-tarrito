@@ -41,22 +41,33 @@ struct AccomplishmentDetailView: View {
         ZStack {
             Color("MainBackground")
                 .ignoresSafeArea()
-            
+
             ScrollView {
                 VStack(spacing: Space.large) {
-                    if isLongText {
-                        // For long text, show only the text in a readable format
-                        textOnlyView
-                    } else {
-                        // For short text, show sticky note view
-                        StickyView(item: accomplishment)
-                            .scaleEffect(1.2)
-                            .padding(.top, Space.extraLarge)
+                    // Photo view (full width) if has photo
+                    if accomplishment.hasPhoto {
+                        photoView
                     }
-                    
+
+                    // Text content
+                    if accomplishment.hasText {
+                        if accomplishment.hasPhoto {
+                            // Caption below photo
+                            captionView
+                        } else if isLongText {
+                            // Long text without photo
+                            textOnlyView
+                        } else {
+                            // Short text without photo - show sticky
+                            StickyView(item: accomplishment)
+                                .scaleEffect(1.2)
+                                .padding(.top, Space.extraLarge)
+                        }
+                    }
+
                     // Date information
                     dateCardView
-                    
+
                     // Delete button
                     deleteButtonView
                 }
@@ -74,6 +85,37 @@ struct AccomplishmentDetailView: View {
         .localized()
     }
     
+    @ViewBuilder
+    private var photoView: some View {
+        if let photoData = accomplishment.photoData, let uiImage = UIImage(data: photoData) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity)
+                .clipShape(RoundedRectangle(cornerRadius: Space.medium))
+                .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
+                .padding(.horizontal)
+                .padding(.top, Space.extraLarge)
+        }
+    }
+
+    @ViewBuilder
+    private var captionView: some View {
+        Text(accomplishment.text)
+            .font(.title3)
+            .fontWeight(.medium)
+            .foregroundColor(.primary)
+            .multilineTextAlignment(.center)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: Space.medium)
+                    .fill(Color(.systemBackground))
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+            )
+            .padding(.horizontal)
+    }
+
     @ViewBuilder
     private var textOnlyView: some View {
         VStack(alignment: .leading, spacing: Space.medium) {

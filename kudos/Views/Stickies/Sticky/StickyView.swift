@@ -21,7 +21,13 @@ struct StickyView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .topTrailing) {
-                BackgroundImageView(color: item.color)
+                // Show photo if available, otherwise show colored background
+                if item.hasPhoto, let photoData = item.photoData, let uiImage = UIImage(data: photoData) {
+                    photoBackgroundView(image: uiImage)
+                } else {
+                    BackgroundImageView(color: item.color)
+                }
+
                 VStack {
                     if isEditMode {
                         DeleteButtonView(action: { delete?() })
@@ -31,9 +37,18 @@ struct StickyView: View {
                             )
                     }
 
-                    ItemTextView(text: item.text)
-                        .multilineTextAlignment(.center)
-                        .offset(x: widthOffset, y: heightOffset)
+                    // Show text only if there is text content
+                    if item.hasText {
+                        if item.hasPhoto {
+                            // Photo with caption - show text at bottom with background
+                            textOverlayView
+                        } else {
+                            // Text only - centered
+                            ItemTextView(text: item.text)
+                                .multilineTextAlignment(.center)
+                                .offset(x: widthOffset, y: heightOffset)
+                        }
+                    }
 
                     if isEditMode {
                         DateLabelView(date: item.date)
@@ -46,7 +61,48 @@ struct StickyView: View {
         }
         .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel(A11y.StickyView.label)
+        .accessibilityLabel(accessibilityLabelText)
+    }
+
+    // MARK: - Subviews
+
+    @ViewBuilder
+    private func photoBackgroundView(image: UIImage) -> some View {
+        Image(uiImage: image)
+            .resizable()
+            .scaledToFill()
+            .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
+            .clipShape(RoundedRectangle(cornerRadius: CGFloat(Size.small.rawValue)))
+            .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 3)
+    }
+
+    @ViewBuilder
+    private var textOverlayView: some View {
+        VStack {
+            Spacer()
+            Text(item.text)
+                .font(.caption)
+                .fontWeight(.medium)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .padding(.horizontal, Space.small)
+                .padding(.vertical, Space.extraSmall)
+                .frame(maxWidth: .infinity)
+                .background(Color.black.opacity(0.6))
+        }
+    }
+
+    // MARK: - Accessibility
+
+    private var accessibilityLabelText: String {
+        if item.hasPhoto && item.hasText {
+            return "\(A11y.StickyView.photoWithCaption): \(item.text)"
+        } else if item.hasPhoto {
+            return A11y.StickyView.photoOnly
+        } else {
+            return A11y.StickyView.label
+        }
     }
 }
 

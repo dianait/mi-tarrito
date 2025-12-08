@@ -120,7 +120,20 @@
 
 // Sticky View A11y
 "sticky_view_label" = "Achievement note";
+"sticky_view_photo_only" = "Photo achievement";
+"sticky_view_photo_with_caption" = "Photo achievement with caption";
 "sticky_view_date_label" = "Saved on {date}";
+
+// Camera
+"camera_add_photo" = "Add photo";
+"camera_change_photo" = "Change photo";
+"camera_remove_photo" = "Remove photo";
+"camera_add_photo_hint" = "Take a photo of your achievement";
+"camera_not_available" = "Camera not available on this device";
+
+// Validation Errors - Photo
+"validation_error_empty_photo" = "Photo cannot be empty";
+"validation_error_empty_content" = "Please add text or a photo";
 
 // Validation Alert
 "validation_alert_title" = "Cannot save";

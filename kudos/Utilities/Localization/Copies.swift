@@ -220,6 +220,28 @@ enum Copies {
             return "in_memory_warning_ok".localized
         }
     }
+
+    enum Camera {
+        static var addPhoto: String {
+            return "camera_add_photo".localized
+        }
+
+        static var changePhoto: String {
+            return "camera_change_photo".localized
+        }
+
+        static var removePhoto: String {
+            return "camera_remove_photo".localized
+        }
+
+        static var addPhotoHint: String {
+            return "camera_add_photo_hint".localized
+        }
+
+        static var notAvailable: String {
+            return "camera_not_available".localized
+        }
+    }
     
     enum ValidationAlert {
         static var title: String {

@@ -18,50 +18,85 @@ struct StickyView: View {
             CGFloat(Size.mediumLarge.rawValue)
     }
 
+    private var photoStickySize: CGFloat {
+        Dimensions.stickyWidth * 1.25
+    }
+
     var body: some View {
-        VStack {
-            ZStack(alignment: .topTrailing) {
-                // Show photo if available, otherwise show colored background
-                if item.hasPhoto, let photoData = item.photoData, let uiImage = UIImage(data: photoData) {
-                    photoBackgroundView(image: uiImage)
-                } else {
-                    BackgroundImageView(color: item.color)
-                }
+        if item.hasPhoto, let photoData = item.photoData, let uiImage = UIImage(data: photoData) {
+            // Photo mode: date outside image like text stickies
+            ZStack {
+                photoBackgroundView(image: uiImage)
 
-                VStack {
-                    if isEditMode {
-                        DeleteButtonView(action: { delete?() })
-                            .offset(
-                                x: -CGFloat(Size.mediumLarge.rawValue),
-                                y: CGFloat(Size.mediumLarge.rawValue)
-                            )
-                    }
-
-                    // Show text only if there is text content
-                    if item.hasText {
-                        if item.hasPhoto {
-                            // Photo with caption - show text at bottom with background
-                            textOverlayView
-                        } else {
-                            // Text only - centered
-                            ItemTextView(text: item.text)
-                                .multilineTextAlignment(.center)
-                                .offset(x: widthOffset, y: heightOffset)
+                // Delete button at top-right of image
+                if isEditMode {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            DeleteButtonView(action: { delete?() })
                         }
+                        Spacer()
                     }
-
-                    if isEditMode {
-                        DateLabelView(date: item.date)
-                            .offset(x: Dimensions.dateLabelXOffset, y: Dimensions.dateLabelYOffset)
-                            .accessibilityLabel(A11y.StickyView.dateLabel(date: item.date))
-                    }
+                    .padding(Space.small)
+                    .offset(x: .zero, y: -30)
                 }
-                .padding()
+
+                // Caption at bottom if has text
+                if item.hasText {
+                    textOverlayView
+                }
+
+                // Date label positioned outside, top-left (like text stickies)
+                if isEditMode {
+                    DateLabelView(date: item.date)
+                        .accessibilityLabel(A11y.StickyView.dateLabel(date: item.date))
+                        .offset(x: -175, y: -145)
+                }
+            }
+            .frame(width: photoStickySize, height: photoStickySize)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityLabelText)
+        } else {
+            // Text mode: original layout
+            VStack {
+                ZStack(alignment: .topTrailing) {
+                    BackgroundImageView(color: item.color)
+                    textModeOverlay
+                }
+            }
+            .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityLabelText)
+        }
+    }
+
+    // MARK: - Text Mode Overlay
+
+    @ViewBuilder
+    private var textModeOverlay: some View {
+        VStack {
+            if isEditMode {
+                DeleteButtonView(action: { delete?() })
+                    .offset(
+                        x: -CGFloat(Size.mediumLarge.rawValue),
+                        y: CGFloat(Size.mediumLarge.rawValue)
+                    )
+            }
+
+            // Show text only if there is text content
+            if item.hasText {
+                ItemTextView(text: item.text)
+                    .multilineTextAlignment(.center)
+                    .offset(x: widthOffset, y: heightOffset)
+            }
+
+            if isEditMode {
+                DateLabelView(date: item.date)
+                    .offset(x: Dimensions.dateLabelXOffset, y: Dimensions.dateLabelYOffset)
+                    .accessibilityLabel(A11y.StickyView.dateLabel(date: item.date))
             }
         }
-        .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(accessibilityLabelText)
+        .padding()
     }
 
     // MARK: - Subviews
@@ -71,9 +106,10 @@ struct StickyView: View {
         Image(uiImage: image)
             .resizable()
             .scaledToFill()
-            .frame(width: Dimensions.stickyWidth, height: Dimensions.stickyHeight)
+            .frame(width: photoStickySize, height: photoStickySize)
             .clipShape(RoundedRectangle(cornerRadius: CGFloat(Size.small.rawValue)))
             .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 3)
+            .offset(x: .zero, y: -25)
     }
 
     @ViewBuilder

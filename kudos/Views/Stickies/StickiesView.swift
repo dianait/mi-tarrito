@@ -5,33 +5,49 @@ struct StickiesView: View {
     @Query(sort: \Accomplishment.date, order: .reverse) private var items: [Accomplishment]
     @Binding var mode: Mode
 
-    var lastMessage: String {
-        switch mode {
-        case .view: return items.first?.text ?? ""
-        case .edit: return "" // In edit mode, don't show placeholder in StickyView
-        }
+    /// The most recent accomplishment to display
+    private var lastItem: Accomplishment? {
+        mode == .view ? items.first : nil
+    }
+
+    /// Text to show (for accessibility and fallback)
+    private var lastMessage: String {
+        lastItem?.text ?? ""
+    }
+
+    /// Default placeholder item when no accomplishments exist
+    private var placeholderItem: Accomplishment {
+        Accomplishment(
+            validatedText: " ",
+            validatedColor: Copies.Colors.yellow.rawValue
+        )
     }
 
     var body: some View {
         HStack {
             ZStack {
                 backgroundStickies()
-                StickyView(
-                    item: Accomplishment(
-                        validatedText: lastMessage.isEmpty ? " " : lastMessage,
-                        validatedColor: Copies.Colors.yellow.rawValue
-                    )
-                )
-                .offset(x: .zero, y: .zero)
-                .onTapGesture {
-                    openEdit()
+
+                // Show the actual last item (with photo if it has one) or placeholder
+                if let item = lastItem {
+                    StickyView(item: item)
+                        .offset(x: .zero, y: .zero)
+                        .onTapGesture {
+                            openEdit()
+                        }
+                } else {
+                    StickyView(item: placeholderItem)
+                        .offset(x: .zero, y: .zero)
+                        .onTapGesture {
+                            openEdit()
+                        }
                 }
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel(A11y.StickiesView.label(lastMessage: lastMessage))
-                .accessibilityHint(A11y.StickiesView.hint)
-                .accessibilityAddTraits([.isButton])
-                .accessibilityIdentifier(A11y.StickiesView.stickie)
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(A11y.StickiesView.label(lastMessage: lastMessage))
+            .accessibilityHint(A11y.StickiesView.hint)
+            .accessibilityAddTraits([.isButton])
+            .accessibilityIdentifier(A11y.StickiesView.stickie)
             .accessibilityAction(.default) {
                 openEdit()
             }
